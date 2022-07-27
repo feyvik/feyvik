@@ -45,7 +45,7 @@ function Hero() {
 						<Span>Hello 👋</Span>
 						<h1 className='mt-2'>Favour Vivian Woka</h1>
 						<p className='my-2'>Frontend Developer & Technical Writer</p>
-						<StyledButton>Hire Me</StyledButton>
+						<StyledButton>Say Hi 👋</StyledButton>
 						<h4 className='mb-3'>FIND ME @</h4>
 						<div className='p-0 m-0 w-full'>
 							<a href='https://twitter.com/feyvik' className='mr-2'>

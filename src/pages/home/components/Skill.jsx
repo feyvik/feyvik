@@ -10,44 +10,72 @@ const StyledHeader = Styled.h1`
 
 function Skill() {
 	const items = [
-		'Html',
-		'Css',
-		'JavaScript(ES6)',
-		'Bootstrap',
-		'jQuery',
-		'Git',
-		'Angular',
-		'TypeScript',
-		'Sass',
-		'Angular Material UI',
-		'Firebase',
-		'Vuejs',
-		'Vuetify',
-		'TailwindCSS',
-		'Reactjs',
-		'Jira',
-		'iles',
-		'PrimeVue',
-		'PrimeReact',
-		'Technical Writer',
-		'React Material UI',
+		{
+			tag: 'HTML 90%',
+			bgColor: '#e34c26',
+			textColor: '#ebebeb',
+		},
+		{
+			tag: 'CSS 90%',
+			bgColor: '#264de4',
+			textColor: '#ebebeb',
+		},
+		{
+			tag: 'JavaScript(ES6) 60%',
+			bgColor: '#fcdc00',
+			textColor: '#000',
+		},
+		{
+			tag: 'Angular 80%',
+			bgColor: '#a6120d',
+			textColor: '#fff',
+		},
+		{
+			tag: 'TypeScript 40%',
+			bgColor: '#3178c6',
+			textColor: '#fff',
+		},
+		{
+			tag: 'Vuejs 50%',
+			bgColor: '#34495e',
+			textColor: '#41b883',
+		},
+		{
+			tag: 'Reactjs 70%',
+			bgColor: '#61dafb',
+			textColor: '#000',
+		},
+		{
+			tag: 'iles 90%',
+			bgColor: '#179cf5',
+			textColor: '#000',
+		},
+		{
+			tag: 'Firebase 50%',
+			bgColor: '#f57c00',
+			textColor: '#fff',
+		},
 	];
 
 	return (
-		<Card className='mt-4 w-7 mr-2'>
-			<div>
+		<div className='w-7 mt-4 mr-2'>
+			<Card className='w-full'>
 				<StyledHeader>My Skills</StyledHeader>
-				<div className='flex w-full flex-wrap'>
-					{items.map((item, i) => (
-						<div
-							key={i}
-							className='flex w-3 align-items-center justify-content-center px-2 py-2'>
-							<p className=''>{item}</p>
+			</Card>
+
+			<div className='flex w-full flex-wrap'>
+				{items.map((item, i) => (
+					<Card
+						key={i}
+						className='mt-4 w-ful mr-2'
+						style={{ backgroundColor: item.bgColor, color: item.textColor }}>
+						<div className='flex align-items-center justify-content-center'>
+							<p className=''>{item.tag}</p>
 						</div>
-					))}
-				</div>
+					</Card>
+				))}
 			</div>
-		</Card>
+		</div>
 	);
 }
 
