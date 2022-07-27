@@ -10,7 +10,7 @@ const StyledSection = Styled.section`
 
 function SkillsPage() {
 	return (
-		<StyledSection className='flex '>
+		<StyledSection className='flex lg:flex-row flex-column'>
 			<Skill />
 			<Interest />
 		</StyledSection>

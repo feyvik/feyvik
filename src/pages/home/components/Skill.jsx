@@ -58,7 +58,7 @@ function Skill() {
 	];
 
 	return (
-		<div className='w-7 mt-4 mr-2'>
+		<div className='flex md:w-full mt-4 mr-2 sm:full w-full flex-column lg:w-7'>
 			<Card className='w-full'>
 				<StyledHeader>My Skills</StyledHeader>
 			</Card>

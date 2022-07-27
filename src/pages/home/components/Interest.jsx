@@ -29,7 +29,7 @@ function Interest() {
 	];
 	const language = ['English', 'Ibo'];
 	return (
-		<div className='w-5 mt-4 ml-3'>
+		<div className='flex md:w-full sm:full w-full flex-column lg:w-5 mt-4 lg:ml-3'>
 			<Card className='w-full'>
 				<StyledHeader>My Interest</StyledHeader>
 			</Card>
