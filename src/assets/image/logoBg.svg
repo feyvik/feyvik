@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- <?xml version="1.0" encoding="UTF-8" standalone="no"?> -->
 <svg
    version="1.1"
    viewBox="-2443.5317179414415 -1064.960009765625 5704.972024795689 2466.04807434082"
    id="svg525"
-   sodipodi:docname="feyvik2-logo.svg"
-   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   sodipodiDocname="feyvik2-logo.svg"
+   inkscapeVersion="1.2 (dc2aeda, 2022-05-15)"
+   xmlnsInkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlnsSodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
+   xmlnsSvg="http://www.w3.org/2000/svg">
+  <!-- <sodipodi:namedview
      id="namedview527"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
+     inkscapeShowpageshadow="2"
+     inkscapePageopacity="0.0"
+     inkscapePagecheckerboard="0"
+     inkscapeDeskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.2671354"
-     inkscape:cx="3406.5123"
-     inkscape:cy="1237.2003"
-     inkscape:window-width="1920"
-     inkscape:window-height="1027"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg525" />
+     inkscapeZoom="0.2671354"
+     inkscapeCx="3406.5123"
+     inkscapeCy="1237.2003"
+     inkscapeWindow-width="1920"
+     inkscapeWindow-height="1027"
+     inkscapeWindow-x="0"
+     inkscapeWindow-y="25"
+     inkscapeWindow-maximized="1"
+     inkscapeCurrent-layer="svg525" /> -->
   <desc
      id="desc487">Created with Snap</desc>
   <defs
@@ -37,7 +37,7 @@
      y="-1064.96"
      width="5704.9722"
      height="2466.0481"
-     fill="#004e89"
+     fill="#073eaa"
      id="rect491" />
   <g
      transform="matrix(22.686966,0,0,24.011265,-2508.0623,-1031.2963)"

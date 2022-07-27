@@ -1,0 +1,14 @@
+/** @format */
+.left-box {
+	padding: 10px;
+	width: 40%;
+}
+.right-box {
+	padding: 10px;
+	width: 60%;
+}
+@media screen and (max-width: 576px) {
+	.styledImg {
+		width: 70%;
+	}
+}

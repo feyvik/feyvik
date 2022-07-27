@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+/** @format */
+@import 'primeflex/primeflex.css';
+main {
+	background: linear-gradient(#636262, #636262);
+	width: 100%;
+	min-height: 100vh;
+	padding: 20px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+	width: 100%;
+	min-height: 10vh;
+	border-radius: 4px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.p-menubar ul {
+	margin-left: auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+	color: #073eaa;
 }
-
-.App-link {
-  color: #61dafb;
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+	background-color: #073eaa !important;
+	color: #fff !important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.p-menubar
+	.p-menubar-root-list
+	> .p-menuitem
+	> .p-menuitem-link
+	.p-menuitem-text {
+	color: unset;
+}
+.p-menubar
+	.p-menubar-root-list
+	> .p-menuitem
+	> .p-menuitem-link
+	.p-menuitem-text:hover {
+	color: #fff !important;
+}
+.p-menubar .p-menubar-button {
+	justify-content: center;
+	margin-left: auto;
+}
+.p-card {
+	color: #000;
 }

@@ -1,0 +1,23 @@
+/** @format */
+
+footer {
+	width: 100%;
+	min-height: 10vh;
+	border-radius: 4px;
+	padding: 10px;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+}
+hr {
+	background: gray;
+	width: 100%;
+}
+a {
+	color: #fff;
+}
+a i {
+	background-color: #073eaa;
+	padding: 10px;
+	border-radius: 100px;
+}
