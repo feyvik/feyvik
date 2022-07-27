@@ -1,12 +1,13 @@
 /** @format */
 @import 'primeflex/primeflex.css';
 main {
-	background: linear-gradient(#6362623d, #6362623d),
-		url('./assets/image/mac.jpeg');
+	background: linear-gradient(#636262a6, #636262a6);
+
+	/* url('./assets/image/mac.jpeg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	object-fit: cover;
+	object-fit: cover; */
 	background-attachment: fixed;
 	width: 100%;
 	min-height: 100vh;
@@ -50,4 +51,10 @@ header {
 }
 .p-card .p-card-content {
 	padding: unset;
+}
+.p-chip img {
+	border-radius: 0px;
+}
+.p-card .p-card-title {
+	font-size: 20px;
 }

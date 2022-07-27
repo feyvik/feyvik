@@ -16,6 +16,14 @@ h1 {
 	margin: 0;
 	padding: 0;
 }
+h2 {
+	font-family: 'Merriweather', serif;
+	font-size: 30px;
+	font-weight: bolder;
+	letter-spacing: 4px;
+	margin: 0;
+	padding: 0;
+}
 h4 {
 	font-family: 'Merriweather', serif;
 }
@@ -38,4 +46,23 @@ button {
 	h1 {
 		font-size: 22px;
 	}
+}
+.slick-slide {
+	border-radius: 6px;
+	/* width: 100% !important; */
+}
+.slick-slider {
+	width: 100% !important;
+}
+
+body .slick-prev,
+body .slick-next {
+	height: 40px;
+	width: 40px;
+	z-index: 100;
+	border-radius: 100px;
+}
+body .slick-prev:before,
+body .slick-next:before {
+	color: #073eaa !important;
 }
