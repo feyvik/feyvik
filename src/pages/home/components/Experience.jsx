@@ -15,7 +15,7 @@ function Experience() {
 			<Card className='w-full'>
 				<StyledHeader>Experiences</StyledHeader>
 			</Card>
-			<div className='row m-0 pb-5'>
+			<div className='row m-0'>
 				<div className={`${style.col}`}>
 					<div className={`${style.timeline}`}>
 						<div className={`${style.timeline__content} ${style.right}`}>

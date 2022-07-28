@@ -81,7 +81,6 @@
 @media screen and (max-width: 899px) {
 	.timeline::after {
 		left: 10px;
-		/* display: block; */
 	}
 	.timeline__content::before {
 		left: 0;
@@ -92,7 +91,6 @@
 	.left::after,
 	.right::after {
 		left: -10px !important;
-		/* display: none; */
 	}
 	.timeline__content {
 		width: 100%;

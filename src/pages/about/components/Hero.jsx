@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Vivian from '../../../assets/image/vivian.png';
-import '../style/Hero.css';
+import '../../home/style/Hero.css';
 import Styled from 'styled-components';
 import { Card } from 'primereact/card';
 import { Dialog } from 'primereact/dialog';
@@ -60,28 +60,27 @@ function Hero() {
 					<div className='md:text-center lg:text-left w-full'>
 						<Span>Hello 👋</Span>
 						<h1 className='mt-2'>I Am Favour Vivian Woka</h1>
-						<p className='my-2'>Frontend Developer & Technical Writer</p>
-						<StyledButton onClick={() => onClick('displayMaximizable')}>
-							Say Hi 👋
-						</StyledButton>
-						<h4 className='mb-3'>FIND ME @</h4>
-						<div className='p-0 m-0 w-full'>
-							<a href='https://twitter.com/feyvik' className='mr-2'>
-								<i className='pi pi-twitter'></i>
-							</a>
-							<a href='https://web.facebook.com/feyvik' className='mr-2'>
-								<i className='pi pi-facebook'></i>
-							</a>
-							<a href='https://www.linkedin.com/in/feyvik' className='mr-2'>
-								<i className='pi pi-linkedin'></i>
-							</a>
-							<a href='https://github.com/feyvik' className='mr-2'>
-								<i className='pi pi-github'></i>
-							</a>
-							<a href='https://www.instagram.com/fey_vik' className='mr-2'>
-								<i className='pi pi-instagram'></i>
-							</a>
-						</div>
+						<p className='my-2'>
+							I a Frontend Developer & Technical Writer based in Port Harcourt,
+							Nigeria.
+						</p>
+						<p className='mb-3'>
+							I am passionate about building applications that run on the web
+							and documenting front-end web tutorials and articles for
+							beginners. I pride myself on code simplicity.
+						</p>
+						<p className='mb-3'>
+							Formally, I worked with a company called PrimedSoft and I was
+							responsible for building user interfaces and implementing APIs. I
+							currently work at KodeCamp as a React Tutor and Team Lead.
+						</p>
+						<p className='mb-3'>
+							When I am not doing software-related activities, you will find me
+							practicing a new dance step (basically I dance for fun)
+						</p>
+						<p className='mb-3'>
+							Want to know more? drop me a line: vivianemma97@gmail.com
+						</p>
 					</div>
 				</div>
 			</Article>

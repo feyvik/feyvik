@@ -46,14 +46,6 @@ function Interest() {
 							}}
 							icon={item.tag}
 						/>
-						// <Card key={i} className='mt-4 w-ful mr-2'>
-						// 	<div className='flex align-items-center justify-content-center'>
-						// 		<p className=''>
-						// 			<span className={`${item.tag} mr-2`}></span>
-						// 			{item.label}
-						// 		</p>
-						// 	</div>
-						// </Card>
 					))}
 				</div>
 			</Card>
@@ -72,11 +64,6 @@ function Interest() {
 								borderRadius: '4px',
 							}}
 						/>
-						// <Card key={i} className='mt-4 w-ful mr-2'>
-						// 	<div className='flex align-items-center justify-content-center'>
-						// 		<p className=''>{item}</p>
-						// 	</div>
-						// </Card>
 					))}
 				</div>
 			</Card>
