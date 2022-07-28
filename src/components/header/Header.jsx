@@ -35,7 +35,7 @@ function Header() {
 					<NavLink
 						style={({ isActive }) => (isActive ? activeStyle : undefined)}
 						to='/about'
-						className={options.className}>
+						className={`${options.className} animate__animated animate__fadeIn`}>
 						{item.label}
 					</NavLink>
 				);
@@ -48,7 +48,7 @@ function Header() {
 					<NavLink
 						style={({ isActive }) => (isActive ? activeStyle : undefined)}
 						to='/#blog'
-						className={options.className}>
+						className={`${options.className} animate__animated animate__fadeIn`}>
 						{item.label}
 					</NavLink>
 				);
@@ -60,7 +60,7 @@ function Header() {
 				return (
 					<NavLink
 						to='#'
-						className={options.className}
+						className={`${options.className} animate__animated animate__fadeIn`}
 						onClick={() => onClick('displayMaximizable')}>
 						{item.label}
 					</NavLink>
@@ -71,7 +71,12 @@ function Header() {
 
 	const start = (
 		<NavLink to='/ '>
-			<img alt='logo' src={Logo} height='40' className='mr-2' />
+			<img
+				alt='logo'
+				src={Logo}
+				height='40'
+				className='mr-2 animate__animated animate__fadeIn'
+			/>
 		</NavLink>
 	);
 

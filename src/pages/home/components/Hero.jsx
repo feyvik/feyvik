@@ -50,19 +50,21 @@ function Hero() {
 	return (
 		<Card>
 			<Article className='flex lg:flex-row flex-column'>
-				<div className='flex align-items-center justify-content-center left-box text-center lg:w-6 w-full'>
+				<div className='flex align-items-center justify-content-center left-box text-center lg:w-6 w-full animate__animated animate__fadeIn'>
 					<StyledImg
 						src={Vivian}
 						alt='Vivian Photo'
 						className='sm:w-9 md:w-5 lg:w-7 styledImg'
 					/>
 				</div>
-				<div className='flex justify-content-start align-items-center right-box lg:w-6 w-full'>
+				<div className='flex justify-content-start align-items-center right-box lg:w-6 w-full animate__animated animate__fadeInRight'>
 					<div className='md:text-center lg:text-left w-full'>
 						<Span>Hello 👋</Span>
 						<h1 className='mt-2'>I Am Favour Vivian Woka</h1>
 						<p className='my-2'>Frontend Developer & Technical Writer</p>
-						<StyledButton onClick={() => onClick('displayMaximizable')}>
+						<StyledButton
+							onClick={() => onClick('displayMaximizable')}
+							className='animate__animated animate__pulse animate__infinite	infinite'>
 							Say Hi 👋
 						</StyledButton>
 						<h4 className='mb-3'>FIND ME @</h4>

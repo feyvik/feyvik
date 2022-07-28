@@ -1,24 +1,34 @@
 /** @format */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from '../style/Experience.module.css';
 import Styled from 'styled-components';
 import { Card } from 'primereact/card';
+import WOW from 'wowjs';
 
 const StyledHeader = Styled.h2`
   color: #073eaa;
 `;
 
 function Experience() {
+	useEffect(() => {
+		new WOW.WOW({
+			live: false,
+		}).init();
+	}, []);
 	return (
 		<div className='w-full mt-4'>
-			<Card className='w-full'>
+			<Card
+				className='w-full wow animate__animated animate__fadeIn'
+				data-wow-delay='0.2s'>
 				<StyledHeader>Experiences</StyledHeader>
 			</Card>
 			<div className='row m-0'>
 				<div className={`${style.col}`}>
 					<div className={`${style.timeline}`}>
-						<div className={`${style.timeline__content} ${style.right}`}>
+						<div
+							className={`${style.timeline__content} ${style.right}  wow animate__animated animate__fadeInRight`}
+							data-wow-delay='0.2s'>
 							<div className={`${style.content}`}>
 								<div className='exp'>
 									<h4 className={`${style.exp_header}`}>
@@ -40,7 +50,9 @@ function Experience() {
 							</div>
 						</div>
 
-						<div className={`${style.timeline__content} ${style.left}`}>
+						<div
+							className={`${style.timeline__content} ${style.left} wow animate__animated animate__fadeInLeft`}
+							data-wow-delay='0.2s'>
 							<div className={`${style.content}`}>
 								<div className='exp'>
 									<h4 className={`${style.exp_header}`}>
@@ -71,7 +83,9 @@ function Experience() {
 							</div>
 						</div>
 
-						<div className={`${style.timeline__content} ${style.right}`}>
+						<div
+							className={`${style.timeline__content} ${style.right}  wow animate__animated animate__fadeInRight`}
+							data-wow-delay='0.2s'>
 							<div className={`${style.content}`}>
 								<div className='exp'>
 									<h4 className={`${style.exp_header}`}>
@@ -102,7 +116,9 @@ function Experience() {
 							</div>
 						</div>
 
-						<div className={`${style.timeline__content} ${style.left}`}>
+						<div
+							className={`${style.timeline__content} ${style.left} wow animate__animated animate__fadeInLeft`}
+							data-wow-delay='0.2s'>
 							<div className={`${style.content}`}>
 								<div className='exp'>
 									<h4 className={`${style.exp_header}`}>
@@ -123,7 +139,9 @@ function Experience() {
 							</div>
 						</div>
 
-						<div className={`${style.timeline__content} ${style.right}`}>
+						<div
+							className={`${style.timeline__content} ${style.right}  wow animate__animated animate__fadeInRight`}
+							data-wow-delay='0.2s'>
 							<div className={`${style.content}`}>
 								<div className='exp'>
 									<h4 className={`${style.exp_header}`}>
@@ -145,7 +163,9 @@ function Experience() {
 							</div>
 						</div>
 
-						<div className={`${style.timeline__content} ${style.left}`}>
+						<div
+							className={`${style.timeline__content} ${style.left} wow animate__animated animate__fadeInLeft`}
+							data-wow-delay='0.2s'>
 							<div className={`${style.content}`}>
 								<div className='exp'>
 									<h4 className={`${style.exp_header}`}>
@@ -169,7 +189,9 @@ function Experience() {
 							</div>
 						</div>
 
-						<div className={`${style.timeline__content} ${style.right}`}>
+						<div
+							className={`${style.timeline__content} ${style.right}  wow animate__animated animate__fadeInRight`}
+							data-wow-delay='0.2s'>
 							<div className={`${style.content}`}>
 								<div className='exp'>
 									<h4 className={`${style.exp_header}`}>
@@ -190,7 +212,9 @@ function Experience() {
 							</div>
 						</div>
 
-						<div className={`${style.timeline__content} ${style.left}`}>
+						<div
+							className={`${style.timeline__content} ${style.left} wow animate__animated animate__fadeInLeft`}
+							data-wow-delay='0.2s'>
 							<div className={`${style.content}`}>
 								<div className='exp'>
 									<h4 className={`${style.exp_header}`}>

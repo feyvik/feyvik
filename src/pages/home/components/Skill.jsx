@@ -1,9 +1,10 @@
 /** @format */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card } from 'primereact/card';
 import Styled from 'styled-components';
 import { Chip } from 'primereact/chip';
+import WOW from 'wowjs';
 
 const StyledHeader = Styled.h2`
   color: #073eaa;
@@ -67,9 +68,17 @@ function Skill() {
 		},
 	];
 
+	useEffect(() => {
+		new WOW.WOW({
+			live: false,
+		}).init();
+	}, []);
+
 	return (
 		<div className='flex md:w-full mt-4 mr-2 sm:full w-full flex-column lg:w-7'>
-			<Card className='w-full'>
+			<Card
+				className='w-full wow animate__animated animate__fadeInLeft'
+				data-wow-delay='0.2s'>
 				<StyledHeader>Skills</StyledHeader>
 
 				<div className='flex w-full flex-wrap mt-4'>
@@ -91,7 +100,9 @@ function Skill() {
 				</div>
 			</Card>
 
-			<Card className='w-full mt-4'>
+			<Card
+				className='w-full mt-4 wow animate__animated animate__fadeInLeft'
+				data-wow-delay='0.2s'>
 				<StyledHeader>Education</StyledHeader>
 				<h4 className='mb-1'>University Of Port Harcourt, Nigeria — BSc</h4>
 				<small>NOVEMBER 2019 - PRESENT</small>

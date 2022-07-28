@@ -1,9 +1,10 @@
 /** @format */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card } from 'primereact/card';
 import Styled from 'styled-components';
 import { Chip } from 'primereact/chip';
+import WOW from 'wowjs';
 
 const StyledHeader = Styled.h2`
   color: #073eaa;
@@ -29,9 +30,17 @@ function Interest() {
 		},
 	];
 	const language = ['English', 'Ibo', 'Ikwerre'];
+	useEffect(() => {
+		new WOW.WOW({
+			live: false,
+		}).init();
+	}, []);
+
 	return (
 		<div className='flex md:w-full sm:full w-full flex-column lg:w-5 mt-4 lg:ml-3'>
-			<Card className='w-full'>
+			<Card
+				className='w-full wow animate__animated animate__fadeInRight'
+				data-wow-delay='0.2s'>
 				<StyledHeader>Interest</StyledHeader>
 
 				<div className='flex w-full flex-wrap mt-4'>
@@ -50,7 +59,9 @@ function Interest() {
 				</div>
 			</Card>
 
-			<Card className='w-full mt-4'>
+			<Card
+				className='w-full mt-4 wow animate__animated animate__fadeInRight'
+				data-wow-delay='0.2s'>
 				<StyledHeader>Languages</StyledHeader>
 
 				<div className='flex w-full flex-wrap mt-4'>

@@ -1,11 +1,11 @@
 /** @format */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import { Card } from 'primereact/card';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import Styled from 'styled-components';
-
+import WOW from 'wowjs';
 const StyledHeader = Styled.h2`
   color: #073eaa;
 `;
@@ -181,14 +181,24 @@ function Work() {
 			},
 		],
 	};
-
+	useEffect(() => {
+		new WOW.WOW({
+			live: false,
+		}).init();
+	}, []);
 	return (
 		<div className='w-full mt-4'>
-			<Card className='w-full'>
+			<Card
+				className='w-full wow animate__animated animate__fadeIn'
+				data-wow-delay='0.2s'>
 				<StyledHeader>Portfolio</StyledHeader>
 				<p>Here are some of my recent projects that i worked on</p>
 			</Card>
-			<Slider {...settings}>
+
+			<Slider
+				{...settings}
+				className='wow animate__animated animate__fadeIn'
+				data-wow-delay='0.2s'>
 				{channels.map((channel) => (
 					<div
 						className='flex align-items-center justify-content-around'
