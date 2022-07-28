@@ -1,13 +1,7 @@
 /** @format */
 @import 'primeflex/primeflex.css';
 main {
-	background: linear-gradient(#636262a6, #636262a6);
-
-	/* url('./assets/image/mac.jpeg');
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	object-fit: cover; */
+	background: #636262;
 	background-attachment: fixed;
 	width: 100%;
 	min-height: 100vh;
@@ -57,4 +51,7 @@ header {
 }
 .p-card .p-card-title {
 	font-size: 20px;
+	color: #e34f26;
+	font-family: 'Merriweather', serif;
+	font-weight: 900;
 }

@@ -12,17 +12,34 @@ const StyledHeader = Styled.h2`
 
 const channels = [
 	{
+		id: 0,
+		participant: {
+			image: (
+				<img
+					className='border-round'
+					src={require('../../../assets/image/houseAfrica.png')}
+					alt=''
+				/>
+			),
+			name: 'HouseAfrica',
+			specialty:
+				'HouseAfrica a startup with the aim of building a blockchain based property record system to help homer buyers and financial companies to access, verify and value properties starting from Real Estate Project Virtualization.',
+			link: 'https://houseafrica.io/',
+		},
+	},
+	{
 		id: 1,
 		participant: {
 			image: (
 				<img
 					className='border-round'
-					src='https://firebasestorage.googleapis.com/v0/b/uploader-89d2b.appspot.com/o/images%2FScreenshot%202021-07-26%20at%2013.19.56.png?alt=media&token=317042be-ad87-4bfe-8a71-399f2479dbfd'
+					src={require('../../../assets/image/map.png')}
 					alt=''
 				/>
 			),
-			name: 'EDIT GROUP SERVICES',
-			specialty: 'I used Javascript and Firebase Hosting',
+			name: 'Sytemap',
+			specialty:
+				'A digital property registry system that helps estate developers, property buyers, and private estates to digitally register and track their property status.',
 			link: 'https://edit-group.com/',
 		},
 	},
@@ -32,13 +49,29 @@ const channels = [
 			image: (
 				<img
 					className='border-round'
+					src='https://firebasestorage.googleapis.com/v0/b/uploader-89d2b.appspot.com/o/images%2FScreenshot%202021-07-26%20at%2013.19.56.png?alt=media&token=317042be-ad87-4bfe-8a71-399f2479dbfd'
+					alt=''
+				/>
+			),
+			name: 'Edit Group Service',
+			specialty:
+				'EGS is an engineering and technology company that is committed to building and developing solid, trusted, and reliable solutions suitable and customizable.',
+			link: 'https://edit-group.com/',
+		},
+	},
+	{
+		id: 3,
+		participant: {
+			image: (
+				<img
+					className='border-round'
 					src='https://firebasestorage.googleapis.com/v0/b/uploader-89d2b.appspot.com/o/images2%2FScreenshot%202021-08-20%20at%2005.21.29.png?alt=media&token=ce8df331-2524-4d14-b64c-7b08592d4759'
 					alt=''
 				/>
 			),
-			name: 'MentorApp',
+			name: 'Ticha',
 			specialty:
-				'A website that allows users to have 1-on-1 conversations about growth, marketing, and everything in between with the world top 3% of startup and marketing mentors',
+				'Ticha is an online platform dedicated to offering value based student centered learning with tailor-made curriculum to suit each learner’s goals.',
 			link: 'https://mentor-app.vercel.app/',
 		},
 	},
@@ -53,7 +86,8 @@ const channels = [
 				/>
 			),
 			name: 'zoepool',
-			specialty: 'An Africa-based stakepool focused on',
+			specialty:
+				'An Africa-based stakepool focused on educating women in blockchain technology.',
 			link: 'https://zoepool.com/',
 		},
 	},
@@ -69,7 +103,7 @@ const channels = [
 			),
 			name: 'Image Link Generator',
 			specialty:
-				'It is a drag and drop image uploader. It is built React.js, Firebase storage and material ul',
+				'It is a drag and drop image uploader. It is built with React.js, Firebase storage and material ul',
 			link: 'https://image-uploader-one.vercel.app/',
 		},
 	},
@@ -85,7 +119,7 @@ const channels = [
 			),
 			name: 'A Dashboard',
 			specialty:
-				'A coding challenge That I built. It is built with bootstrap, react',
+				'A coding challenge That I built. It is built with bootstrap, React.js',
 			link: 'https://aneeque-coding-challenge-taupe.vercel.app/',
 		},
 	},
@@ -173,7 +207,7 @@ function Work() {
 								title={channel.participant.name}
 								style={{
 									width: '25em',
-									height: '440px',
+
 									padding: '10px',
 								}}>
 								<p className='m-0 mb-3' style={{ lineHeight: '1.5' }}>

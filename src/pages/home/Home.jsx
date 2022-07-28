@@ -4,6 +4,7 @@ import React from 'react';
 import './style/Home.css';
 import SkillsPage from './components/SkillsPage';
 import Work from './components/Work';
+import Experience from './components/Experience';
 
 import Hero from './components/Hero';
 
@@ -13,6 +14,7 @@ function Home() {
 			<Hero />
 			<SkillsPage />
 			<Work />
+			<Experience />
 		</section>
 	);
 }

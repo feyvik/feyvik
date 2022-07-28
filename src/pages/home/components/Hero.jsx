@@ -43,7 +43,7 @@ function Hero() {
 				<div className='flex justify-content-start align-items-center right-box lg:w-6 w-full'>
 					<div className='md:text-center lg:text-left w-full'>
 						<Span>Hello 👋</Span>
-						<h1 className='mt-2'>Favour Vivian Woka</h1>
+						<h1 className='mt-2'>I Am Favour Vivian Woka</h1>
 						<p className='my-2'>Frontend Developer & Technical Writer</p>
 						<StyledButton>Say Hi 👋</StyledButton>
 						<h4 className='mb-3'>FIND ME @</h4>

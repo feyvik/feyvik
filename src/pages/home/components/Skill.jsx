@@ -87,16 +87,17 @@ function Skill() {
 							}}
 							image={item.url}
 						/>
-						// <Card
-						// 	key={i}
-						// 	className='mt-4 w-ful mr-2'
-						// 	style={{ backgroundColor: item.bgColor, color: item.textColor }}>
-						// 	<div className='flex align-items-center justify-content-center'>
-						// 		<p className=''>{item.tag}</p>
-						// 	</div>
-						// </Card>
 					))}
 				</div>
+			</Card>
+
+			<Card className='w-full mt-4'>
+				<StyledHeader>Education</StyledHeader>
+				<h4 className='mb-1'>University Of Port Harcourt, Nigeria — BSc</h4>
+				<small>NOVEMBER 2019 - PRESENT</small>
+				<ul>
+					<li>Studying Statistics and Computer Science</li>
+				</ul>
 			</Card>
 		</div>
 	);

@@ -28,7 +28,7 @@ function Interest() {
 			tag: 'pi pi-mobile',
 		},
 	];
-	const language = ['English', 'Ibo'];
+	const language = ['English', 'Ibo', 'Ikwerre'];
 	return (
 		<div className='flex md:w-full sm:full w-full flex-column lg:w-5 mt-4 lg:ml-3'>
 			<Card className='w-full'>
