@@ -1,5 +1,6 @@
 /** @format */
 @import 'primeflex/primeflex.css';
+/* 3f599e */
 main {
 	background: #636262;
 	background-attachment: fixed;
@@ -54,4 +55,7 @@ header {
 	color: #e34f26;
 	font-family: 'Merriweather', serif;
 	font-weight: 900;
+}
+.p-card small {
+	color: #e34f26;
 }

@@ -209,7 +209,6 @@ function Work() {
 								title={channel.participant.name}
 								style={{
 									width: '25em',
-
 									padding: '10px',
 								}}>
 								<p className='m-0 mb-3' style={{ lineHeight: '1.5' }}>

@@ -18,16 +18,13 @@ const StyledButton = Styled.button`
 
 function Blog() {
 	return (
-		<div
-			className='mt-4 w-full px-2 py-4 border-round'
-			id='blog'
-			style={{ background: '#3f599e' }}>
-			<Card>
+		<Card className='mt-4 w-full px-2 py-4 border-round' id='blog'>
+			<div>
 				<StyledHeader>Blog</StyledHeader>
 				<p className='m-0'>
 					I write articles on frontend development and tutorials for beginners.
 				</p>
-			</Card>
+			</div>
 
 			<div className='flex md:flex-row flex-column w-full mt-4'>
 				<div className='flex justify-content-start align-items-center md:w-6 flex-column px-2 w-full mb-4'>
@@ -41,9 +38,9 @@ function Blog() {
 							className='border-round'
 						/>
 					</div>
-					<div className='text-white w-full'>
+					<div className='w-full'>
 						<h4>Uploading an Image to Firebase Cloud Storage with Angular</h4>
-						<small className='text-orange-200'>Feb 17, 2020</small>
+						<small>Feb 17, 2020</small>
 						<p className='mt-2 mb-3'>
 							In this tutorial, we are going to learn how to upload an image to
 							Firebase Cloud Storage from an Angular Project. We’ll be using
@@ -69,9 +66,9 @@ function Blog() {
 							className='border-round'
 						/>
 					</div>
-					<div className='text-white w-full'>
+					<div className='w-full'>
 						<h4>Uploading an Image to Firebase Cloud Storage with Angular</h4>
-						<small className='text-orange-200'>Feb 17, 2020</small>
+						<small>Feb 17, 2020</small>
 						<p className='mt-2 mb-3'>
 							In this tutorial, we are going to learn how to upload an image to
 							Firebase Cloud Storage from an Angular Project. We’ll be using
@@ -88,7 +85,7 @@ function Blog() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</Card>
 	);
 }
 
