@@ -13,6 +13,7 @@ const StyledButton = Styled.button`
 	background-color: #073eaa;
 	color: #fff;
   margin-top: 10px;
+  cursor: pointer;
 `;
 
 function Blog() {

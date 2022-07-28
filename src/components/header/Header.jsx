@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Menubar } from 'primereact/menubar';
 import Logo from '../../assets/image/logo-no-bg.svg';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Dialog } from 'primereact/dialog';
 import DialogCard from '../dialog/DialogCard';
 
@@ -22,14 +22,22 @@ function Header() {
 		dialogFuncMap[`${name}`](false);
 	};
 
+	let activeStyle = {
+		borderBottom: '2px solid #073eaa',
+		borderBottomRadius: '0px',
+	};
+
 	const items = [
 		{
 			label: 'About Me',
 			template: (item, options) => {
 				return (
-					<Link to='/about' className={options.className}>
+					<NavLink
+						style={({ isActive }) => (isActive ? activeStyle : undefined)}
+						to='/about'
+						className={options.className}>
 						{item.label}
-					</Link>
+					</NavLink>
 				);
 			},
 		},
@@ -37,9 +45,12 @@ function Header() {
 			label: 'Blog',
 			template: (item, options) => {
 				return (
-					<Link to='/#blog' className={options.className}>
+					<NavLink
+						style={({ isActive }) => (isActive ? activeStyle : undefined)}
+						to='/#blog'
+						className={options.className}>
 						{item.label}
-					</Link>
+					</NavLink>
 				);
 			},
 		},
@@ -47,21 +58,21 @@ function Header() {
 			label: 'Contact',
 			template: (item, options) => {
 				return (
-					<Link
+					<NavLink
 						to='#'
 						className={options.className}
 						onClick={() => onClick('displayMaximizable')}>
 						{item.label}
-					</Link>
+					</NavLink>
 				);
 			},
 		},
 	];
 
 	const start = (
-		<Link to='/ '>
+		<NavLink to='/ '>
 			<img alt='logo' src={Logo} height='40' className='mr-2' />
-		</Link>
+		</NavLink>
 	);
 
 	return (
