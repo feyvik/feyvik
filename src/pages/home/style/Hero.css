@@ -1,8 +1,19 @@
 /** @format */
-.left-box {
+.box {
+	background-image: linear-gradient(#0000008b, #00000095),
+		url('../../../assets/image/vivian.png');
+	background-color: #073eaa;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-attachment: fixed;
+	color: #fff;
+	border-radius: 0;
+}
+/* .left-box {
 	padding: 10px;
 	width: 40%;
-}
+} */
 .right-box {
 	padding: 10px;
 	width: 60%;

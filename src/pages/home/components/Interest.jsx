@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useEffect } from 'react';
-import { Card } from 'primereact/card';
 import Styled from 'styled-components';
 import { Chip } from 'primereact/chip';
 import WOW from 'wowjs';
@@ -37,8 +36,8 @@ function Interest() {
 	}, []);
 
 	return (
-		<div className='flex md:w-full sm:full w-full flex-column lg:w-5 mt-4 lg:ml-3'>
-			<Card
+		<div className='flex md:w-full sm:full w-full flex-column lg:w-5 mt-4 lg:ml-3 interest'>
+			<div
 				className='w-full wow animate__animated animate__fadeInRight'
 				data-wow-delay='0.2s'>
 				<StyledHeader>Interest</StyledHeader>
@@ -57,9 +56,9 @@ function Interest() {
 						/>
 					))}
 				</div>
-			</Card>
+			</div>
 
-			<Card
+			<div
 				className='w-full mt-4 wow animate__animated animate__fadeInRight'
 				data-wow-delay='0.2s'>
 				<StyledHeader>Languages</StyledHeader>
@@ -77,7 +76,7 @@ function Interest() {
 						/>
 					))}
 				</div>
-			</Card>
+			</div>
 		</div>
 	);
 }

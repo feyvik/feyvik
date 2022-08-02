@@ -35,13 +35,24 @@
 	width: 25px;
 	height: 25px;
 	right: -17px;
-	background-color: #e34f26;
+	background-color: #fd9b4d;
 	border: 4px solid #073eaa;
 	top: 15px;
 	border-radius: 50%;
 	z-index: 1;
 }
 
+.timeline::after {
+	content: '';
+	position: absolute;
+	width: 6px;
+	background-color: #073eaa;
+	border-radius: 8px;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3px;
+}
 .left {
 	left: 0;
 }
@@ -71,6 +82,7 @@
 .exp__date {
 	font-size: 14px;
 	margin: 8px 0;
+	color: #fd9b4d;
 }
 .exp__list li {
 	font-size: 14px;

@@ -7,7 +7,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import Styled from 'styled-components';
 import WOW from 'wowjs';
 const StyledHeader = Styled.h2`
-  color: #073eaa;
+  color: #FD9B4D;
 `;
 
 const channels = [
@@ -187,13 +187,13 @@ function Work() {
 		}).init();
 	}, []);
 	return (
-		<div className='w-full mt-4'>
-			<Card
+		<div className='w-full mt-4 box-work'>
+			<div
 				className='w-full wow animate__animated animate__fadeIn'
 				data-wow-delay='0.2s'>
 				<StyledHeader>Portfolio</StyledHeader>
 				<p>Here are some of my recent projects that i worked on</p>
-			</Card>
+			</div>
 
 			<Slider
 				{...settings}

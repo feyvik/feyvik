@@ -98,7 +98,7 @@ function DialogCard() {
 				<form
 					ref={form}
 					onSubmit={handleSubmit(onSubmit)}
-					className='p-fluid mt-4 w-8 m-auto'>
+					className='p-fluid mt-4 m-auto'>
 					<div className='mb-3'>
 						<StyledHeader>Let Work Together</StyledHeader>
 						<small>

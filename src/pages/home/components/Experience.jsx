@@ -3,7 +3,6 @@
 import React, { useEffect } from 'react';
 import style from '../style/Experience.module.css';
 import Styled from 'styled-components';
-import { Card } from 'primereact/card';
 import WOW from 'wowjs';
 
 const StyledHeader = Styled.h2`
@@ -17,12 +16,12 @@ function Experience() {
 		}).init();
 	}, []);
 	return (
-		<div className='w-full mt-4'>
-			<Card
+		<div className='w-full mt-4 experience'>
+			<div
 				className='w-full wow animate__animated animate__fadeIn'
 				data-wow-delay='0.2s'>
 				<StyledHeader>Experiences</StyledHeader>
-			</Card>
+			</div>
 			<div className='row m-0'>
 				<div className={`${style.col}`}>
 					<div className={`${style.timeline}`}>

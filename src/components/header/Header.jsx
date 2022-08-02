@@ -23,7 +23,8 @@ function Header() {
 	};
 
 	let activeStyle = {
-		fontWeight: '800',
+		borderBottom: '2px solid',
+		borderRadius: '0 !important',
 	};
 
 	const items = [

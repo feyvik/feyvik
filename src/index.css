@@ -49,7 +49,6 @@ button {
 }
 .slick-slide {
 	border-radius: 6px;
-	/* width: 100% !important; */
 }
 .slick-slider {
 	width: 100% !important;
@@ -65,4 +64,21 @@ body .slick-next {
 body .slick-prev:before,
 body .slick-next:before {
 	color: #ffffff !important;
+}
+.slick-next {
+	right: -20px;
+}
+.slick-prev {
+	left: -20px;
+}
+small {
+	color: #fd9b4d;
+}
+form {
+	width: 80%;
+}
+@media screen and (max-width: 730px) {
+	form {
+		width: 90%;
+	}
 }

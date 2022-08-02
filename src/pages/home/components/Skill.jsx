@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useEffect } from 'react';
-import { Card } from 'primereact/card';
 import Styled from 'styled-components';
 import { Chip } from 'primereact/chip';
 import WOW from 'wowjs';
@@ -75,8 +74,8 @@ function Skill() {
 	}, []);
 
 	return (
-		<div className='flex md:w-full mt-4 mr-2 sm:full w-full flex-column lg:w-7'>
-			<Card
+		<div className='flex md:w-full mt-4 mr-2 sm:full w-full flex-column lg:w-7 skill'>
+			<div
 				className='w-full wow animate__animated animate__fadeInLeft'
 				data-wow-delay='0.2s'>
 				<StyledHeader>Skills</StyledHeader>
@@ -98,9 +97,9 @@ function Skill() {
 						/>
 					))}
 				</div>
-			</Card>
+			</div>
 
-			<Card
+			<div
 				className='w-full mt-4 wow animate__animated animate__fadeInLeft'
 				data-wow-delay='0.2s'>
 				<StyledHeader>Education</StyledHeader>
@@ -109,7 +108,7 @@ function Skill() {
 				<ul>
 					<li>Studying Statistics and Computer Science</li>
 				</ul>
-			</Card>
+			</div>
 		</div>
 	);
 }
