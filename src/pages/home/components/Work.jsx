@@ -135,7 +135,7 @@ const channels = [
 			),
 			name: 'Covid-19',
 			specialty:
-				'It is a covid-19 website that showcase each country covid-19 status',
+				'its a website that provides global update on coronavirus and guides to prevent the spread of coronavirus.',
 			link: 'https://covid-19-app-ccb27.web.app/',
 		},
 	},
