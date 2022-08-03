@@ -45,12 +45,11 @@ function Header() {
 			label: 'Blog',
 			template: (item, options) => {
 				return (
-					<NavLink
-						style={({ isActive }) => (isActive ? activeStyle : undefined)}
-						to='/#blog'
+					<a
+						href='https://dev.to/fayvik'
 						className={`${options.className} animate__animated animate__fadeIn`}>
 						{item.label}
-					</NavLink>
+					</a>
 				);
 			},
 		},

@@ -129,6 +129,22 @@ const channels = [
 			image: (
 				<img
 					className='border-round'
+					src={require('../../../assets/image/covid.png')}
+					alt=''
+				/>
+			),
+			name: 'Covid-19',
+			specialty:
+				'It is a covid-19 website that showcase each country covid-19 status',
+			link: 'https://covid-19-app-ccb27.web.app/',
+		},
+	},
+	{
+		id: 8,
+		participant: {
+			image: (
+				<img
+					className='border-round'
 					src='https://firebasestorage.googleapis.com/v0/b/uploader-89d2b.appspot.com/o/images2%2FScreenshot%202021-08-14%20at%2003.09.01.png?alt=media&token=a258aa88-40d7-4c98-bc10-5d6297ee902b'
 					alt=''
 				/>
@@ -139,7 +155,7 @@ const channels = [
 		},
 	},
 	{
-		id: 8,
+		id: 9,
 		participant: {
 			image: (
 				<img
