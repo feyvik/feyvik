@@ -5,7 +5,7 @@ import '../../assets/style/Footer.css';
 
 function Footer() {
 	return (
-		<footer className='flex-column mt-4'>
+		<footer className='flex-column'>
 			<div className='flex flex-column align-items-center justify-content-center'>
 				<h4>FIND ME @</h4>
 				<div>
