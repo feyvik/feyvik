@@ -18,7 +18,7 @@ function Experience() {
 	return (
 		<div className='w-full mt-4 experience'>
 			<div
-				className='w-full wow animate__animated animate__fadeIn'
+				className='w-full wow animate__animated animate__fadeIn mb-4'
 				data-wow-delay='0.2s'>
 				<StyledHeader>Experiences</StyledHeader>
 			</div>

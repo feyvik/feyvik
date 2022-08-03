@@ -18,7 +18,7 @@ const Span = Styled.span`
 function Hero() {
 	return (
 		<Article className='flex lg:flex-row flex-column box h-screen'>
-			<div className='flex justify-content-start align-items-center right-box w-full animate__animated animate__fadeInRight'>
+			<div className='flex justify-content-start align-items-center right-box w-full animate__animated animate__fadeInRight h-screen'>
 				<div className='text-center w-full'>
 					<Span>Hello 👋</Span>
 					<h1 className='mt-2'>I Am Favour Vivian Woka</h1>
