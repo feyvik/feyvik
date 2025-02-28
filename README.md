@@ -11,9 +11,9 @@
 
 - 🗙️ You can always find me on [X (Twitter)](https://x.com/feyvik)
 
-- 💬 Ask me about **Angular, React, UI/UX, and optimizing frontend performance**
+- 💬 Ask me about **Angular, React, and optimizing frontend performance**
 
-- 📧 How to reach me **feyvik.dev@gmail.com**
+- 📧 How to reach me **vivianemma97@gmail.com**
 
 - ✨ Fun fact **I love designing intuitive UIs and exploring new frontend technologies.**
 
