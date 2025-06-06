@@ -1,6 +1,6 @@
 /** @format */
 import styled from "styled-components";
-import img from "../assets/homeImage/me3.jpg";
+import img from "../assets/home/me3.jpg";
 
 const FooterWrapper = styled.div`
   min-height: ;

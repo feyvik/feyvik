@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import img from "../../assets/homeImage/me3.jpg";
+import img from "../../assets/home/me3.jpg";
 import { ProjectImage, type Image } from "./ImageCard";
 import FeatherIcon from "feather-icons-react";
 

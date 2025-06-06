@@ -1,6 +1,6 @@
 /** @format */
 import styled from "styled-components";
-import img from "../../assets/homeImage/me1.jpg";
+import img from "../../assets/home/me1.jpg";
 
 const HeroWrapper = styled.div`
   min-height: 100vh;
