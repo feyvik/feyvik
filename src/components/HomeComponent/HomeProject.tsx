@@ -115,7 +115,11 @@ const ProjectWrapper = styled.div`
   }
 `;
 
-const HomeProject = () => {
+type SectionsProps = {
+  projectRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const HomeProject = ({ projectRef }: SectionsProps) => {
   const [modal, setModal] = useState(false);
   const [projectInfo, setProjectInfo] = useState<Image>({
     id: 0,
@@ -140,7 +144,7 @@ const HomeProject = () => {
   }, [modal]);
 
   return (
-    <ProjectWrapper>
+    <ProjectWrapper ref={projectRef}>
       <div className="container">
         <div className="project_content">
           <div className="mb-6">

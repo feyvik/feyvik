@@ -1,23 +1,31 @@
 /** @format */
+import { useRef } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import Gallery from "./pages/Gallery";
 import Projects from "./pages/Projects";
-import TimeLine from "./pages/Timeline";
 import Footer from "./components/Footer";
 
 function App() {
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const projectRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <div className="min-h-[100vh] bg-[#ffff] text-textlight dark:bg-dark dark:text-dark-text font-body">
-      <Header />
+      <Header
+        aboutRef={aboutRef}
+        projectRef={projectRef}
+        contactRef={contactRef}
+      />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route
+          path="/"
+          element={<Home aboutRef={aboutRef} projectRef={projectRef} />}
+        />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/timeLine" element={<TimeLine />} />
       </Routes>
-      <Footer />
+      <Footer contactRef={contactRef} />
     </div>
   );
 }

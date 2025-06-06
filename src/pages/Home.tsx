@@ -4,12 +4,17 @@ import Hero from "../components/HomeComponent/Hero";
 import HomeGallery from "../components/HomeComponent/HomeGallery";
 import HomeProject from "../components/HomeComponent/HomeProject";
 
-const Home = () => {
+type SectionsProps = {
+  aboutRef: React.RefObject<HTMLDivElement | null>;
+  projectRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const Home = ({ aboutRef, projectRef }: SectionsProps) => {
   return (
     <div>
       <Hero />
-      <AboutMe />
-      <HomeProject />
+      <AboutMe aboutRef={aboutRef} />
+      <HomeProject projectRef={projectRef} />
       <HomeGallery />
     </div>
   );

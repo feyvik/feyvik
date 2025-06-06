@@ -40,7 +40,7 @@ export const ProjectImage: Image[] = [
     name: "FLE Tribe Community Blog",
     description:
       "The FLE Tribe (Forge. Learn. Evolve.) is a Nigerian-based online community and learning platform dedicated to helping absolute beginners break into the tech industry. It offers mentorship, educational resources, and a supportive environment tailored to newcomers aiming to build foundational skills and confidence in tech.",
-    link: "https://www.thefletribe.com.ng",
+    link: "https://thefletribe.com.ng",
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const ProjectImage: Image[] = [
     name: "FLE Tribe Community Website",
     description:
       "The FLE Tribe Blog, is an extension of The FLE Tribe's mission to support beginners in their tech journeys. It offers a collection of beginner-friendly articles, stories, and resources designed to inspire and guide aspiring tech enthusiasts.",
-    link: "https://www.blog.thefletribe.com.ng",
+    link: "https://blog.thefletribe.com.ng",
   },
   {
     id: 5,

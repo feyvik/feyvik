@@ -66,9 +66,13 @@ const AboutWrapper = styled.div`
   }
 `;
 
-const AboutMe = () => {
+type SectionsProps = {
+  aboutRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const AboutMe = ({ aboutRef }: SectionsProps) => {
   return (
-    <AboutWrapper>
+    <AboutWrapper ref={aboutRef}>
       <div className="container">
         <div className="about_content">
           <div className="mb-6">

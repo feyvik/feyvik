@@ -54,8 +54,18 @@ const NavWrapper = styled.nav.withConfig({
   }
 `;
 
-const Header = () => {
+type HeaderProps = {
+  aboutRef: React.RefObject<HTMLDivElement | null>;
+  projectRef: React.RefObject<HTMLDivElement | null>;
+  contactRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const [isDark, setIsDark] = useState(() => {
     return (
@@ -92,7 +102,7 @@ const Header = () => {
           <Link
             to={"/"}
             className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src={logo} alt="logo" width={120}/>
+            <img src={logo} alt="logo" width={120} />
           </Link>
           <button
             data-collapse-toggle="navbar-default"
@@ -110,13 +120,30 @@ const Header = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/"}>About</Link>
+                <button
+                  onClick={() => scrollToSection(aboutRef)}
+                  className="text-white">
+                  About
+                </button>
               </li>
               <li>
-                <Link to={"/projects"}>Projects</Link>
+                <button
+                  onClick={() => scrollToSection(projectRef)}
+                  className="text-white">
+                  Projects
+                </button>
               </li>
               <li>
-                <Link to={"/gallery"}>Blog</Link>
+                <a href="https://blog.thefletribe.com.ng" target="_blank">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection(contactRef)}
+                  className="text-white">
+                  Contact
+                </button>
               </li>
               <li>
                 {isDark ? (

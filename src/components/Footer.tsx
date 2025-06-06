@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import img from "../assets/homeImage/me3.jpg";
 
-const GalleryWrapper = styled.div`
+const FooterWrapper = styled.div`
   min-height: ;
   width: 100%;
   display: flex;
@@ -14,7 +14,7 @@ const GalleryWrapper = styled.div`
     font-size: 50px;
   }
 
-  .gallery_content {
+  .footer_content {
     min-height: 60vh;
     width: 100%;
 
@@ -84,11 +84,15 @@ const GalleryWrapper = styled.div`
   }
 `;
 
-const Footer = () => {
+type SectionsProps = {
+  contactRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const Footer = ({ contactRef }: SectionsProps) => {
   return (
-    <GalleryWrapper className="bg-dark">
+    <FooterWrapper ref={contactRef} className="bg-dark">
       <div className="container">
-        <div className="gallery_content">
+        <div className="footer_content">
           <div className="mb-6">
             <fieldset>
               <figcaption className="text-primary mb-8">
@@ -243,7 +247,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </GalleryWrapper>
+    </FooterWrapper>
   );
 };
 
