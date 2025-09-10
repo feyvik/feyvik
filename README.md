@@ -1,5 +1,5 @@
 <h1 align="left">Hi 👋, I'm Favour Vivian Woka</h1>
-<h3 align="left">A passionate frontend engineer with experience in developing scalable and user-friendly applications. My expertise lies in Angular, React, and crafting seamless user experiences. I am always eager to learn and grow.</h3>
+<h3 align="left">Frontend Developer with 4+ years of experience building responsive and user-friendly web applications. Skilled in Angular, React, and modern web technologies, I specialize in turning designs into seamless digital experiences with clean code, accessibility, and performance at the core. Passionate about solving problems through technology, enhancing UI/UX, and continuously learning to stay ahead in the ever-evolving web ecosystem.</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=feyvik&amp;label=Profile%20views&amp;color=0e75b6&amp;style=flat" alt="feyvik"/> </p>
 
