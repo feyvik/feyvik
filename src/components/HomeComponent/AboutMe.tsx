@@ -38,7 +38,9 @@ const AboutWrapper = styled.div`
   }
 
   .stat-card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(45, 27, 105, 0.12);
@@ -56,12 +58,10 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
   return (
     <AboutWrapper ref={aboutRef} className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <div
-          ref={animRef}
-          className="animate-on-scroll">
+        <div ref={animRef} className="animate-on-scroll">
           <div className="flex items-center gap-5 mb-6">
             <div className="avatar-frame shadow-2xl rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/10">
-              <img src={img} alt="Favour Vivian" className="rounded-full" />
+              <img src={img} alt="Favour Vivian" className="rounded-full" loading="lazy" />
             </div>
             <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase">
               About Me.

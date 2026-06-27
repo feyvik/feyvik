@@ -72,6 +72,7 @@ const Hero = () => {
                 src={img}
                 alt="Favour Vivian"
                 className="w-full h-full object-cover"
+                fetchPriority="high"
               />
             </div>
           </div>

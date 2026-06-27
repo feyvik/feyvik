@@ -95,18 +95,12 @@ const CtaButton = styled.button`
 `;
 
 type HeaderProps = {
-  headerRef: React.RefObject<HTMLDivElement | null>;
   aboutRef: React.RefObject<HTMLDivElement | null>;
   projectRef: React.RefObject<HTMLDivElement | null>;
   contactRef: React.RefObject<HTMLDivElement | null>;
 };
 
-const Header = ({
-  headerRef,
-  aboutRef,
-  projectRef,
-  contactRef,
-}: HeaderProps) => {
+const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -231,22 +225,27 @@ const Header = ({
           <div className="hidden w-full md:block md:w-auto ms-auto">
             <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
               <li>
-                <Link to={"/"} onClick={() => scrollToSection(headerRef)}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to={"/"} onClick={() => scrollToSection(aboutRef)}>
+                <Link to={"/#about"} onClick={() => scrollToSection(aboutRef)}>
                   About
                 </Link>
               </li>
               <li>
-                <Link to={"/"} onClick={() => scrollToSection(projectRef)}>
+                <Link
+                  to={"/#projects"}
+                  onClick={() => scrollToSection(projectRef)}>
                   Projects
                 </Link>
               </li>
               <li>
-                <Link to={"/"} onClick={() => scrollToSection(contactRef)}>
+                <Link to={"/profile"}>Profile</Link>
+              </li>
+              <li>
+                <Link to={"/works"}>Works</Link>
+              </li>
+              <li>
+                <Link
+                  to={"/#contact"}
+                  onClick={() => scrollToSection(contactRef)}>
                   Contact
                 </Link>
               </li>
@@ -284,22 +283,23 @@ const Header = ({
 
         <MobileNav>
           <li className="mb-4">
-            <Link to={"/"} onClick={() => scrollToSection(headerRef)}>
-              Home
-            </Link>
-          </li>
-          <li className="mb-4">
-            <Link to={"/"} onClick={() => scrollToSection(aboutRef)}>
+            <Link to={"/#about"} onClick={() => scrollToSection(aboutRef)}>
               About
             </Link>
           </li>
           <li className="mb-4">
-            <Link to={"/"} onClick={() => scrollToSection(projectRef)}>
+            <Link to={"/#projects"} onClick={() => scrollToSection(projectRef)}>
               Projects
             </Link>
           </li>
+          <li>
+            <Link to={"/profile"}>Profile</Link>
+          </li>
+          <li>
+            <Link to={"/works"}>Works</Link>
+          </li>
           <li className="mb-4">
-            <Link to={"/"} onClick={() => scrollToSection(contactRef)}>
+            <Link to={"/#contact"} onClick={() => scrollToSection(contactRef)}>
               Contact
             </Link>
           </li>

@@ -128,7 +128,7 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
       <div ref={animRef} className="animate-on-scroll max-w-6xl mx-auto">
         <div className="flex items-center gap-5 mb-6">
           <div className="avatar-frame shadow-2xl rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/10">
-            <img src={img} alt="profile" />
+            <img src={img} alt="profile" loading="lazy" />
           </div>
           <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase">
             Selected Works
@@ -156,7 +156,7 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {ProjectImage.slice(0, projectNumber).map((image: Image) => (
             <div key={image.id} className="project-card">
-              <img src={image.image} alt={image.name} />
+              <img src={image.image} alt={image.name} loading="lazy" />
               <div className="overlay">
                 <p className="font-medium text-base">{image.name}</p>
                 <button

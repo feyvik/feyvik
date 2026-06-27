@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 
 function App() {
-  const headerRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const projectRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
@@ -16,7 +15,6 @@ function App() {
   return (
     <div className="min-h-[100vh] dark:bg-dark dark:text-white">
       <Header
-        headerRef={headerRef}
         aboutRef={aboutRef}
         projectRef={projectRef}
         contactRef={contactRef}
@@ -26,8 +24,8 @@ function App() {
           path="/"
           element={<Home aboutRef={aboutRef} projectRef={projectRef} />}
         />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/profile" element={<About />} />
+        <Route path="/works" element={<Projects />} />
       </Routes>
       <Footer contactRef={contactRef} />
     </div>
