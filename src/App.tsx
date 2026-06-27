@@ -25,7 +25,7 @@ function App() {
           element={<Home aboutRef={aboutRef} projectRef={projectRef} />}
         />
         <Route path="/profile" element={<About />} />
-        <Route path="/works" element={<Projects />} />
+        <Route path="/work" element={<Projects />} />
       </Routes>
       <Footer contactRef={contactRef} />
     </div>

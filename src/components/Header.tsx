@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FeatherIcon from "feather-icons-react";
 import logo from "../assets/FEYVIK-LOGO-BLACK.png";
 import logo2 from "../assets/FEYVIK-LOGO-WHITE.png";
@@ -15,6 +15,17 @@ const NavWrapper = styled.nav.withConfig({
     padding 0.3s ease;
   box-shadow: ${({ $isscrolled }) =>
     $isscrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none"};
+
+  ul li button {
+    font-family: "Source Serif 4", serif;
+    padding: 0px;
+    font-size: 16px;
+    &:hover {
+      color: #3d5afe;
+      box-shadow: none;
+      transform: none;
+    }
+  }
 
   .logo {
     width: 100px;
@@ -103,10 +114,19 @@ type HeaderProps = {
 const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (
+    ref: React.RefObject<HTMLDivElement | null>,
+    section: "about" | "projects" | "contact",
+  ) => {
     setMenuOpen(false);
+
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/", { state: { scrollTo: section } });
+    }
   };
 
   const [isDark, setIsDark] = useState(() => {
@@ -225,29 +245,25 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
           <div className="hidden w-full md:block md:w-auto ms-auto">
             <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
               <li>
-                <Link to={"/#about"} onClick={() => scrollToSection(aboutRef)}>
+                <button onClick={() => scrollToSection(aboutRef, "about")}>
                   About
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  to={"/#projects"}
-                  onClick={() => scrollToSection(projectRef)}>
+                <button onClick={() => scrollToSection(projectRef, "projects")}>
                   Projects
-                </Link>
+                </button>
               </li>
               <li>
                 <Link to={"/profile"}>Profile</Link>
               </li>
               <li>
-                <Link to={"/works"}>Works</Link>
+                <Link to={"/work"}>Work</Link>
               </li>
               <li>
-                <Link
-                  to={"/#contact"}
-                  onClick={() => scrollToSection(contactRef)}>
+                <button onClick={() => scrollToSection(contactRef, "contact")}>
                   Contact
-                </Link>
+                </button>
               </li>
               <li>
                 <DarkModeToggle />
@@ -283,32 +299,33 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
 
         <MobileNav>
           <li className="mb-4">
-            <Link to={"/#about"} onClick={() => scrollToSection(aboutRef)}>
+            <Link to={"/"} onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+          </li>
+          <li className="mb-4">
+            <button onClick={() => scrollToSection(aboutRef, "about")}>
               About
-            </Link>
+            </button>
           </li>
           <li className="mb-4">
-            <Link to={"/#projects"} onClick={() => scrollToSection(projectRef)}>
+            <button onClick={() => scrollToSection(projectRef, "projects")}>
               Projects
-            </Link>
-          </li>
-          <li>
-            <Link to={"/profile"}>Profile</Link>
-          </li>
-          <li>
-            <Link to={"/works"}>Works</Link>
+            </button>
           </li>
           <li className="mb-4">
-            <Link to={"/#contact"} onClick={() => scrollToSection(contactRef)}>
+            <button
+              style={{ fontFamily: '"Source Serif 4", serif' }}
+              onClick={() => scrollToSection(contactRef, "contact")}>
               Contact
-            </Link>
+            </button>
           </li>
           <li className="mb-4">
             <DarkModeToggle />
           </li>
         </MobileNav>
 
-        <CtaButton onClick={() => scrollToSection(contactRef)}>
+        <CtaButton onClick={() => scrollToSection(contactRef, "contact")}>
           Work with me
         </CtaButton>
       </Panel>
