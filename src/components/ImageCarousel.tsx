@@ -50,7 +50,7 @@ export default function ImageCarousel({ itemsPerView = 3, gap = 16 }) {
   const translatePercent = current * itemWidthPercent;
 
   return (
-    <div className="pb-20">
+    <div className="pb-20 px-6">
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center">
           <h2 className="text-2xl  leading-tight">
