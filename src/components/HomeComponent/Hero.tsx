@@ -3,7 +3,6 @@ import styled from "styled-components";
 import img from "../../assets/KELV2738.jpg";
 
 const HeroWrapper = styled.div`
-
   button:hover {
     background: #3d5afe;
     color: #ffffff;
@@ -13,7 +12,7 @@ const HeroWrapper = styled.div`
 
 const Hero = () => {
   return (
-    <HeroWrapper className="min-h-screen flex items-center justify-center pt-20">
+    <HeroWrapper className="min-h-screen flex items-center justify-center pt-20 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="order-2 md:order-1">
           <fieldset>

@@ -37,7 +37,7 @@ type SectionsProps = {
 
 const AboutMe = ({ aboutRef }: SectionsProps) => {
   return (
-    <AboutWrapper ref={aboutRef} className="py-24">
+    <AboutWrapper ref={aboutRef} className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-5 mb-6">
           <div className="avatar-frame shadow-2xl rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/10">
