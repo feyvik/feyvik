@@ -1,13 +1,13 @@
 /** @format */
-import img1 from "../assets/project/1.png";
-import img2 from "../assets/project/2.png";
-import img3 from "../assets/project/3.png";
-import img4 from "../assets/project/4.png";
-import img5 from "../assets/project/5.png";
-import img6 from "../assets/project/6.png";
-import img7 from "../assets/project/7.png";
-import img8 from "../assets/project/8.png";
-import img9 from "../assets/project/9.png";
+import img1 from "../assets/project/1.jpg";
+import img2 from "../assets/project/2.jpg";
+import img3 from "../assets/project/3.jpg";
+import img4 from "../assets/project/4.jpg";
+import img5 from "../assets/project/5.jpg";
+import img6 from "../assets/project/6.jpg";
+import img7 from "../assets/project/7.jpg";
+import img8 from "../assets/project/8.jpg";
+import img9 from "../assets/project/9.jpg";
 
 export interface Image {
   id: number;
