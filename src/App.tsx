@@ -12,7 +12,7 @@ function App() {
   const contactRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div className="min-h-[100vh] bg-[#ffff] text-textlight dark:bg-dark dark:text-dark-text font-body">
+    <div className="min-h-[100vh] dark:bg-dark dark:text-white font-body px-6">
       <Header
         aboutRef={aboutRef}
         projectRef={projectRef}

@@ -1,56 +1,99 @@
 /** @format */
+
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import FeatherIcon from "feather-icons-react";
-import logo from "../assets/logo-white.svg";
+import logo from "../assets/FEYVIK-LOGO-BLACK.png";
 
 const NavWrapper = styled.nav.withConfig({
-  shouldForwardProp: (prop) => prop !== "isscrolled",
+  shouldForwardProp: (prop) => prop !== "$isscrolled",
 })<{ $isscrolled: boolean }>`
-  background: ${({ $isscrolled }) => ($isscrolled ? "#2797FA" : "")};
-  position: ${({ $isscrolled }) => ($isscrolled ? "fixed" : "")};
-  z-index: ${({ $isscrolled }) => ($isscrolled ? "1" : "auto")};
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  position: ${({ $isscrolled }) => ($isscrolled ? "fixed" : "absolute")};
-  top: ${({ $isscrolled }) => ($isscrolled ? "0" : "20px")};
-  left: 0;
-  z-index: 100;
-  transition: background 0.3s ease, padding 0.3s ease;
+  transition:
+    background 0.3s ease,
+    padding 0.3s ease;
   box-shadow: ${({ $isscrolled }) =>
     $isscrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none"};
-
-  .container {
-    background: ${({ $isscrolled }) => ($isscrolled ? "" : "#2797FA")};
-    a {
-      color: ${({ $isscrolled }) =>
-        $isscrolled ? "#F9FAFB !important" : "#F9FAFB !important"};
-    }
-    height: 72px;
-  }
 
   .logo {
     width: 100px;
   }
+`;
 
-  .dark_mode_toggle {
-    height: 40px;
-    width: 40px;
-    padding: unset;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
+const Overlay = styled.div<{ $open: boolean }>`
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 16, 12, 0.35);
+  opacity: ${({ $open }) => ($open ? 1 : 0)};
+  visibility: ${({ $open }) => ($open ? "visible" : "hidden")};
+  transition: opacity 0.25s ease;
+  z-index: 60;
+`;
+
+const Panel = styled.aside<{ $open: boolean; $isDark: boolean }>`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(420px, 86vw);
+  background: ${({ $isDark }) => ($isDark ? "#000000" : "#ffffff")};
+  z-index: 61;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 32px 32px;
+  overflow-y: auto;
+  transform: translateX(${({ $open }) => ($open ? "0" : "100%")});
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 380px) {
+    padding: 24px 20px 28px;
+  }
+`;
+
+const CloseButton = styled.button`
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 28px;
+  transition: background 0.2s ease;
+  padding: 0px;
+`;
+
+const MobileNav = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li a {
+    font-size: 18px;
+  }
+`;
+
+const CtaButton = styled.button`
+  margin-top: 8px;
+  width: 100%;
+  background: #3d5afe;
+  color: #ffffff;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    background: #3d5afe;
   }
 
-  @media (max-width: 1123px) {
-    top: 0px;
-    .container {
-      max-width: 100% !important;
-    }
+  &:active {
+    transform: scale(0.98);
   }
 `;
 
@@ -62,9 +105,11 @@ type HeaderProps = {
 
 const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
   };
 
   const [isDark, setIsDark] = useState(() => {
@@ -95,110 +140,193 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.setAttribute("data-scroll-locked", "");
+    } else {
+      document.body.removeAttribute("data-scroll-locked");
+    }
+
+    return () => {
+      document.body.removeAttribute("data-scroll-locked");
+    };
+  }, [menuOpen]);
+
+  const DarkModeToggle = () => (
+    <button
+      type="button"
+      onClick={() => setIsDark(!isDark)}
+      className="dark_mode_toggle"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}>
+      {isDark ? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-moon text-secondary-gold">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+      ) : (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-sun text-secondary-gold">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+      )}
+    </button>
+  );
+
   return (
-    <NavWrapper $isscrolled={isScrolled}>
-      <div className="container px-[2.6rem]">
-        <div className="flex flex-wrap items-center justify-between mx-auto h-full">
-          <Link
-            to={"/"}
-            className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src={logo} alt="logo" width={120} />
-          </Link>
-          <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            className="inline-flex items-center btn_menu justify-center md:hidden border-[#3f09c9]"
-            aria-controls="navbar-default">
-            <FeatherIcon
-              icon="align-left"
-              style={{ color: "#ff4d00", cursor: "pointer" }}
-            />
-          </button>
-          <div className="hidden w-full md:block md:w-auto ms-auto">
-            <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
-              <li>
-                <Link to={"/"}>Home</Link>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection(aboutRef)}
-                  className="text-white">
-                  About
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection(projectRef)}
-                  className="text-white">
-                  Projects
-                </button>
-              </li>
-              <li>
-                <a href="https://blog.thefletribe.com.ng" target="_blank">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection(contactRef)}
-                  className="text-white">
-                  Contact
-                </button>
-              </li>
-              <li>
-                {isDark ? (
-                  <button
-                    type="button"
-                    onClick={() => setIsDark(!isDark)}
-                    className="dark_mode_toggle">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-moon text-secondary-gold">
-                      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-                    </svg>
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => setIsDark(!isDark)}
-                    className="dark_mode_toggle">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-sun text-secondary-gold">
-                      <circle cx="12" cy="12" r="4"></circle>
-                      <path d="M12 2v2"></path>
-                      <path d="M12 20v2"></path>
-                      <path d="m4.93 4.93 1.41 1.41"></path>
-                      <path d="m17.66 17.66 1.41 1.41"></path>
-                      <path d="M2 12h2"></path>
-                      <path d="M20 12h2"></path>
-                      <path d="m6.34 17.66-1.41 1.41"></path>
-                      <path d="m19.07 4.93-1.41 1.41"></path>
-                    </svg>
-                  </button>
-                )}
-              </li>
-            </ul>
+    <>
+      <NavWrapper
+        $isscrolled={isScrolled}
+        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
+        <div className="container">
+          <div className="flex flex-wrap items-center justify-between mx-auto h-full py-4">
+            <Link
+              to={"/"}
+              className="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src={logo} alt="logo" width={130} />
+            </Link>
+
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              type="button"
+              className="inline-flex items-center justify-center md:hidden border-[#3f09c9]"
+              aria-label="Toggle navigation menu">
+              <FeatherIcon
+                icon="align-left"
+                style={{
+                  cursor: "pointer",
+                  width: "30px",
+                  height: "30px",
+                }}
+              />
+            </button>
+
+            <div className="hidden w-full md:block md:w-auto ms-auto">
+              <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
+                <li>
+                  <Link to={"/"}>Home</Link>
+                </li>
+                <li>
+                  <Link to={"/"} onClick={() => scrollToSection(aboutRef)}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/"} onClick={() => scrollToSection(projectRef)}>
+                    Projects
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://blog.thefletribe.com.ng"
+                    target="_blank"
+                    rel="noopener">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <Link to={"/"} onClick={() => scrollToSection(contactRef)}>
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <DarkModeToggle />
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </NavWrapper>
+      </NavWrapper>
+
+      <Overlay
+        $open={menuOpen}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden={!menuOpen}
+      />
+      <Panel
+        id="mobile-sidebar"
+        $open={menuOpen}
+        $isDark={isDark}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!menuOpen}>
+        <CloseButton onClick={() => setMenuOpen(false)} aria-label="Close menu">
+          <FeatherIcon
+            icon="x"
+            size={18}
+            style={{
+              cursor: "pointer",
+              width: "30px",
+              height: "30px",
+            }}
+          />
+        </CloseButton>
+
+        <MobileNav>
+          <li className="mb-4">
+            <Link to={"/"} onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link to={"/"} onClick={() => scrollToSection(aboutRef)}>
+              About
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link to={"/"} onClick={() => scrollToSection(projectRef)}>
+              Projects
+            </Link>
+          </li>
+          <li className="mb-4">
+            <a
+              href="https://blog.thefletribe.com.ng"
+              target="_blank"
+              rel="noopener"
+              onClick={() => setMenuOpen(false)}>
+              Blog
+            </a>
+          </li>
+          <li className="mb-4">
+            <Link to={"/"} onClick={() => scrollToSection(contactRef)}>
+              Contact
+            </Link>
+          </li>
+          <li className="mb-4">
+            <DarkModeToggle />
+          </li>
+        </MobileNav>
+
+        <CtaButton onClick={() => scrollToSection(contactRef)}>
+          Work with me
+        </CtaButton>
+      </Panel>
+    </>
   );
 };
 

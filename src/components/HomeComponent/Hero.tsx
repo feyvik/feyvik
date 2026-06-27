@@ -1,6 +1,6 @@
 /** @format */
 import styled from "styled-components";
-import img from "../../assets/home/me1.jpg";
+import img from "../../assets/KELV2738.jpg";
 
 const HeroWrapper = styled.div`
   min-height: 100vh;
@@ -8,118 +8,45 @@ const HeroWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: start;
-
-  .hero_content {
-    min-height: 100vh;
-    width: 100%;
-
-    h1 {
-      font-size: 46px;
-    }
-
-    .image-container {
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 50%;
-
-      img {
-        object-fit: cover;
-        vertical-align: bottom;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        object-position: top;
-      }
-    }
-
-    .image-container::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-      pointer-events: none;
-    }
-
-    .hero_info {
-      width: 50%;
-    }
-
-    @media (max-width: 1123px) {
-      .image-container {
-        width: 100%;
-        left: 0;
-      }
-
-      .hero_info {
-        position: relative;
-        z-index: 2;
-        color: #ffffff;
-        text-align: center;
-        width: 100%;
-
-        .hero_btn {
-          display: flex;
-          flex-direction: column;
-        }
-
-        button {
-          width: 400px;
-        }
-
-        .text-text-light {
-          color: #ffffff;
-        }
-      }
-    }
-
-    @media (max-width: 450px) {
-      h1 {
-        font-size: 30px;
-      }
-      .hero_info {
-        button {
-          width: 100%;
-        }
-      }
-    }
-  }
 `;
 
 const Hero = () => {
   return (
-    <HeroWrapper className="bg-[#ebebeb] dark:bg-dark">
+    <HeroWrapper className="min-h-screen flex items-center justify-center pt-20">
       <div className="container">
-        <div className="grid grid-cols gap-4 items-center hero_content">
-          <div className="image-container">
-            <img src={img} alt="image description" />
-          </div>
-          <div className="hero_info px-[1.5rem] pt-[60px]">
+        <div className="grid md:grid-cols-2 gap-12 items-center hero_content">
+          <div className="order-2 md:order-1">
             <fieldset>
-              <figcaption className="text-primary text-2xl">Hello</figcaption>
-              <h1 className="font-heading mb-3 text-secondary dark:text-white">
-                Welcome to My <br className="hidden sm:block" /> Developer
-                Journey
+              <h1 className="mb-3 dark:text-white text-5xl md:text-5xl lg:text-6xl text-foreground leading-tight">
+                Developing and Designing{" "}
+                <br className="hidden sm:block lg:hidden" />
+                <b className="text-[#3D5AFE]"> With Clarity. </b>
               </h1>
-              <span>
-                I'm a passionate developer dedicated to creating innovative
-                <br className="hidden sm:block" />
-                solutions. Join me as I share my growth and milestones in the
-                tech world.
-              </span>
+              <p className="text-md max-w-lg leading-relaxed dark:text-white text-foreground">
+                A frontend engineer and design-minded builder with 8+ years of
+                experience architecting scalable, AI-assisted web applications,
+                bridging engineering and design, and leading communities that
+                make tech accessible to beginners across Africa.
+              </p>
 
-              <div className="grid lg:grid-cols-2 gap-4 hero_btn items-center mt-10">
-                <button className="bg-primary text-white lg:w-[100%] dark:text-white">
-                  More About Me
+              <div className="flex gap-4 hero_btn items-center mt-6">
+                <button className="bg-[#3D5AFE] text-white dark:text-white">
+                  Learn More
                 </button>
-                <button className="border border-primary lg:w-[100%] text-secondary dark:text-white">
-                  Get In Touch
+                <button className="border border-[#3D5AFE] dark:text-white">
+                  Work With Me
                 </button>
               </div>
             </fieldset>
+          </div>
+          <div className="order-1 md:order-2 flex justify-center image-container">
+            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-[#3D5AFE] border-4 border-[#3D5AFE]/20 flex items-center justify-center overflow-hidden shadow-2xl">
+              <img
+                src={img}
+                alt="image description"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

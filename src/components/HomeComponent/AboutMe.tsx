@@ -1,7 +1,7 @@
 /** @format */
 /** @format */
 import styled from "styled-components";
-import img from "../../assets/home/me3.jpg";
+import img from "../../assets/KELV2726.jpg";
 
 const AboutWrapper = styled.div`
   min-height: 100vh;
@@ -50,7 +50,7 @@ const AboutWrapper = styled.div`
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+        background: rgba(0, 0, 0, 0.2); /* Black overlay with 50% opacity */
         pointer-events: none;
         width: 200px;
         height: 200px;
