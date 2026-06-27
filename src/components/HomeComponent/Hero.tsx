@@ -8,6 +8,12 @@ const HeroWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: start;
+
+  button:hover {
+    background: #3d5afe;
+    color: #ffffff;
+    border: none;
+  }
 `;
 
 const Hero = () => {
@@ -30,17 +36,17 @@ const Hero = () => {
               </p>
 
               <div className="flex gap-4 hero_btn items-center mt-6">
-                <button className="bg-[#3D5AFE] text-white dark:text-white">
+                <button className="bg-[#2D1B69] text-white dark:text-white">
                   Learn More
                 </button>
-                <button className="border border-[#3D5AFE] dark:text-white">
+                <button className="border border-[#2D1B69] dark:text-white">
                   Work With Me
                 </button>
               </div>
             </fieldset>
           </div>
           <div className="order-1 md:order-2 flex justify-center image-container">
-            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-[#3D5AFE] border-4 border-[#3D5AFE]/20 flex items-center justify-center overflow-hidden shadow-2xl">
+            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/20 flex items-center justify-center overflow-hidden shadow-2xl">
               <img
                 src={img}
                 alt="image description"

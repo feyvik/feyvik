@@ -10,7 +10,7 @@ type SectionsProps = {
 
 const Home = ({ aboutRef, projectRef }: SectionsProps) => {
   return (
-    <div>
+    <div className="px-6">
       <Hero />
       <AboutMe aboutRef={aboutRef} />
       <HomeProject projectRef={projectRef} />

@@ -98,12 +98,18 @@ const CtaButton = styled.button`
 `;
 
 type HeaderProps = {
+  headerRef: React.RefObject<HTMLDivElement | null>;
   aboutRef: React.RefObject<HTMLDivElement | null>;
   projectRef: React.RefObject<HTMLDivElement | null>;
   contactRef: React.RefObject<HTMLDivElement | null>;
 };
 
-const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
+const Header = ({
+  headerRef,
+  aboutRef,
+  projectRef,
+  contactRef,
+}: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -229,7 +235,9 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
             <div className="hidden w-full md:block md:w-auto ms-auto">
               <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
                 <li>
-                  <Link to={"/"}>Home</Link>
+                  <Link to={"/"} onClick={() => scrollToSection(headerRef)}>
+                    Home
+                  </Link>
                 </li>
                 <li>
                   <Link to={"/"} onClick={() => scrollToSection(aboutRef)}>
@@ -240,14 +248,6 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
                   <Link to={"/"} onClick={() => scrollToSection(projectRef)}>
                     Projects
                   </Link>
-                </li>
-                <li>
-                  <a
-                    href="https://blog.thefletribe.com.ng"
-                    target="_blank"
-                    rel="noopener">
-                    Blog
-                  </a>
                 </li>
                 <li>
                   <Link to={"/"} onClick={() => scrollToSection(contactRef)}>
@@ -289,7 +289,7 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
 
         <MobileNav>
           <li className="mb-4">
-            <Link to={"/"} onClick={() => setMenuOpen(false)}>
+            <Link to={"/"} onClick={() => scrollToSection(headerRef)}>
               Home
             </Link>
           </li>
@@ -302,15 +302,6 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
             <Link to={"/"} onClick={() => scrollToSection(projectRef)}>
               Projects
             </Link>
-          </li>
-          <li className="mb-4">
-            <a
-              href="https://blog.thefletribe.com.ng"
-              target="_blank"
-              rel="noopener"
-              onClick={() => setMenuOpen(false)}>
-              Blog
-            </a>
           </li>
           <li className="mb-4">
             <Link to={"/"} onClick={() => scrollToSection(contactRef)}>
