@@ -16,7 +16,7 @@ export default function ContactSection() {
 
       <div className="max-w-5xl mx-auto">
         <div>
-          <p className="text-xl text-gray-500 leading-relaxed mb-10">
+          <p className="text-xl text-gray-500 dark:text-white leading-relaxed mb-10">
             Whether you're looking for a brand designer, frontend developer, or
             collaborator — I'd love to hear from you.
           </p>
@@ -27,7 +27,7 @@ export default function ContactSection() {
             <div className="w-16 h-16 rounded-full bg-[#3D5AFE] flex items-center justify-center flex-shrink-0">
               <Mail size={24} className="text-white" />
             </div>
-            <span className="text-xl text-gray-900 group-hover:text-[#3D5AFE] transition-colors">
+            <span className="text-xl group-hover:text-[#3D5AFE] transition-colors">
               vivianemma97@gmail.com
             </span>
           </a>
