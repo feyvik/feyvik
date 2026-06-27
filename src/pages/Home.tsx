@@ -1,7 +1,6 @@
 /** @format */
 import AboutMe from "../components/HomeComponent/AboutMe";
 import Hero from "../components/HomeComponent/Hero";
-import HomeGallery from "../components/HomeComponent/HomeGallery";
 import HomeProject from "../components/HomeComponent/HomeProject";
 
 type SectionsProps = {
@@ -15,7 +14,6 @@ const Home = ({ aboutRef, projectRef }: SectionsProps) => {
       <Hero />
       <AboutMe aboutRef={aboutRef} />
       <HomeProject projectRef={projectRef} />
-      <HomeGallery />
     </div>
   );
 };

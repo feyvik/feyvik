@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import img from "../../assets/home/me3.jpg";
+import img from "../../assets/IMG_7598.jpg";
 import { ProjectImage, type Image } from "./ImageCard";
 import FeatherIcon from "feather-icons-react";
 
@@ -44,10 +44,10 @@ const ProjectWrapper = styled.div`
 
       img {
         object-fit: cover;
-        vertical-align: bottom;
+        vertical-align: center;
         margin: 0;
         padding: 0;
-        object-position: top;
+        object-position: center;
         height: 100%;
         width: 100%;
       }
