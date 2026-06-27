@@ -5,6 +5,7 @@ import styled from "styled-components";
 import img from "../assets/IMG_7598.jpg";
 import { ProjectImage, type Image } from "./ImageCard";
 import FeatherIcon, { ArrowRight } from "feather-icons-react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const ProjectWrapper = styled.div`
   .avatar-frame {
@@ -98,6 +99,7 @@ type SectionsProps = {
 };
 
 const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
+  const animRef = useScrollAnimation();
   const [modal, setModal] = useState(false);
   const [projectInfo, setProjectInfo] = useState<Image>({
     id: 0,
@@ -123,7 +125,7 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
 
   return (
     <ProjectWrapper ref={projectRef} className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div ref={animRef} className="animate-on-scroll max-w-6xl mx-auto">
         <div className="flex items-center gap-5 mb-6">
           <div className="avatar-frame shadow-2xl rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/10">
             <img src={img} alt="profile" />
@@ -133,7 +135,7 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
           </p>
         </div>
 
-        <h2 className="text-3xl md:text-4xl mb-4 leading-tight">
+        <h2 className="mb-4 leading-tight dark:text-white">
           Check Out Some of My Works
         </h2>
 

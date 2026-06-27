@@ -1,33 +1,42 @@
 /** @format */
 
 import { Mail } from "feather-icons-react";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 export default function ContactSection() {
-  return (
-    <div className="py-24 px-6">
-      <div className="text-center mb-20">
-        <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] mb-4">
-          GET IN TOUCH
-        </p>
-        <h2 className="text-3xl md:text-4xl mb-4 leading-tight">
-          Let's create impact together
-        </h2>
-      </div>
+  const animRef = useScrollAnimation();
 
-      <div className="max-w-5xl mx-auto">
+  return (
+    <div
+      className="py-24 px-6"
+      style={{
+        background:
+          "linear-gradient(135deg, rgba(45,27,105,0.06) 0%, rgba(61,90,254,0.06) 50%, rgba(39,151,250,0.05) 100%)",
+      }}>
+      <div ref={animRef} className="animate-on-scroll max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] mb-4 uppercase">
+            Get In Touch
+          </p>
+          <h2 className="mb-4 leading-tight dark:text-white">
+            Let's create impact together
+          </h2>
+          <div className="w-12 h-1 rounded-full bg-[#3D5AFE] mx-auto" />
+        </div>
+
         <div>
-          <p className="text-xl text-gray-500 dark:text-white leading-relaxed mb-10">
+          <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-10">
             Whether you're looking for a brand designer, frontend developer, or
             collaborator — I'd love to hear from you.
           </p>
 
           <a
             href="mailto:vivianemma97@gmail.com"
-            className="flex items-center gap-5 group">
-            <div className="w-16 h-16 rounded-full bg-[#3D5AFE] flex items-center justify-center flex-shrink-0">
+            className="inline-flex items-center gap-5 group">
+            <div className="w-16 h-16 rounded-full bg-[#3D5AFE] flex items-center justify-center flex-shrink-0 shadow-lg group-hover:bg-[#2D1B69] transition-colors duration-300">
               <Mail size={24} className="text-white" />
             </div>
-            <span className="text-xl group-hover:text-[#3D5AFE] transition-colors">
+            <span className="text-xl font-medium text-gray-800 dark:text-white group-hover:text-[#3D5AFE] transition-colors duration-200">
               vivianemma97@gmail.com
             </span>
           </a>
