@@ -1,13 +1,13 @@
 /** @format */
-import img1 from "../../assets/project/1.png";
-import img2 from "../../assets/project/2.png";
-import img3 from "../../assets/project/3.png";
-import img4 from "../../assets/project/4.png";
-import img5 from "../../assets/project/5.png";
-import img6 from "../../assets/project/6.png";
-import img7 from "../../assets/project/7.png";
-import img8 from "../../assets/project/8.png";
-import img9 from "../../assets/project/9.png";
+import img1 from "../assets/project/1.png";
+import img2 from "../assets/project/2.png";
+import img3 from "../assets/project/3.png";
+import img4 from "../assets/project/4.png";
+import img5 from "../assets/project/5.png";
+import img6 from "../assets/project/6.png";
+import img7 from "../assets/project/7.png";
+import img8 from "../assets/project/8.png";
+import img9 from "../assets/project/9.png";
 
 export interface Image {
   id: number;
@@ -37,10 +37,10 @@ export const ProjectImage: Image[] = [
   {
     id: 3,
     image: img3,
-    name: "FLE Tribe Community Blog",
+    name: "Personal portfolio website",
     description:
-      "The FLE Tribe (Forge. Learn. Evolve.) is a Nigerian-based online community and learning platform dedicated to helping absolute beginners break into the tech industry. It offers mentorship, educational resources, and a supportive environment tailored to newcomers aiming to build foundational skills and confidence in tech.",
-    link: "https://thefletribe.com.ng",
+      "A personal portfolio site showcasing my work, skills, and experience as a frontend engineer — built to give visitors a clear picture of my background and the projects I've shipped.",
+    link: "https://feyvik.vercel.app/",
   },
   {
     id: 4,

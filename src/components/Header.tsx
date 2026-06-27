@@ -5,14 +5,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import FeatherIcon from "feather-icons-react";
 import logo from "../assets/FEYVIK-LOGO-BLACK.png";
+import logo2 from "../assets/FEYVIK-LOGO-WHITE.png";
 
 const NavWrapper = styled.nav.withConfig({
   shouldForwardProp: (prop) => prop !== "$isscrolled",
 })<{ $isscrolled: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
   transition:
     background 0.3s ease,
     padding 0.3s ease;
@@ -209,56 +206,54 @@ const Header = ({
       <NavWrapper
         $isscrolled={isScrolled}
         className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
-        <div className="container">
-          <div className="flex flex-wrap items-center justify-between mx-auto h-full py-4">
-            <Link
-              to={"/"}
-              className="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src={logo} alt="logo" width={130} />
-            </Link>
+        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+          <Link
+            to={"/"}
+            className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src={isDark ? logo2 : logo} alt="logo" width={130} />
+          </Link>
 
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              type="button"
-              className="inline-flex items-center justify-center md:hidden border-[#3f09c9]"
-              aria-label="Toggle navigation menu">
-              <FeatherIcon
-                icon="align-left"
-                style={{
-                  cursor: "pointer",
-                  width: "30px",
-                  height: "30px",
-                }}
-              />
-            </button>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            type="button"
+            className="inline-flex items-center justify-center md:hidden border-[#3f09c9]"
+            aria-label="Toggle navigation menu">
+            <FeatherIcon
+              icon="align-left"
+              style={{
+                cursor: "pointer",
+                width: "30px",
+                height: "30px",
+              }}
+            />
+          </button>
 
-            <div className="hidden w-full md:block md:w-auto ms-auto">
-              <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
-                <li>
-                  <Link to={"/"} onClick={() => scrollToSection(headerRef)}>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"/"} onClick={() => scrollToSection(aboutRef)}>
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"/"} onClick={() => scrollToSection(projectRef)}>
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"/"} onClick={() => scrollToSection(contactRef)}>
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <DarkModeToggle />
-                </li>
-              </ul>
-            </div>
+          <div className="hidden w-full md:block md:w-auto ms-auto">
+            <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
+              <li>
+                <Link to={"/"} onClick={() => scrollToSection(headerRef)}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to={"/"} onClick={() => scrollToSection(aboutRef)}>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to={"/"} onClick={() => scrollToSection(projectRef)}>
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link to={"/"} onClick={() => scrollToSection(contactRef)}>
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <DarkModeToggle />
+              </li>
+            </ul>
           </div>
         </div>
       </NavWrapper>

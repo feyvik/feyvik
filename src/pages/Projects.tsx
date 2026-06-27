@@ -1,7 +1,13 @@
 /** @format */
 
+import HomeProject from "../components/HomeProject";
+
 const Projects = () => {
-  return <div>Projects</div>;
+  return (
+    <div>
+      <HomeProject />
+    </div>
+  );
 };
 
 export default Projects;
