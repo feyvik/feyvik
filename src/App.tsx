@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
 import About from "./pages/About";
+import Design from "./pages/Design";
 
 function App() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -26,6 +27,7 @@ function App() {
         />
         <Route path="/profile" element={<About />} />
         <Route path="/work" element={<Projects />} />
+        <Route path="/design" element={<Design />} />
       </Routes>
       <Footer contactRef={contactRef} />
     </div>
