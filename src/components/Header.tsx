@@ -84,6 +84,9 @@ const MobileNav = styled.ul`
   li a {
     font-size: 18px;
   }
+  li button {
+    padding: 0px;
+  }
 `;
 
 const CtaButton = styled.button`
@@ -260,6 +263,9 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
                 <Link to={"/work"}>Work</Link>
               </li>
               <li className="text-gray-600 dark:text-white">
+                <Link to={"/design"}>Design</Link>
+              </li>
+              <li className="text-gray-600 dark:text-white">
                 <button onClick={() => scrollToSection(contactRef, "contact")}>
                   Contact
                 </button>
@@ -311,6 +317,11 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
             <button onClick={() => scrollToSection(projectRef, "projects")}>
               Projects
             </button>
+          </li>
+          <li className="mb-4 text-gray-600 dark:text-white">
+            <Link to={"/design"} onClick={() => setMenuOpen(false)}>
+              Design
+            </Link>
           </li>
           <li className="mb-4 text-gray-600 dark:text-white">
             <button

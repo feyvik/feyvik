@@ -6,6 +6,8 @@ import images2 from "../assets/helixgade.png";
 import images3 from "../assets/phreetech.jpeg";
 import images4 from "../assets/sytmap.jpeg";
 import styled from "styled-components";
+import images5 from "../assets/primedsoft_logo.jpeg";
+
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const Button = styled.button`
@@ -18,6 +20,7 @@ const files = [
   { images: images2, alt: "Slide 2" },
   { images: images3, alt: "Slide 3" },
   { images: images4, alt: "Slide 4" },
+  { images: images5, alt: "Slide 5" },
 ];
 
 const AUTOSCROLL_INTERVAL = 4000;

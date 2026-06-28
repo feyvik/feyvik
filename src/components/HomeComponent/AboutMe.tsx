@@ -89,7 +89,7 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
             <p className="mb-6">
               <Link
                 to={"/about"}
-                className="inline-flex items-center gap-1 text-[#3D5AFE] font-semibold hover:underline">
+                className="inline-flex items-center gap-1 text-[#3D5AFE] hover:underline">
                 Read my full story <ArrowRight size={16} />
               </Link>
             </p>
