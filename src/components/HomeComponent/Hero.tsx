@@ -47,7 +47,7 @@ const Hero = () => {
               <br className="hidden sm:block lg:hidden" />
               <span className="text-[#3D5AFE]">With Clarity.</span>
             </h1>
-            <p className="hero-enter hero-enter-delay-2 text-gray-600 text-lg max-w-lg leading-relaxed dark:text-gray-300">
+            <p className="text-gray-600 text-lg max-w-lg leading-relaxed dark:text-white">
               A frontend engineer and design-minded builder with 8+ years of
               experience architecting scalable, AI-assisted web applications,
               bridging engineering and design, and leading communities that make

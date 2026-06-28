@@ -7,7 +7,7 @@ export default function AboutHero() {
     <div className="pt-32 pb-20 px-6">
       <div className="max-w-5xl mx-auto">
         <a
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10"
+          className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors mb-10 dark:text-white"
           href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
