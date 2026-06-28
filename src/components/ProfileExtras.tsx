@@ -43,11 +43,18 @@ const certificates = [
 
 const volunteerItems = [
   {
-    role: "DevFest Team Lead",
+    role: "DevFest Volunteer — Registration",
     org: "DevFest",
     period: "2025",
     description:
-      "Coordinated event logistics for DevFest, leading a volunteer team through venue setup, attendee registration, and on-the-day coordination to ensure smooth execution for a large developer community gathering.",
+      "Volunteered on the registration team for DevFest, supporting attendee check-in and on-the-day coordination for a large developer community gathering.",
+  },
+  {
+    role: "Tech4Good Volunteer — Registration",
+    org: "T4G",
+    period: "2025",
+    description:
+      "Volunteered on the registration team for T4G, supporting attendee check-in and on-the-day coordination for a large developer community gathering.",
   },
   {
     role: "Community Lead & Founder",
