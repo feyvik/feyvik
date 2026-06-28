@@ -153,10 +153,6 @@ h6 {
   letter-spacing: -0.05px;
 }
 
-a {
-  font-weight: 500;
-  font-family: "Source Serif 4", serif;
-}
 a:hover {
   color: #3d5afe !important;
 }
@@ -165,7 +161,6 @@ button {
   border-radius: 50px;
   padding: 0.85rem 2rem;
   font-size: 0.875em;
-  font-weight: 600;
   font-family: inherit;
   cursor: pointer;
   transition:

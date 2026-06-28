@@ -126,6 +126,26 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
   return (
     <ProjectWrapper ref={projectRef} className="py-24 px-6">
       <div ref={animRef} className="animate-on-scroll max-w-6xl mx-auto">
+        <a
+          className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors mb-10 dark:text-white"
+          href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-arrow-left w-4 h-4">
+            <path d="m12 19-7-7 7-7"></path>
+            <path d="M19 12H5"></path>
+          </svg>
+          Back to Home
+        </a>
+
         <div className="flex items-center gap-5 mb-6">
           <div className="avatar-frame shadow-2xl rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/10">
             <img src={img} alt="profile" loading="lazy" />
@@ -139,7 +159,7 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
           Check Out Some of My Works
         </h2>
 
-        <p className="text-gray-500 max-w-2xl leading-relaxed mb-4">
+        <p className="text-gray-600 max-w-2xl leading-relaxed mb-4 dark:text-white">
           I've worked on a variety of projects, ranging from landing pages, web
           apps, real estate projects, and side projects. Here are a few of my
           favorites.
@@ -221,7 +241,7 @@ const ProjectModal = ({ handleSetModal, projectData }: modalPreviewProps) => {
 
             <div className="p-6 space-y-3">
               <h5 className="text-xl leading-tight">{projectData.name}</h5>
-              <p className="text-base leading-relaxed text-gray-500 dark:text-white">
+              <p className="text-base leading-relaxed text-gray-600 dark:text-white">
                 {projectData.description}
               </p>
             </div>
@@ -237,7 +257,7 @@ const ProjectModal = ({ handleSetModal, projectData }: modalPreviewProps) => {
               <button
                 type="button"
                 onClick={handleStateReset}
-                className="flex-1 flex items-center justify-center py-3.5 font-medium text-gray-600 hover:bg-gray-50 transition-colors">
+                className="flex-1 flex items-center justify-center py-3.5 font-medium text-gray-600 dark:text-white transition-colors">
                 Close
               </button>
             </div>
