@@ -3,8 +3,14 @@ import { useState } from "react";
 import styled from "styled-components";
 import FeatherIcon from "feather-icons-react";
 import { Link } from "react-router-dom";
-import { CATEGORIES, DesignItems, type DesignCategory, type DesignItem } from "./designData";
+import {
+  CATEGORIES,
+  DesignItems,
+  type DesignCategory,
+  type DesignItem,
+} from "./designData";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import img from "../../assets/KELV2777.jpg";
 
 const GalleryCard = styled.div`
   position: relative;
@@ -53,7 +59,7 @@ const GalleryCard = styled.div`
     gap: 6px;
     font-size: 12px;
     font-weight: 600;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     transform: translateY(6px);
@@ -76,7 +82,7 @@ const GalleryCard = styled.div`
     gap: 6px;
     font-size: 13px;
     font-weight: 500;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255, 255, 255, 0.85);
     margin-top: 8px;
     transform: translateY(8px);
     opacity: 0;
@@ -97,18 +103,46 @@ const CategoryBtn = styled.button<{ $active: boolean }>`
   font-size: 0.8rem !important;
   font-weight: 600 !important;
   transition: all 0.2s ease !important;
-  background: ${({ $active }) => ($active ? "#3D5AFE" : "transparent")} !important;
+  background: ${({ $active }) =>
+    $active ? "#3D5AFE" : "transparent"} !important;
   color: ${({ $active }) => ($active ? "#ffffff" : "#555")} !important;
   border: 1.5px solid ${({ $active }) => ($active ? "#3D5AFE" : "#ddd")} !important;
   box-shadow: none !important;
   transform: none !important;
 
   &:hover {
-    background: ${({ $active }) => ($active ? "#3D5AFE" : "rgba(61,90,254,0.07)")} !important;
-    border-color: #3D5AFE !important;
+    background: ${({ $active }) =>
+      $active ? "#3D5AFE" : "rgba(61,90,254,0.07)"} !important;
+    border-color: #3d5afe !important;
     color: ${({ $active }) => ($active ? "#fff" : "#3D5AFE")} !important;
     transform: none !important;
     box-shadow: none !important;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  .avatar-frame {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.15);
+      pointer-events: none;
+    }
   }
 `;
 
@@ -117,53 +151,145 @@ type ModalProps = {
   onClose: () => void;
 };
 
-const DesignModal = ({ item, onClose }: ModalProps) => (
-  <div
-    onClick={onClose}
-    className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 px-4">
+const DesignModal = ({ item, onClose }: ModalProps) => {
+  const isPdf = Boolean(item.pdfSrc);
+
+  return (
+    // <div
+    //   onClick={onClose}
+    //   className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 p-4">
+    //   <div
+    //     onClick={(e) => e.stopPropagation()}
+    //     className="relative flex flex-col bg-white dark:bg-[#0d0d14] rounded-2xl overflow-hidden shadow-2xl"
+    //     style={{
+    //       width: isPdf ? "min(860px, 95vw)" : "min(680px, 95vw)",
+    //       height: isPdf ? "92vh" : "auto",
+    //       maxHeight: "92vh",
+    //     }}>
+    //     {/* Header bar */}
+    //     <div className="flex items-start justify-between gap-4 px-6 py-4 border-b border-gray-100 dark:border-white/10 flex-shrink-0">
+    //       <div className="space-y-1.5">
+    //         <div className="flex flex-wrap gap-2">
+    //           {item.tags.map((tag) => (
+    //             <span
+    //               key={tag}
+    //               className="text-xs font-semibold px-3 py-1 rounded-full bg-[#3D5AFE]/10 text-[#3D5AFE]"
+    //               style={{ fontSize: "11px" }}>
+    //               {tag}
+    //             </span>
+    //           ))}
+    //         </div>
+    //         <h4 className="leading-tight dark:text-white text-base font-semibold">
+    //           {item.title}
+    //         </h4>
+    //         {item.client && (
+    //           <p className="text-xs text-gray-400">Client: {item.client}</p>
+    //         )}
+    //       </div>
+    //       <button
+    //         type="button"
+    //         style={{ padding: 0 }}
+    //         onClick={onClose}
+    //         aria-label="Close"
+    //         className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 text-gray-600 dark:text-white transition-colors">
+    //         <FeatherIcon icon="x" size={18} />
+    //       </button>
+    //     </div>
+
+    //     {/* Content */}
+    //     <div className="flex-1 min-h-0 overflow-hidden">
+    //       {isPdf ? (
+    //         <iframe
+    //           src={`${item.pdfSrc}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
+    //           title={item.title}
+    //           className="w-full h-full border-0"
+    //         />
+    //       ) : (
+    //         <div className="w-full h-full overflow-auto flex items-center justify-center bg-gray-50 dark:bg-black/20">
+    //           <img
+    //             src={item.image}
+    //             alt={item.title}
+    //             className="max-w-full max-h-full object-contain"
+    //             style={{ display: "block" }}
+    //           />
+    //         </div>
+    //       )}
+    //     </div>
+
+    //     {/* PDF download hint */}
+
+    //   </div>
+    // </div>
     <div
-      onClick={(e) => e.stopPropagation()}
-      className="relative w-full max-w-2xl bg-white dark:bg-[#0d0d14] rounded-2xl overflow-hidden shadow-2xl">
-      <button
-        type="button"
-        style={{ padding: 0 }}
-        onClick={onClose}
-        aria-label="Close"
-        className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors">
-        <FeatherIcon icon="x" size={18} />
-      </button>
+      onClick={onClose}
+      className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 px-4">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-2xl bg-white dark:bg-[#0d0d14] rounded-2xl overflow-hidden shadow-2xl">
+        <button
+          type="button"
+          style={{ padding: 0 }}
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors">
+          <FeatherIcon icon="x" size={18} />
+        </button>
 
-      <div className="w-full aspect-video bg-gray-100">
-        <img
-          src={item.image}
-          alt={item.title}
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      <div className="p-6 space-y-3">
-        <div className="flex flex-wrap gap-2">
-          {item.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs font-semibold px-3 py-1 rounded-full bg-[#3D5AFE]/10 text-[#3D5AFE]"
-              style={{ fontSize: "12px" }}>
-              {tag}
-            </span>
-          ))}
+        <div className="flex-1 overflow-hidden">
+          {isPdf ? (
+            <iframe
+              src={`${item.pdfSrc}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
+              title={item.title}
+              className="w-full h-[500px] border-0"
+            />
+          ) : (
+            <div className="w-full aspect-video bg-gray-100">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="max-w-full max-h-full object-contain mx-auto"
+                style={{ display: "block" }}
+              />
+            </div>
+          )}
         </div>
-        <h4 className="leading-tight dark:text-white">{item.title}</h4>
-        {item.client && (
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            Client: {item.client}
-          </p>
+
+        <div className="p-6 space-y-3">
+          <div className="flex flex-wrap gap-2">
+            {item.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-semibold px-3 py-1 rounded-full bg-[#3D5AFE]/10 text-[#3D5AFE]"
+                style={{ fontSize: "12px" }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+          <h4 className="leading-tight dark:text-white">{item.title}</h4>
+          {item.client && (
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Client: {item.client}
+            </p>
+          )}
+        </div>
+
+        {isPdf && (
+          <div className="flex-shrink-0 px-6 py-3 border-t border-gray-100 dark:border-white/10 flex items-center justify-between">
+            <p className="text-xs text-gray-400">
+              Scroll inside to view all pages
+            </p>
+          </div>
         )}
       </div>
     </div>
-  </div>
-);
+  );
+};
 
-export default function DesignGallery() {
+type HomeProjectProps = {
+  projectNumber?: number;
+};
+
+export default function DesignGallery({ projectNumber }: HomeProjectProps) {
   const [active, setActive] = useState<DesignCategory>("all");
   const [selected, setSelected] = useState<DesignItem | null>(null);
   const animRef = useScrollAnimation();
@@ -173,42 +299,58 @@ export default function DesignGallery() {
       ? DesignItems
       : DesignItems.filter((item) => item.category === active);
 
+  const visibleProjects = projectNumber
+    ? filtered.slice(0, projectNumber)
+    : filtered;
+
+  const showFilters = visibleProjects.length > 3;
+
   return (
     <section className="py-24 px-6">
       <div ref={animRef} className="animate-on-scroll max-w-6xl mx-auto">
-
-        {/* Header */}
-        <div className="flex items-start justify-between flex-wrap gap-4 mb-10">
+        <ImageWrapper className="flex items-center gap-5 mb-6">
+          <div className="avatar-frame shadow-2xl rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/10">
+            <img src={img} alt="profile" loading="lazy" />
+          </div>
+          <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase">
+            Selected Design
+          </p>
+        </ImageWrapper>
+        <div className="flex items-start justify-between flex-wrap gap-4">
           <div>
-            <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase mb-3">
-              Graphic Design
-            </p>
-            <h2 className="leading-tight dark:text-white">
-              Design Work
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-xl mt-3 leading-relaxed">
+            <h2 className="mb-4 leading-tight dark:text-white">Design Work</h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-xl mb-3 leading-relaxed">
               Brand identities, social graphics, and print work — where visual
               language meets intentional craft.
             </p>
+            {projectNumber && projectNumber < filtered.length && (
+              <p className="mb-4">
+                <Link
+                  to={"/design"}
+                  className="inline-flex items-center gap-1 text-[#3D5AFE] hover:underline text-sm">
+                  View more <FeatherIcon icon="arrow-right" size={15} className="inline-block ml-1" />
+                </Link>
+              </p>
+            )}
           </div>
         </div>
 
-        {/* Category filter */}
-        <div className="flex flex-wrap gap-2 mb-10">
-          {CATEGORIES.map(({ key, label }) => (
-            <CategoryBtn
-              key={key}
-              $active={active === key}
-              onClick={() => setActive(key)}>
-              {label}
-            </CategoryBtn>
-          ))}
-        </div>
+        {showFilters && (
+          <div className="flex flex-wrap gap-2 mb-10">
+            {CATEGORIES.map(({ key, label }) => (
+              <CategoryBtn
+                key={key}
+                $active={active === key}
+                onClick={() => setActive(key)}>
+                {label}
+              </CategoryBtn>
+            ))}
+          </div>
+        )}
 
-        {/* Grid */}
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((item) => (
+            {visibleProjects.map((item) => (
               <GalleryCard key={item.id} onClick={() => setSelected(item)}>
                 <img src={item.image} alt={item.title} loading="lazy" />
                 <div className="overlay">
@@ -221,11 +363,14 @@ export default function DesignGallery() {
               </GalleryCard>
             ))}
 
-            {/* "More coming" placeholder when few items */}
             {filtered.length < 3 && (
               <div className="rounded-2xl border-2 border-dashed border-[#3D5AFE]/20 bg-[#3D5AFE]/03 aspect-[4/3] flex flex-col items-center justify-center gap-3 text-center p-6">
                 <div className="w-12 h-12 rounded-full bg-[#3D5AFE]/10 flex items-center justify-center">
-                  <FeatherIcon icon="plus" size={20} className="text-[#3D5AFE]" />
+                  <FeatherIcon
+                    icon="plus"
+                    size={20}
+                    className="text-[#3D5AFE]"
+                  />
                 </div>
                 <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
                   More work coming soon

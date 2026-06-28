@@ -1,4 +1,6 @@
 /** @format */
+
+// Thumbnails (JPG) for gallery cards
 import portfolio1 from "../../assets/project/10.jpg";
 import portfolio2 from "../../assets/project/11.jpg";
 import portfolio3 from "../../assets/project/12.jpg";
@@ -6,11 +8,16 @@ import portfolio4 from "../../assets/project/13.jpg";
 import portfolio5 from "../../assets/project/14.jpg";
 import portfolio6 from "../../assets/project/15.jpg";
 
+// Full PDF sources for modal viewer (use ?url to get the raw file URL)
+import pdf2 from "../../assets/project/11.pdf?url";
+import pdf3 from "../../assets/project/12.pdf?url";
+
 export type DesignCategory = "all" | "logo" | "social" | "print";
 
 export interface DesignItem {
   id: number;
-  image: string;
+  image: string;       // thumbnail shown in the grid card
+  pdfSrc?: string;     // if set, modal shows a PDF iframe instead of the image
   title: string;
   client?: string;
   category: Exclude<DesignCategory, "all">;
@@ -29,6 +36,7 @@ export const DesignItems: DesignItem[] = [
   {
     id: 2,
     image: portfolio2,
+    pdfSrc: pdf2,
     title: "Visual Brand Collateral",
     client: "Personal Project",
     category: "social",
@@ -37,6 +45,7 @@ export const DesignItems: DesignItem[] = [
   {
     id: 3,
     image: portfolio3,
+    pdfSrc: pdf3,
     title: "Print Design for Event",
     client: "Community Organization",
     category: "print",

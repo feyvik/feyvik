@@ -6,6 +6,7 @@ import ContactSection from "../components/HomeComponent/ContactSection";
 import Hero from "../components/HomeComponent/Hero";
 import HomeProject from "../components/HomeProject";
 import ImageCarousel from "../components/ImageCarousel";
+import DesignGallery from "../components/DesignGallery/DesignGallery";
 
 type SectionsProps = {
   aboutRef: React.RefObject<HTMLDivElement | null>;
@@ -16,8 +17,7 @@ const Home = ({ aboutRef, projectRef }: SectionsProps) => {
   const location = useLocation();
 
   useEffect(() => {
-    const scrollTo = (location.state as { scrollTo?: string } | null)
-      ?.scrollTo;
+    const scrollTo = (location.state as { scrollTo?: string } | null)?.scrollTo;
     if (!scrollTo) return;
 
     // Small delay lets the page finish rendering before scrolling
@@ -42,8 +42,9 @@ const Home = ({ aboutRef, projectRef }: SectionsProps) => {
     <div>
       <Hero />
       <AboutMe aboutRef={aboutRef} />
-      <ImageCarousel />
       <HomeProject projectRef={projectRef} projectNumber={3} />
+      <ImageCarousel />
+      <DesignGallery projectNumber={3} />
       <ContactSection />
     </div>
   );

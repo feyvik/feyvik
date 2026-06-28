@@ -84,6 +84,9 @@ const MobileNav = styled.ul`
   li a {
     font-size: 18px;
   }
+  li button {
+    padding: 0px;
+  }
 `;
 
 const CtaButton = styled.button`
