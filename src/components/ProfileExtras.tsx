@@ -122,7 +122,7 @@ const Certificates = () => {
     <section className="py-16 px-6">
       <div ref={animRef} className="animate-on-scroll max-w-6xl mx-auto">
         <SectionLabel text="Certifications" />
-        <h2 className="leading-tight dark:text-white mb-2">
+        <h2 className="leading-tight dark:text-light mb-2">
           Learning Never Stops
         </h2>
         <p className="text-gray-500 dark:text-gray-400 max-w-xl mb-10 leading-relaxed">
@@ -150,7 +150,7 @@ const Certificates = () => {
               </div>
 
               <div className="flex-1 min-w-0">
-                <h4 className="leading-snug dark:text-white mb-1">
+                <h4 className="leading-snug dark:text-light mb-1">
                   {cert.title}
                 </h4>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
@@ -201,7 +201,7 @@ const Volunteer = () => {
       }}>
       <div ref={animRef} className="animate-on-scroll max-w-6xl mx-auto">
         <SectionLabel text="Volunteer & Community" />
-        <h2 className="leading-tight dark:text-white mb-2">
+        <h2 className="leading-tight dark:text-light mb-2">
           Giving Back to the Ecosystem
         </h2>
         <p className="text-gray-500 dark:text-gray-400 max-w-xl mb-10 leading-relaxed">
@@ -214,7 +214,6 @@ const Volunteer = () => {
             <Card
               key={i}
               className="p-6 flex flex-col sm:flex-row gap-5 stagger-child">
-              {/* left accent */}
               <div className="flex-shrink-0 flex sm:flex-col items-center sm:items-center gap-3 sm:gap-0">
                 <div className="w-10 h-10 rounded-xl bg-[#2D1B69]/10 dark:bg-[#3D5AFE]/15 flex items-center justify-center text-[#2D1B69] dark:text-[#3D5AFE]">
                   <svg
@@ -235,7 +234,6 @@ const Volunteer = () => {
                 <div className="hidden sm:block w-px flex-1 bg-gray-200 dark:bg-white/10 mt-3" />
               </div>
 
-              {/* content */}
               <div className="flex-1">
                 <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
                   <h4 className="leading-snug dark:text-white">{item.role}</h4>
@@ -256,7 +254,6 @@ const Volunteer = () => {
   );
 };
 
-/* ── combined export ── */
 export default function ProfileExtras() {
   return (
     <>

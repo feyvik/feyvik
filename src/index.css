@@ -5,6 +5,15 @@
 @config "../tailwind.config.ts";
 @import "tailwindcss";
 
+@theme {
+  --color-dark-start: #131523;
+  --color-dark-end: #050608;
+  --color-white: #a3a7b3;
+  --color-light: #ffffff;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 html {
   scroll-behavior: smooth;
 }

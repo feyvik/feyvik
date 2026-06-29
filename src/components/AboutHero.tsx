@@ -36,10 +36,10 @@ export default function AboutHero() {
           </div>
 
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 dark:text-light">
               Favour Vivian
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl dark leading-relaxed max-w-2xl">
               Frontend engineer with a growing foundation in brand design,
               building products that work and carry real visual identity.
             </p>

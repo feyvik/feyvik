@@ -55,13 +55,17 @@ export default function ImageCarousel({ itemsPerView = 3, gap = 16 }) {
   const translatePercent = current * itemWidthPercent;
 
   return (
-    <div className="pb-20 pt-4 px-6" style={{ background: "rgba(39,151,250,0.04)" }}>
-      <div ref={animRef} className="animate-on-scroll relative max-w-6xl mx-auto">
+    <div
+      className="pb-20 pt-4 px-6"
+      style={{ background: "rgba(39,151,250,0.04)" }}>
+      <div
+        ref={animRef}
+        className="animate-on-scroll relative max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase mb-3">
             Trusted By
           </p>
-          <h2 className="leading-tight dark:text-white">
+          <h2 className="leading-tight dark:text-light">
             Companies I Have Worked With
           </h2>
         </div>

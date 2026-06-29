@@ -18,7 +18,7 @@ export default function ContactSection() {
           <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] mb-4 uppercase">
             Get In Touch
           </p>
-          <h2 className="mb-4 leading-tight dark:text-white">
+          <h2 className="mb-4 leading-tight dark:text-light">
             Let's create impact together
           </h2>
           <div className="w-12 h-1 rounded-full bg-[#3D5AFE] mx-auto" />
@@ -32,9 +32,9 @@ export default function ContactSection() {
 
           <a
             href="mailto:vivianemma97@gmail.com"
-            className="inline-flex items-center gap-5 group">
+            className="block sm:inline-flex items-center gap-5 group space-y-4">
             <div className="w-16 h-16 rounded-full bg-[#3D5AFE] flex items-center justify-center flex-shrink-0 shadow-lg group-hover:bg-[#2D1B69] transition-colors duration-300">
-              <Mail size={24} className="text-white" />
+              <Mail size={24} className="text-light" />
             </div>
             <span className="text-xl font-medium text-gray-800 dark:text-white group-hover:text-[#3D5AFE] transition-colors duration-200">
               vivianemma97@gmail.com

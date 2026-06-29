@@ -61,14 +61,19 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
         <div ref={animRef} className="animate-on-scroll">
           <div className="flex items-center gap-5 mb-6">
             <div className="avatar-frame shadow-2xl rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/10">
-              <img src={img} alt="Favour Vivian" className="rounded-full" loading="lazy" />
+              <img
+                src={img}
+                alt="Favour Vivian"
+                className="rounded-full"
+                loading="lazy"
+              />
             </div>
             <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase">
               About Me.
             </p>
           </div>
 
-          <h2 className="mb-5 leading-tight dark:text-white">
+          <h2 className="mb-5 leading-tight dark:text-light">
             Building Interfaces With Intention.
           </h2>
 

@@ -48,9 +48,8 @@ const timelineData = [
 export default function CareerTimeline() {
   return (
     <div className="min-h-screen py-16">
-      {/* Header */}
       <div className="text-center mb-20">
-        <h2 className="font-serif text-5xl">Career Timeline</h2>
+        <h2 className="text-5xl dark:text-light">Career Timeline</h2>
       </div>
 
       <div className="relative max-w-5xl mx-auto">
@@ -66,10 +65,10 @@ export default function CareerTimeline() {
               {item.side === "left" ? (
                 <>
                   <div className="text-right pr-8">
-                    <p className="font-serif text-2xl text-[#3D5AFE] mb-3">
-                      {item.year}
-                    </p>
-                    <h3 className="font-serif text-xl mb-3">{item.title}</h3>
+                    <p className="text-2xl text-[#3D5AFE] mb-3">{item.year}</p>
+                    <h3 className="text-xl mb-3 dark:text-light">
+                      {item.title}
+                    </h3>
                     <p className="leading-relaxed">{item.description}</p>
                   </div>
                   <div />
@@ -78,10 +77,10 @@ export default function CareerTimeline() {
                 <>
                   <div />
                   <div className="pl-8">
-                    <p className="font-serif text-2xl text-[#3D5AFE] mb-3">
-                      {item.year}
-                    </p>
-                    <h3 className="font-serif text-xl mb-3">{item.title}</h3>
+                    <p className="text-2xl text-[#3D5AFE] mb-3">{item.year}</p>
+                    <h3 className="text-xl mb-3 dark:text-light">
+                      {item.title}
+                    </h3>
                     <p className="leading-relaxed">{item.description}</p>
                   </div>
                 </>

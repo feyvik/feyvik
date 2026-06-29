@@ -42,7 +42,7 @@ const Hero = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="order-2 md:order-1">
           <fieldset>
-            <h1 className="hero-enter hero-enter-delay-1 mb-4 dark:text-white text-foreground">
+            <h1 className="hero-enter hero-enter-delay-1 mb-4 dark:text-light text-foreground">
               Developing and Designing{" "}
               <br className="hidden sm:block lg:hidden" />
               <span className="text-[#3D5AFE]">With Clarity.</span>

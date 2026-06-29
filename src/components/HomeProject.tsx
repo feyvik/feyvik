@@ -243,7 +243,7 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
           </p>
         </div>
 
-        <h2 className="mb-4 leading-tight dark:text-white">
+        <h2 className="mb-4 leading-tight dark:text-light">
           Check Out Some of My Works
         </h2>
 
@@ -312,7 +312,7 @@ const ProjectModal = ({ handleSetModal, projectData }: modalPreviewProps) => {
       className="fixed inset-0 z-[110] w-full h-full flex items-center justify-center bg-black/80 px-4">
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-xl bg-white dark:bg-dark rounded-2xl overflow-hidden shadow-2xl">
+        className="relative w-full max-w-xl bg-white bg-linear-to-b dark:from-dark-start dark:to-dark-end rounded-2xl overflow-hidden shadow-2xl">
         <button
           type="button"
           style={{ padding: 0 }}
@@ -324,7 +324,7 @@ const ProjectModal = ({ handleSetModal, projectData }: modalPreviewProps) => {
 
         {projectData && (
           <>
-            <div className="w-full aspect-video bg-gray-100">
+            <div className="w-full">
               <img
                 src={projectData.image}
                 alt={projectData.name}
