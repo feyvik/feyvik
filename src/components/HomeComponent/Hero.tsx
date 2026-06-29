@@ -40,7 +40,7 @@ const HeroWrapper = styled.div`
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <HeroWrapper className="min-h-screen flex items-center justify-center pt-20 px-6">
+    <HeroWrapper className="md:min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-0 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="order-2 md:order-1">
           <fieldset>
@@ -77,7 +77,7 @@ const Hero = () => {
           <div className="relative">
             {/* decorative ring */}
             <div className="absolute inset-0 rounded-full border-2 border-[#3D5AFE]/20 scale-110" />
-            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/20 flex items-center justify-center overflow-hidden shadow-2xl">
+            <div className="w-48 h-48 md:w-96 md:h-96 rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/20 flex items-center justify-center overflow-hidden shadow-2xl">
               <img
                 src={img}
                 alt="Favour Vivian"
