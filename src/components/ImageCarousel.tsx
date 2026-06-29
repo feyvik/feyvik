@@ -64,6 +64,7 @@ export default function ImageCarousel({ itemsPerView = 3, gap = 16 }) {
     };
   }, [isPaused, goNext]);
 
+  const activeGap = activeItemsPerView === 1 ? 0 : gap;
   const itemWidthPercent = 100 / activeItemsPerView;
   const translatePercent = current * itemWidthPercent;
 
@@ -91,7 +92,7 @@ export default function ImageCarousel({ itemsPerView = 3, gap = 16 }) {
             className="flex items-center transition-transform duration-500 ease-out"
             style={{
               transform: `translateX(-${translatePercent}%)`,
-              gap: `${gap}px`,
+              gap: `${activeGap}px`,
             }}>
             {files.map((file, index) => (
               <div
@@ -99,7 +100,7 @@ export default function ImageCarousel({ itemsPerView = 3, gap = 16 }) {
                 className="flex items-center justify-center h-40 md:h-64"
                 style={{
                   width: `calc(${itemWidthPercent}% - ${
-                    (gap * (activeItemsPerView - 1)) / activeItemsPerView
+                    (activeGap * (activeItemsPerView - 1)) / activeItemsPerView
                   }px)`,
                   flexShrink: 0,
                 }}>
