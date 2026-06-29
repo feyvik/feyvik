@@ -9,10 +9,13 @@ import About from "./pages/About";
 import Design from "./pages/Design";
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, state } = useLocation();
   useEffect(() => {
+    // Skip scroll-to-top when navigating with a section scroll target —
+    // the destination page handles its own scroll in that case.
+    if ((state as { scrollTo?: string } | null)?.scrollTo) return;
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, state]);
   return null;
 }
 
@@ -32,13 +35,19 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home aboutRef={aboutRef} projectRef={projectRef} />}
+          element={
+            <Home
+              aboutRef={aboutRef}
+              projectRef={projectRef}
+              contactRef={contactRef}
+            />
+          }
         />
         <Route path="/profile" element={<About />} />
         <Route path="/work" element={<Projects />} />
         <Route path="/design" element={<Design />} />
       </Routes>
-      <Footer contactRef={contactRef} />
+      <Footer />
     </div>
   );
 }
