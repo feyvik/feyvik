@@ -47,44 +47,59 @@ const timelineData = [
 
 export default function CareerTimeline() {
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen py-16 px-6">
       <div className="text-center mb-20">
         <h2 className="text-5xl dark:text-light">Career Timeline</h2>
       </div>
 
       <div className="relative max-w-5xl mx-auto">
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 -translate-x-1/2" />
+        {/* Desktop: centre line — hidden on mobile */}
+        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 -translate-x-1/2" />
 
-        <div className="flex flex-col gap-16">
+        {/* Mobile: left-edge line */}
+        <div className="md:hidden absolute left-4 top-0 bottom-0 w-px bg-gray-300" />
+
+        <div className="flex flex-col gap-12 md:gap-16">
           {timelineData.map((item, index) => (
-            <div
-              key={index}
-              className="relative grid grid-cols-2 gap-x-12 items-start">
-              <div className="absolute left-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-[#3D5AFE] -translate-x-1/2 z-10" />
+            <div key={index} className="relative">
 
-              {item.side === "left" ? (
-                <>
-                  <div className="text-right pr-8">
-                    <p className="text-2xl text-[#3D5AFE] mb-3">{item.year}</p>
-                    <h3 className="text-xl mb-3 dark:text-light">
-                      {item.title}
-                    </h3>
-                    <p className="leading-relaxed">{item.description}</p>
-                  </div>
-                  <div />
-                </>
-              ) : (
-                <>
-                  <div />
-                  <div className="pl-8">
-                    <p className="text-2xl text-[#3D5AFE] mb-3">{item.year}</p>
-                    <h3 className="text-xl mb-3 dark:text-light">
-                      {item.title}
-                    </h3>
-                    <p className="leading-relaxed">{item.description}</p>
-                  </div>
-                </>
-              )}
+              {/* ── Mobile layout: dot on left, card indented ── */}
+              <div className="md:hidden flex items-start gap-5">
+                {/* dot */}
+                <div className="flex-shrink-0 mt-1.5 w-3.5 h-3.5 rounded-full bg-[#3D5AFE] z-10 ml-[10.25px]" />
+                {/* card */}
+                <div className="flex-1 pl-2">
+                  <p className="text-xl text-[#3D5AFE] mb-1">{item.year}</p>
+                  <h3 className="text-lg mb-2 dark:text-light">{item.title}</h3>
+                  <p className="leading-relaxed text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
+                </div>
+              </div>
+
+              {/* ── Desktop layout: alternating left/right ── */}
+              <div className="hidden md:grid grid-cols-2 gap-x-12 items-start">
+                <div className="absolute left-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-[#3D5AFE] -translate-x-1/2 z-10" />
+
+                {item.side === "left" ? (
+                  <>
+                    <div className="text-right pr-8">
+                      <p className="text-2xl text-[#3D5AFE] mb-3">{item.year}</p>
+                      <h3 className="text-xl mb-3 dark:text-light">{item.title}</h3>
+                      <p className="leading-relaxed">{item.description}</p>
+                    </div>
+                    <div />
+                  </>
+                ) : (
+                  <>
+                    <div />
+                    <div className="pl-8">
+                      <p className="text-2xl text-[#3D5AFE] mb-3">{item.year}</p>
+                      <h3 className="text-xl mb-3 dark:text-light">{item.title}</h3>
+                      <p className="leading-relaxed">{item.description}</p>
+                    </div>
+                  </>
+                )}
+              </div>
+
             </div>
           ))}
         </div>

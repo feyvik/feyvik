@@ -25,13 +25,26 @@ const files = [
 
 const AUTOSCROLL_INTERVAL = 4000;
 
+function useItemsPerView(defaultCount: number) {
+  const [count, setCount] = useState(() =>
+    window.innerWidth < 640 ? 1 : defaultCount
+  );
+  useEffect(() => {
+    const handler = () => setCount(window.innerWidth < 640 ? 1 : defaultCount);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, [defaultCount]);
+  return count;
+}
+
 export default function ImageCarousel({ itemsPerView = 3, gap = 16 }) {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<number | null>(null);
   const animRef = useScrollAnimation();
+  const activeItemsPerView = useItemsPerView(itemsPerView);
 
-  const maxIndex = Math.max(files.length - itemsPerView, 0);
+  const maxIndex = Math.max(files.length - activeItemsPerView, 0);
 
   const goNext = useCallback(() => {
     setCurrent((prev) => (prev === maxIndex ? 0 : prev + 1));
@@ -51,7 +64,7 @@ export default function ImageCarousel({ itemsPerView = 3, gap = 16 }) {
     };
   }, [isPaused, goNext]);
 
-  const itemWidthPercent = 100 / itemsPerView;
+  const itemWidthPercent = 100 / activeItemsPerView;
   const translatePercent = current * itemWidthPercent;
 
   return (
@@ -86,7 +99,7 @@ export default function ImageCarousel({ itemsPerView = 3, gap = 16 }) {
                 className="flex items-center justify-center h-40 md:h-64"
                 style={{
                   width: `calc(${itemWidthPercent}% - ${
-                    (gap * (itemsPerView - 1)) / itemsPerView
+                    (gap * (activeItemsPerView - 1)) / activeItemsPerView
                   }px)`,
                   flexShrink: 0,
                 }}>

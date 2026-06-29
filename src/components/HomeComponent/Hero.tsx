@@ -1,6 +1,7 @@
 /** @format */
 import styled from "styled-components";
 import img from "../../assets/KELV2738.jpg";
+import { useNavigate } from "react-router-dom";
 
 const HeroWrapper = styled.div`
   position: relative;
@@ -37,6 +38,7 @@ const HeroWrapper = styled.div`
 `;
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <HeroWrapper className="min-h-screen flex items-center justify-center pt-20 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -55,8 +57,16 @@ const Hero = () => {
             </p>
 
             <div className="hero-enter hero-enter-delay-3 flex flex-wrap gap-4 items-center mt-8">
-              <button className="btn-primary">Learn More</button>
-              <button className="btn-outline text-[#2d1b69] dark:text-white">
+              <button
+                className="btn-primary"
+                onClick={() => navigate("/", { state: { scrollTo: "about" } })}>
+                Learn More
+              </button>
+              <button
+                className="btn-outline text-[#2d1b69] dark:text-white"
+                onClick={() =>
+                  navigate("/", { state: { scrollTo: "contact" } })
+                }>
                 Work With Me
               </button>
             </div>
