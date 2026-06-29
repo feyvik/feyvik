@@ -35,11 +35,11 @@ const Projects = () => {
           <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase mb-4">
             Engineering Work
           </p>
-          <h1 className="dark:text-white mb-4">
+          <h1 className="dark:text-light mb-4">
             Development
             <span className="text-[#3D5AFE]"> Portfolio</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
+          <p className="text-lg max-w-2xl leading-relaxed">
             From scalable web applications to AI-assisted builds — projects that
             solve real problems with clean, maintainable code.
           </p>

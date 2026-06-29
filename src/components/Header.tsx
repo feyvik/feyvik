@@ -47,7 +47,7 @@ const Panel = styled.aside<{ $open: boolean; $isDark: boolean }>`
   right: 0;
   bottom: 0;
   width: min(420px, 86vw);
-  background: ${({ $isDark }) => ($isDark ? "#000000" : "#ffffff")};
+  background: ${({ $isDark }) => ($isDark ? "#131523" : "#ffffff")};
   z-index: 61;
   display: flex;
   flex-direction: column;
@@ -82,10 +82,16 @@ const MobileNav = styled.ul`
   margin: 0;
   padding: 0;
   li a {
-    font-size: 18px;
+    font-size: 16px;
   }
-  li button {
+  button {
     padding: 0px;
+    font-size: 16px;
+    &:hover {
+      color: #3d5afe;
+      box-shadow: none;
+      transform: none;
+    }
   }
 `;
 
@@ -222,7 +228,7 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
       <NavWrapper
         $isscrolled={isScrolled}
         className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 md:py-4">
           <Link
             to={"/"}
             className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -246,31 +252,31 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
 
           <div className="hidden w-full md:block md:w-auto ms-auto">
             <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
-              <li className="text-gray-600 dark:text-white">
+              <li>
                 <button onClick={() => scrollToSection(aboutRef, "about")}>
                   About
                 </button>
               </li>
-              <li className="text-gray-600 dark:text-white">
+              <li>
                 <button onClick={() => scrollToSection(projectRef, "projects")}>
                   Projects
                 </button>
               </li>
-              <li className="text-gray-600 dark:text-white">
+              <li>
                 <Link to={"/profile"}>Profile</Link>
               </li>
-              <li className="text-gray-600 dark:text-white">
+              <li>
                 <Link to={"/work"}>Work</Link>
               </li>
-              <li className="text-gray-600 dark:text-white">
+              <li>
                 <Link to={"/design"}>Design</Link>
               </li>
-              <li className="text-gray-600 dark:text-white">
+              <li>
                 <button onClick={() => scrollToSection(contactRef, "contact")}>
                   Contact
                 </button>
               </li>
-              <li className="text-gray-600 dark:text-white">
+              <li>
                 <DarkModeToggle />
               </li>
             </ul>
@@ -303,34 +309,29 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
         </CloseButton>
 
         <MobileNav>
-          <li className="mb-4 text-gray-600 dark:text-white">
-            <Link to={"/"} onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-          </li>
-          <li className="mb-4 text-gray-600 dark:text-white">
+          
+          <li className="mb-4">
             <button onClick={() => scrollToSection(aboutRef, "about")}>
               About
             </button>
           </li>
-          <li className="mb-4 text-gray-600 dark:text-white">
+          <li className="mb-4">
             <button onClick={() => scrollToSection(projectRef, "projects")}>
               Projects
             </button>
           </li>
-          <li className="mb-4 text-gray-600 dark:text-white">
+          <li className="mb-4">
+            <Link to={"/profile"}>Profile</Link>
+          </li>
+          <li className="mb-4">
+            <Link to={"/work"}>Work</Link>
+          </li>
+          <li className="mb-4">
             <Link to={"/design"} onClick={() => setMenuOpen(false)}>
               Design
             </Link>
           </li>
-          <li className="mb-4 text-gray-600 dark:text-white">
-            <button
-              style={{ fontFamily: '"Source Serif 4", serif' }}
-              onClick={() => scrollToSection(contactRef, "contact")}>
-              Contact
-            </button>
-          </li>
-          <li className="mb-4 text-gray-600 dark:text-white">
+          <li className="mb-4">
             <DarkModeToggle />
           </li>
         </MobileNav>

@@ -11,9 +11,10 @@ import DesignGallery from "../components/DesignGallery/DesignGallery";
 type SectionsProps = {
   aboutRef: React.RefObject<HTMLDivElement | null>;
   projectRef: React.RefObject<HTMLDivElement | null>;
+  contactRef: React.RefObject<HTMLDivElement | null>;
 };
 
-const Home = ({ aboutRef, projectRef }: SectionsProps) => {
+const Home = ({ aboutRef, projectRef, contactRef }: SectionsProps) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -25,18 +26,13 @@ const Home = ({ aboutRef, projectRef }: SectionsProps) => {
       const refMap: Record<string, React.RefObject<HTMLDivElement | null>> = {
         about: aboutRef,
         projects: projectRef,
+        contact: contactRef,
       };
       refMap[scrollTo]?.current?.scrollIntoView({ behavior: "smooth" });
-
-      if (scrollTo === "contact") {
-        document
-          .querySelector("[data-contact]")
-          ?.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
+    }, 150);
 
     return () => clearTimeout(timer);
-  }, [location.state, aboutRef, projectRef]);
+  }, [location.state, aboutRef, projectRef, contactRef]);
 
   return (
     <div>
@@ -45,7 +41,7 @@ const Home = ({ aboutRef, projectRef }: SectionsProps) => {
       <HomeProject projectRef={projectRef} projectNumber={3} />
       <ImageCarousel />
       <DesignGallery projectNumber={3} />
-      <ContactSection />
+      <ContactSection contactRef={contactRef} />
     </div>
   );
 };

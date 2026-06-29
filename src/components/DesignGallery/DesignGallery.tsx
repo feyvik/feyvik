@@ -101,11 +101,10 @@ const CategoryBtn = styled.button<{ $active: boolean }>`
   border-radius: 50px !important;
   padding: 0.5rem 1.25rem !important;
   font-size: 0.8rem !important;
-  font-weight: 600 !important;
   transition: all 0.2s ease !important;
   background: ${({ $active }) =>
     $active ? "#3D5AFE" : "transparent"} !important;
-  color: ${({ $active }) => ($active ? "#ffffff" : "#555")} !important;
+  color: ${({ $active }) => ($active ? "#ffffff" : "")} !important;
   border: 1.5px solid ${({ $active }) => ($active ? "#3D5AFE" : "#ddd")} !important;
   box-shadow: none !important;
   transform: none !important;
@@ -155,71 +154,6 @@ const DesignModal = ({ item, onClose }: ModalProps) => {
   const isPdf = Boolean(item.pdfSrc);
 
   return (
-    // <div
-    //   onClick={onClose}
-    //   className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 p-4">
-    //   <div
-    //     onClick={(e) => e.stopPropagation()}
-    //     className="relative flex flex-col bg-white dark:bg-[#0d0d14] rounded-2xl overflow-hidden shadow-2xl"
-    //     style={{
-    //       width: isPdf ? "min(860px, 95vw)" : "min(680px, 95vw)",
-    //       height: isPdf ? "92vh" : "auto",
-    //       maxHeight: "92vh",
-    //     }}>
-    //     {/* Header bar */}
-    //     <div className="flex items-start justify-between gap-4 px-6 py-4 border-b border-gray-100 dark:border-white/10 flex-shrink-0">
-    //       <div className="space-y-1.5">
-    //         <div className="flex flex-wrap gap-2">
-    //           {item.tags.map((tag) => (
-    //             <span
-    //               key={tag}
-    //               className="text-xs font-semibold px-3 py-1 rounded-full bg-[#3D5AFE]/10 text-[#3D5AFE]"
-    //               style={{ fontSize: "11px" }}>
-    //               {tag}
-    //             </span>
-    //           ))}
-    //         </div>
-    //         <h4 className="leading-tight dark:text-white text-base font-semibold">
-    //           {item.title}
-    //         </h4>
-    //         {item.client && (
-    //           <p className="text-xs text-gray-400">Client: {item.client}</p>
-    //         )}
-    //       </div>
-    //       <button
-    //         type="button"
-    //         style={{ padding: 0 }}
-    //         onClick={onClose}
-    //         aria-label="Close"
-    //         className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 text-gray-600 dark:text-white transition-colors">
-    //         <FeatherIcon icon="x" size={18} />
-    //       </button>
-    //     </div>
-
-    //     {/* Content */}
-    //     <div className="flex-1 min-h-0 overflow-hidden">
-    //       {isPdf ? (
-    //         <iframe
-    //           src={`${item.pdfSrc}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
-    //           title={item.title}
-    //           className="w-full h-full border-0"
-    //         />
-    //       ) : (
-    //         <div className="w-full h-full overflow-auto flex items-center justify-center bg-gray-50 dark:bg-black/20">
-    //           <img
-    //             src={item.image}
-    //             alt={item.title}
-    //             className="max-w-full max-h-full object-contain"
-    //             style={{ display: "block" }}
-    //           />
-    //         </div>
-    //       )}
-    //     </div>
-
-    //     {/* PDF download hint */}
-
-    //   </div>
-    // </div>
     <div
       onClick={onClose}
       className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 px-4">
@@ -231,7 +165,7 @@ const DesignModal = ({ item, onClose }: ModalProps) => {
           style={{ padding: 0 }}
           onClick={onClose}
           aria-label="Close"
-          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors">
+          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-colors">
           <FeatherIcon icon="x" size={18} />
         </button>
 
@@ -265,19 +199,13 @@ const DesignModal = ({ item, onClose }: ModalProps) => {
               </span>
             ))}
           </div>
-          <h4 className="leading-tight dark:text-white">{item.title}</h4>
-          {item.client && (
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Client: {item.client}
-            </p>
-          )}
+          <h4 className="dark:text-light">{item.title}</h4>
+          {item.client && <p className="text-sm">Client: {item.client}</p>}
         </div>
 
         {isPdf && (
           <div className="flex-shrink-0 px-6 py-3 border-t border-gray-100 dark:border-white/10 flex items-center justify-between">
-            <p className="text-xs text-gray-400">
-              Scroll inside to view all pages
-            </p>
+            <p className="text-xs">Scroll inside to view all pages</p>
           </div>
         )}
       </div>
@@ -318,8 +246,8 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
         </ImageWrapper>
         <div className="flex items-start justify-between flex-wrap gap-4">
           <div>
-            <h2 className="mb-4 leading-tight dark:text-white">Design Work</h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-xl mb-3 leading-relaxed">
+            <h2 className="mb-4 leading-tight dark:text-light">Design Work</h2>
+            <p className="max-w-xl mb-3 leading-relaxed">
               Brand identities, social graphics, and print work — where visual
               language meets intentional craft.
             </p>
@@ -328,7 +256,12 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
                 <Link
                   to={"/design"}
                   className="inline-flex items-center gap-1 text-[#3D5AFE] hover:underline text-sm">
-                  View more <FeatherIcon icon="arrow-right" size={15} className="inline-block ml-1" />
+                  View more{" "}
+                  <FeatherIcon
+                    icon="arrow-right"
+                    size={15}
+                    className="inline-block ml-1"
+                  />
                 </Link>
               </p>
             )}
@@ -389,7 +322,6 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
           </div>
         )}
 
-        {/* CTA */}
         <div className="mt-14 pt-10 border-t border-gray-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
           <p className="text-gray-500 dark:text-gray-400 text-sm">
             Want to work together on a brand or design project?

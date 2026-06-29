@@ -6,7 +6,6 @@ import DesignGallery from "../components/DesignGallery/DesignGallery";
 export default function Design() {
   return (
     <div className="min-h-screen">
-      {/* Page hero */}
       <div
         className="pt-32 pb-16 px-6"
         style={{
@@ -24,31 +23,32 @@ export default function Design() {
           <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase mb-4">
             Creative Work
           </p>
-          <h1 className="dark:text-white mb-4">
+          <h1 className="dark:text-light mb-4">
             Graphic Design
             <span className="text-[#3D5AFE]"> Portfolio</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
+          <p className="text-lg max-w-2xl leading-relaxed">
             From brand identity systems to social graphics and print — visual
             work that communicates clearly and leaves an impression.
           </p>
 
           <div className="flex flex-wrap gap-3 mt-8">
-            {["Logo & Brand Identity", "Social Media Graphics", "Print & Flyers"].map(
-              (tag) => (
-                <span
-                  key={tag}
-                  className="text-xs font-semibold px-4 py-1.5 rounded-full border border-[#3D5AFE]/25 text-[#3D5AFE] bg-[#3D5AFE]/05"
-                  style={{ fontSize: "12px" }}>
-                  {tag}
-                </span>
-              )
-            )}
+            {[
+              "Logo & Brand Identity",
+              "Social Media Graphics",
+              "Print & Flyers",
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-semibold px-4 py-1.5 rounded-full border border-[#3D5AFE]/25 text-[#3D5AFE] bg-[#3D5AFE]/05"
+                style={{ fontSize: "12px" }}>
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Gallery */}
       <DesignGallery />
     </div>
   );

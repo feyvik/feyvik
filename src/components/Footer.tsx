@@ -21,13 +21,9 @@ const FooterWrapper = styled.div`
   }
 `;
 
-type SectionsProps = {
-  contactRef: React.RefObject<HTMLDivElement | null>;
-};
-
-const Footer = ({ contactRef }: SectionsProps) => {
+const Footer = () => {
   return (
-    <FooterWrapper ref={contactRef} className="bg-dark">
+    <FooterWrapper className="bg-dark">
       <div className="w-full max-w-5xl mx-auto px-6">
         <div className="flex flex-wrap items-center ">
           <div className="w-[100%] sm:w-[50%] mb-4 sm:mb-0">
