@@ -101,19 +101,19 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="stat-card stagger-child rounded-xl dark:text-white text-center border border-[#2D1B69]/15 bg-white dark:bg-[#1a1a2e] p-6 shadow-sm">
+            <div className="rounded-xl text-center p-6 border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
               <h3 className="font-bold mb-2 text-[#3D5AFE]">8+</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Years of experience in Frontend Engineering
               </p>
             </div>
-            <div className="stat-card stagger-child rounded-xl dark:text-white text-center border border-[#2D1B69]/15 bg-white dark:bg-[#1a1a2e] p-6 shadow-sm">
+            <div className="rounded-xl text-center p-6 border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
               <h3 className="font-bold mb-2 text-[#3D5AFE]">1+</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Years of experience in Brand Design
               </p>
             </div>
-            <div className="stat-card stagger-child rounded-xl dark:text-white text-center border border-[#2D1B69]/15 bg-white dark:bg-[#1a1a2e] p-6 shadow-sm">
+            <div className="rounded-xl text-center p-6 border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
               <h3 className="font-bold mb-2 text-[#3D5AFE]">100+</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Lives Impacted

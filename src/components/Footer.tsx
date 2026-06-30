@@ -6,7 +6,7 @@ const FooterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: start;
-  padding: 40px 0px;
+  padding: 20px 0px;
 
   .social-media {
     display: flex;

@@ -15,7 +15,7 @@ export default function Design() {
         <div className="max-w-6xl mx-auto">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#3D5AFE] transition-colors mb-10 dark:text-gray-400">
+            className="inline-flex items-center gap-2 hover:text-[#3D5AFE] transition-colors mb-10">
             <FeatherIcon icon="arrow-left" size={16} />
             Back to Home
           </Link>

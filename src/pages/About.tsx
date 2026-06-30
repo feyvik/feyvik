@@ -7,7 +7,7 @@ import ProfileExtras from "../components/ProfileExtras";
 
 export default function About() {
   return (
-    <div className="px-6">
+    <div>
       <AboutHero />
       <CareerTimeline />
       <ProfileExtras />

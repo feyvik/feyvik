@@ -13,7 +13,7 @@ const Projects = () => {
         }}>
         <div className="max-w-6xl mx-auto">
           <a
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-primary transition-colors mb-10 dark:text-white"
+            className="inline-flex items-center gap-2 hover:text-primary transition-colors mb-10"
             href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
