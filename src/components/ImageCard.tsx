@@ -42,7 +42,7 @@ export const ProjectImage: Image[] = [
     name: "Drag-and-drop event website builder",
     description:
       "Drag-and-drop event website builder, Angular 19 with SSR (architecture + Claude-assisted implementation)",
-    link: "https://recallr.com.ng/",
+    link: "https://grid-system-psi.vercel.app/",
   },
   {
     id: 4,
