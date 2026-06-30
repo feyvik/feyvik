@@ -201,3 +201,11 @@ button:active {
   box-shadow: none;
   transform: none;
 }
+
+.volunteer_ {
+  background: linear-gradient(
+    135deg,
+    rgba(45, 27, 105, 0.04) 0%,
+    rgba(39, 151, 250, 0.03) 100%
+  );
+}

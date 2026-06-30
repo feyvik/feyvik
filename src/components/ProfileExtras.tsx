@@ -72,10 +72,8 @@ const volunteerItems = [
   },
 ];
 
-/* ── shared styled primitives ── */
-
 const Card = styled.div`
-  border: 1px solid rgba(45, 27, 105, 0.12);
+  border: 1px solid #e5e7eb;
   border-radius: 16px;
   background: #fff;
   transition:
@@ -84,12 +82,13 @@ const Card = styled.div`
 
   .dark & {
     background: #1a1a2e;
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: #a3a7b3;
   }
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 28px rgba(45, 27, 105, 0.1);
+    border-color: color-mix(in oklab, #3d5afe 40%, transparent);
   }
 `;
 
@@ -117,20 +116,22 @@ const Certificates = () => {
   const animRef = useScrollAnimation();
 
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 px-6 volunteer_">
       <div ref={animRef} className="animate-on-scroll max-w-6xl mx-auto">
         <SectionLabel text="Certifications" />
         <h2 className="leading-tight dark:text-light mb-2">
           Learning Never Stops
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 max-w-xl mb-10 leading-relaxed">
+        <p className="max-w-xl mb-10 leading-relaxed">
           A selection of courses and certifications that shaped my technical
           foundation.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {certificates.map((cert, i) => (
-            <Card key={i} className="p-6 flex gap-4 items-start stagger-child">
+            <Card
+              key={i}
+              className="p-6 flex gap-4 items-start border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
               <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#3D5AFE]/10 flex items-center justify-center text-[#3D5AFE]">
                 <svg
                   viewBox="0 0 24 24"
@@ -150,9 +151,7 @@ const Certificates = () => {
                 <h4 className="leading-snug dark:text-light mb-1">
                   {cert.title}
                 </h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-                  {cert.issuer}
-                </p>
+                <p className="mb-3">{cert.issuer}</p>
                 <div className="flex items-center gap-3 flex-wrap">
                   <Badge>{cert.year}</Badge>
                   {cert.credential && (
@@ -189,27 +188,20 @@ const Volunteer = () => {
   const animRef = useScrollAnimation();
 
   return (
-    <section
-      className="py-16 px-6"
-      style={{
-        background:
-          "linear-gradient(135deg, rgba(45,27,105,0.04) 0%, rgba(39,151,250,0.03) 100%)",
-      }}>
+    <section className="py-16 px-6">
       <div ref={animRef} className="animate-on-scroll max-w-6xl mx-auto">
         <SectionLabel text="Volunteer & Community" />
         <h2 className="leading-tight dark:text-light mb-2">
           Giving Back to the Ecosystem
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 max-w-xl mb-10 leading-relaxed">
+        <p className="max-w-xl mb-10 leading-relaxed">
           Teaching, mentoring, and community-building alongside the day job —
           because access to tech education should never be a privilege.
         </p>
 
         <div className="flex flex-col gap-6">
           {volunteerItems.map((item, i) => (
-            <Card
-              key={i}
-              className="p-6 flex flex-col sm:flex-row gap-5 stagger-child">
+            <Card key={i} className="p-6 flex flex-col sm:flex-row gap-5">
               <div className="flex-shrink-0 flex sm:flex-col items-center sm:items-center gap-3 sm:gap-0">
                 <div className="w-10 h-10 rounded-xl bg-[#2D1B69]/10 dark:bg-[#3D5AFE]/15 flex items-center justify-center text-[#2D1B69] dark:text-[#3D5AFE]">
                   <svg
@@ -238,9 +230,7 @@ const Volunteer = () => {
                 <p className="text-sm font-semibold text-[#3D5AFE] mb-3">
                   {item.org}
                 </p>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
-                  {item.description}
-                </p>
+                <p className="leading-relaxed text-sm">{item.description}</p>
               </div>
             </Card>
           ))}

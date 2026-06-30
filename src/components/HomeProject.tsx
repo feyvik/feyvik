@@ -190,11 +190,7 @@ const TechStack = () => (
           className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200"
           style={{ color }}>
           {icon}
-          <span
-            className="text-sm text-dark dark:text-light"
-            style={{ fontSize: "13px" }}>
-            {name}
-          </span>
+          <span className="text-sm text-dark dark:text-light">{name}</span>
         </div>
       ))}
     </div>
@@ -281,7 +277,6 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
           ))}
         </div>
 
-        {/* Tech stack */}
         <TechStack />
       </div>
 
@@ -312,7 +307,7 @@ const ProjectModal = ({ handleSetModal, projectData }: modalPreviewProps) => {
       className="fixed inset-0 z-[110] w-full h-full flex items-center justify-center bg-black/80 px-4">
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-xl bg-white bg-linear-to-b dark:from-dark-start dark:to-dark-end rounded-2xl overflow-hidden shadow-2xl">
+        className="relative w-full max-w-xl bg-light bg-linear-to-b dark:from-dark-start dark:to-dark-end rounded-2xl overflow-hidden shadow-2xl">
         <button
           type="button"
           style={{ padding: 0 }}
@@ -334,7 +329,7 @@ const ProjectModal = ({ handleSetModal, projectData }: modalPreviewProps) => {
 
             <div className="p-6 space-y-3">
               <h5 className="text-xl leading-tight">{projectData.name}</h5>
-              <p className="text-base leading-relaxed text-gray-600 dark:text-white">
+              <p className="text-base leading-relaxed">
                 {projectData.description}
               </p>
             </div>
@@ -343,7 +338,7 @@ const ProjectModal = ({ handleSetModal, projectData }: modalPreviewProps) => {
               <Link
                 to={projectData.link}
                 target="_blank"
-                className="flex-1 flex items-center justify-center gap-2 text-white bg-[#2D1B69] transition-colors">
+                className="flex-1 flex items-center justify-center gap-2 text-light bg-[#2D1B69] transition-colors">
                 View Details
                 <FeatherIcon icon="external-link" size={15} />
               </Link>

@@ -60,13 +60,14 @@ export default function CareerTimeline() {
         <div className="flex flex-col gap-12 md:gap-16">
           {timelineData.map((item, index) => (
             <div key={index} className="relative">
-
               <div className="md:hidden flex items-start gap-5">
                 <div className="flex-shrink-0 mt-1.5 w-3.5 h-3.5 rounded-full bg-[#3D5AFE] z-10 ml-[10.25px]" />
                 <div className="flex-1 pl-2">
-                  <p className="text-xl text-[#3D5AFE] mb-1">{item.year}</p>
+                  <p className="text-xl text-[#3D5AFE] mb-1 font-semibold">
+                    {item.year}
+                  </p>
                   <h3 className="text-lg mb-2 dark:text-light">{item.title}</h3>
-                  <p className="leading-relaxed text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
+                  <p className="leading-relaxed">{item.description}</p>
                 </div>
               </div>
 
@@ -76,8 +77,12 @@ export default function CareerTimeline() {
                 {item.side === "left" ? (
                   <>
                     <div className="text-right pr-8">
-                      <p className="text-2xl text-[#3D5AFE] mb-3">{item.year}</p>
-                      <h3 className="text-xl mb-3 dark:text-light">{item.title}</h3>
+                      <p className="text-2xl text-[#3D5AFE] mb-3 font-semibold">
+                        {item.year}
+                      </p>
+                      <h3 className="text-xl mb-3 dark:text-light">
+                        {item.title}
+                      </h3>
                       <p className="leading-relaxed">{item.description}</p>
                     </div>
                     <div />
@@ -86,14 +91,17 @@ export default function CareerTimeline() {
                   <>
                     <div />
                     <div className="pl-8">
-                      <p className="text-2xl text-[#3D5AFE] mb-3">{item.year}</p>
-                      <h3 className="text-xl mb-3 dark:text-light">{item.title}</h3>
+                      <p className="text-2xl text-[#3D5AFE] mb-3 font-semibold">
+                        {item.year}
+                      </p>
+                      <h3 className="text-xl mb-3 dark:text-light">
+                        {item.title}
+                      </h3>
                       <p className="leading-relaxed">{item.description}</p>
                     </div>
                   </>
                 )}
               </div>
-
             </div>
           ))}
         </div>
