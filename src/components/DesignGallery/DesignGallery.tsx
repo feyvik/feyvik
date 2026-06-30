@@ -322,17 +322,19 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
           </div>
         )}
 
-        <div className="mt-14 pt-10 border-t border-gray-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
-          <p className="text-gray-500 dark:text-gray-400 text-sm">
-            Want to work together on a brand or design project?
-          </p>
-          <Link
-            to="/"
-            state={{ scrollTo: "contact" }}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#3D5AFE] hover:underline">
-            Get in touch <FeatherIcon icon="arrow-right" size={15} />
-          </Link>
-        </div>
+        {showFilters && (
+          <div className="mt-14 pt-10 border-t border-gray-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <p className="text-gray-500 dark:text-gray-400 text-sm">
+              Want to work together on a brand or design project?
+            </p>
+            <Link
+              to="/"
+              state={{ scrollTo: "contact" }}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#3D5AFE] hover:underline">
+              Get in touch <FeatherIcon icon="arrow-right" size={15} />
+            </Link>
+          </div>
+        )}
       </div>
 
       {selected && (
