@@ -8,6 +8,8 @@ import img6 from "../assets/project/6.jpg";
 import img7 from "../assets/project/7.jpg";
 import img8 from "../assets/project/8.jpg";
 import img9 from "../assets/project/9.jpg";
+import img10 from "../assets/project/16.png";
+import img11 from "../assets/project/17.png";
 
 export interface Image {
   id: number;
@@ -20,22 +22,6 @@ export interface Image {
 export const ProjectImage: Image[] = [
   {
     id: 1,
-    image: img1,
-    name: "HouseAfrica Website",
-    description:
-      "HouseAfrica a startup with the aim of building a blockchain based property record system to help homer buyers and financial companies to access, verify and value properties starting from Real Estate Project Virtualization.",
-    link: "https://houseafrica.io/",
-  },
-  {
-    id: 2,
-    image: img2,
-    name: "Sytemap",
-    description:
-      "A digital property registry system that helps estate developers, property buyers, and private estates to digitally register and track their property status.",
-    link: "https://developer.sytemap.com/map/crown-field-estate",
-  },
-  {
-    id: 3,
     image: img3,
     name: "Personal portfolio website",
     description:
@@ -43,7 +29,39 @@ export const ProjectImage: Image[] = [
     link: "https://feyvik.vercel.app/",
   },
   {
+    id: 2,
+    image: img10,
+    name: "Student Micro gig",
+    description:
+      "The fastest way for Nigerian students to earn from short remote tasks — Data Entry, Transcription, Research, and more. Get paid directly to your bank account.",
+    link: "https://recallr.com.ng/",
+  },
+  {
+    id: 3,
+    image: img11,
+    name: "Drag-and-drop event website builder",
+    description:
+      "Drag-and-drop event website builder, Angular 19 with SSR (architecture + Claude-assisted implementation)",
+    link: "https://grid-system-psi.vercel.app/",
+  },
+  {
     id: 4,
+    image: img1,
+    name: "HouseAfrica Website",
+    description:
+      "HouseAfrica a startup with the aim of building a blockchain based property record system to help homer buyers and financial companies to access, verify and value properties starting from Real Estate Project Virtualization.",
+    link: "https://houseafrica.io/",
+  },
+  {
+    id: 5,
+    image: img2,
+    name: "Sytemap",
+    description:
+      "A digital property registry system that helps estate developers, property buyers, and private estates to digitally register and track their property status.",
+    link: "https://developer.sytemap.com/map/crown-field-estate",
+  },
+  {
+    id: 6,
     image: img4,
     name: "FLE Tribe Community Website",
     description:
@@ -51,7 +69,7 @@ export const ProjectImage: Image[] = [
     link: "https://blog.thefletribe.com.ng",
   },
   {
-    id: 5,
+    id: 7,
     image: img5,
     name: "Chakam App",
     description:
@@ -59,7 +77,7 @@ export const ProjectImage: Image[] = [
     link: "https://chakam.vercel.app/",
   },
   {
-    id: 6,
+    id: 8,
     image: img6,
     name: "Covid-19",
     description:
@@ -67,7 +85,7 @@ export const ProjectImage: Image[] = [
     link: "https://covid-19-app-ccb27.web.app/",
   },
   {
-    id: 7,
+    id: 9,
     image: img7,
     name: "User Management Dashboard",
     description:
@@ -75,7 +93,7 @@ export const ProjectImage: Image[] = [
     link: "https://user-dashboard-mauve.vercel.app/user-dashboard",
   },
   {
-    id: 8,
+    id: 10,
     image: img8,
     name: "Zeopool Website",
     description:
@@ -83,7 +101,7 @@ export const ProjectImage: Image[] = [
     link: "https://zoepool.com/",
   },
   {
-    id: 9,
+    id: 11,
     image: img9,
     name: "Image Link Generator",
     description:
