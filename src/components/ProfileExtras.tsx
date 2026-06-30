@@ -107,14 +107,12 @@ const Badge = styled.span`
   color: #3d5afe;
 `;
 
-/* ── section header ── */
 const SectionLabel = ({ text }: { text: string }) => (
   <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase mb-3">
     {text}
   </p>
 );
 
-/* ── Certificates ── */
 const Certificates = () => {
   const animRef = useScrollAnimation();
 
@@ -133,7 +131,6 @@ const Certificates = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {certificates.map((cert, i) => (
             <Card key={i} className="p-6 flex gap-4 items-start stagger-child">
-              {/* icon */}
               <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#3D5AFE]/10 flex items-center justify-center text-[#3D5AFE]">
                 <svg
                   viewBox="0 0 24 24"
@@ -188,7 +185,6 @@ const Certificates = () => {
   );
 };
 
-/* ── Volunteer ── */
 const Volunteer = () => {
   const animRef = useScrollAnimation();
 

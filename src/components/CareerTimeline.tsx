@@ -53,21 +53,16 @@ export default function CareerTimeline() {
       </div>
 
       <div className="relative max-w-5xl mx-auto">
-        {/* Desktop: centre line — hidden on mobile */}
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 -translate-x-1/2" />
 
-        {/* Mobile: left-edge line */}
         <div className="md:hidden absolute left-4 top-0 bottom-0 w-px bg-gray-300" />
 
         <div className="flex flex-col gap-12 md:gap-16">
           {timelineData.map((item, index) => (
             <div key={index} className="relative">
 
-              {/* ── Mobile layout: dot on left, card indented ── */}
               <div className="md:hidden flex items-start gap-5">
-                {/* dot */}
                 <div className="flex-shrink-0 mt-1.5 w-3.5 h-3.5 rounded-full bg-[#3D5AFE] z-10 ml-[10.25px]" />
-                {/* card */}
                 <div className="flex-1 pl-2">
                   <p className="text-xl text-[#3D5AFE] mb-1">{item.year}</p>
                   <h3 className="text-lg mb-2 dark:text-light">{item.title}</h3>
@@ -75,7 +70,6 @@ export default function CareerTimeline() {
                 </div>
               </div>
 
-              {/* ── Desktop layout: alternating left/right ── */}
               <div className="hidden md:grid grid-cols-2 gap-x-12 items-start">
                 <div className="absolute left-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-[#3D5AFE] -translate-x-1/2 z-10" />
 

@@ -56,9 +56,9 @@ const ProjectWrapper = styled.div`
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(13, 13, 16, 0.85) 0%,
-        rgba(13, 13, 16, 0.15) 55%,
-        rgba(13, 13, 16, 0) 100%
+        rgba(45, 27, 105, 0.92) 0%,
+        rgba(45, 27, 105, 0.2) 55%,
+        transparent 100%
       );
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -187,11 +187,11 @@ const TechStack = () => (
       {STACK.map(({ name, color, icon }) => (
         <div
           key={name}
-          className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200"
+          className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200"
           style={{ color }}>
           {icon}
           <span
-            className="text-sm font-semibold text-gray-700 dark:text-gray-200"
+            className="text-sm text-dark dark:text-light"
             style={{ fontSize: "13px" }}>
             {name}
           </span>
