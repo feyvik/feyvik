@@ -252,7 +252,7 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
         {projectNumber && projectNumber < ProjectImage.length && (
           <p className="mb-4">
             <Link
-              to={"/projects"}
+              to={"/work"}
               className="inline-flex items-center gap-1 text-[#3D5AFE] hover:underline text-sm">
               View more <ArrowRight className="inline-block ml-1" />
             </Link>
