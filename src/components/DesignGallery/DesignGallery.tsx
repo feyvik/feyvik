@@ -156,19 +156,18 @@ const DesignModal = ({ item, onClose }: ModalProps) => {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 px-4">
+      className="fixed inset-0 z-[110] w-full h-full flex items-center justify-center bg-black/80 px-4">
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-2xl bg-white dark:bg-[#0d0d14] rounded-2xl overflow-hidden shadow-2xl">
+        className="relative w-full max-w-xl bg-light bg-linear-to-b dark:from-dark-start dark:to-dark-end rounded-2xl overflow-hidden shadow-2xl">
         <button
           type="button"
           style={{ padding: 0 }}
           onClick={onClose}
           aria-label="Close"
-          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-colors">
+          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors">
           <FeatherIcon icon="x" size={18} />
         </button>
-
         <div className="flex-1 overflow-hidden">
           {isPdf ? (
             <iframe
@@ -187,7 +186,6 @@ const DesignModal = ({ item, onClose }: ModalProps) => {
             </div>
           )}
         </div>
-
         <div className="p-6 space-y-3">
           <div className="flex flex-wrap gap-2">
             {item.tags.map((tag) => (
@@ -202,7 +200,6 @@ const DesignModal = ({ item, onClose }: ModalProps) => {
           <h4 className="dark:text-light">{item.title}</h4>
           {item.client && <p className="text-sm">Client: {item.client}</p>}
         </div>
-
         {isPdf && (
           <div className="flex-shrink-0 px-6 py-3 border-t border-gray-100 dark:border-white/10 flex items-center justify-between">
             <p className="text-xs">Scroll inside to view all pages</p>
