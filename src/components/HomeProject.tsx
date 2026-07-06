@@ -243,7 +243,7 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
           Check Out Some of My Works
         </h2>
 
-        <p className="text-gray-600 max-w-2xl leading-relaxed mb-4 dark:text-white">
+        <p className="max-w-2xl leading-relaxed mb-4">
           I've worked on a variety of projects, ranging from landing pages, web
           apps, real estate projects, and side projects. Here are a few of my
           favorites.
