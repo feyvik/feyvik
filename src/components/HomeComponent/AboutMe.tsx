@@ -77,7 +77,7 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
             Building Interfaces With Intention.
           </h2>
 
-          <div className="text-left text-gray-600 dark:text-gray-300 max-w-2xl">
+          <div className="text-left max-w-2xl">
             <p className="mb-4 leading-relaxed">
               I believe great products are built on craft, not just code. For
               over 8 years, I've worked with teams, founders, and communities to
@@ -103,19 +103,19 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="rounded-xl text-center p-6 border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
               <h3 className="font-bold mb-2 text-[#3D5AFE]">8+</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-sm">
                 Years of experience in Frontend Engineering
               </p>
             </div>
             <div className="rounded-xl text-center p-6 border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
               <h3 className="font-bold mb-2 text-[#3D5AFE]">1+</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-sm">
                 Years of experience in Brand Design
               </p>
             </div>
             <div className="rounded-xl text-center p-6 border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
               <h3 className="font-bold mb-2 text-[#3D5AFE]">100+</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-sm">
                 Lives Impacted
               </p>
             </div>

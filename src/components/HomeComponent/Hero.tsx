@@ -49,7 +49,7 @@ const Hero = () => {
               <br className="hidden sm:block lg:hidden" />
               <span className="text-[#3D5AFE]">With Clarity.</span>
             </h1>
-            <p className="text-gray-600 text-lg max-w-lg leading-relaxed dark:text-white">
+            <p className="text-lg max-w-lg leading-relaxed">
               A frontend engineer and design-minded builder with 8+ years of
               experience architecting scalable, AI-assisted web applications,
               bridging engineering and design, and leading communities that make
@@ -75,7 +75,6 @@ const Hero = () => {
 
         <div className="order-1 md:order-2 flex justify-center hero-image-enter">
           <div className="relative">
-            {/* decorative ring */}
             <div className="absolute inset-0 rounded-full border-2 border-[#3D5AFE]/20 scale-110" />
             <div className="w-48 h-48 md:w-96 md:h-96 rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/20 flex items-center justify-center overflow-hidden shadow-2xl">
               <img
