@@ -302,7 +302,7 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
                     className="text-[#3D5AFE]"
                   />
                 </div>
-                <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                <p className="text-sm font-medium">
                   More work coming soon
                 </p>
               </div>
@@ -313,7 +313,7 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
             <div className="w-16 h-16 rounded-full bg-[#3D5AFE]/10 flex items-center justify-center">
               <FeatherIcon icon="image" size={24} className="text-[#3D5AFE]" />
             </div>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p>
               No work in this category yet — check back soon.
             </p>
           </div>
@@ -321,7 +321,7 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
 
         {showFilters && (
           <div className="mt-14 pt-10 border-t border-gray-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-gray-500 dark:text-gray-400 text-sm">
+            <p className="text-sm">
               Want to work together on a brand or design project?
             </p>
             <Link
