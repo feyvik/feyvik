@@ -2,10 +2,11 @@
 
 import portfolio1 from "../../assets/project/10.jpg";
 import portfolio2 from "../../assets/project/11.jpg";
-import portfolio3 from "../../assets/project/12.jpg";
-import portfolio4 from "../../assets/project/13.jpg";
-import portfolio5 from "../../assets/project/14.jpg";
-import portfolio6 from "../../assets/project/15.jpg";
+import portfolio3 from "../../assets/project/18.jpg";
+import portfolio4 from "../../assets/project/12.jpg";
+import portfolio5 from "../../assets/project/13.jpg";
+import portfolio6 from "../../assets/project/14.jpg";
+import portfolio7 from "../../assets/project/15.jpg";
 
 import pdf2 from "../../assets/project/11.pdf?url";
 import pdf3 from "../../assets/project/12.pdf?url";
@@ -43,8 +44,7 @@ export const DesignItems: DesignItem[] = [
   {
     id: 3,
     image: portfolio3,
-    pdfSrc: pdf3,
-    title: "Cello Magazine Print Design for Event",
+    title: "Logo Design for Techies Corner",
     client: "Personal Project",
     category: "print",
     tags: ["Brochures", "Graphics", "Branding", "Layout"],
@@ -52,10 +52,11 @@ export const DesignItems: DesignItem[] = [
   {
     id: 4,
     image: portfolio4,
-    title: "Social Media Flyer",
+    pdfSrc: pdf3,
+    title: "Cello Magazine Print Design for Event",
     client: "Personal Project",
-    category: "social",
-    tags: ["Flyer"],
+    category: "print",
+    tags: ["Brochures", "Graphics", "Branding", "Layout"],
   },
   {
     id: 5,
@@ -68,6 +69,14 @@ export const DesignItems: DesignItem[] = [
   {
     id: 6,
     image: portfolio6,
+    title: "Social Media Flyer",
+    client: "Personal Project",
+    category: "social",
+    tags: ["Flyer"],
+  },
+  {
+    id: 7,
+    image: portfolio7,
     title: "Logo Design for Tech Startup",
     client: "Tech Startup",
     category: "logo",
