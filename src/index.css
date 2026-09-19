@@ -30,7 +30,7 @@ body {
   height: 100%;
   box-sizing: border-box;
   font-weight: 400;
-  color: #1d1d29;
+  color: #0A0A0A;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 16px;
 }
@@ -179,6 +179,7 @@ button {
 button:active {
   transform: translateY(0);
 }
+
 
 .container {
   width: 1760px;

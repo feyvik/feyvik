@@ -10,6 +10,19 @@ type SectionsProps = {
 
 const ContactWrapper = styled.div`
   background: "linear-gradient(135deg, rgba(45,27,105,0.06) 0%, rgba(61,90,254,0.06) 50%, rgba(39,151,250,0.05) 100%)";
+
+  @media (max-width: 640px) {
+    .contact_text {
+      text-align: center;
+    }
+    .contact_email {
+      text-align: center;
+    }
+
+    .contact_icon {
+      margin: 10px auto;
+    }
+  }
 `;
 
 export default function ContactSection({ contactRef }: SectionsProps) {
@@ -30,15 +43,15 @@ export default function ContactSection({ contactRef }: SectionsProps) {
           </div>
 
           <div>
-            <p className="text-xl leading-relaxed mb-10">
+            <p className="text-xl leading-relaxed mb-10 contact_text">
               Whether you're looking for a brand designer, frontend developer,
               or collaborator — I'd love to hear from you.
             </p>
 
             <a
               href="mailto:vivianemma97@gmail.com"
-              className="block sm:inline-flex items-center gap-5 group space-y-4">
-              <div className="w-16 h-16 rounded-full bg-[#3D5AFE] flex items-center justify-center flex-shrink-0 shadow-lg group-hover:bg-[#2D1B69] transition-colors duration-300">
+              className="block sm:inline-flex items-center gap-5 group space-y-4 contact_email">
+              <div className="w-16 h-16 rounded-full bg-[#3D5AFE] flex items-center justify-center flex-shrink-0 shadow-lg group-hover:bg-[#2D1B69] transition-colors duration-300 contact_icon">
                 <Mail size={24} className="text-light" />
               </div>
               <span className="text-xl font-medium text-gray-800 dark:text-white group-hover:text-[#3D5AFE] transition-colors duration-200">
