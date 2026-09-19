@@ -8,15 +8,119 @@ const FooterWrapper = styled.div`
   justify-content: start;
   padding: 20px 0px;
 
-  .social-media {
+  .wrapper {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 10px;
-    color: #fff;
+    list-style: none;
 
     svg {
       fill: #ffffff;
+    }
+  }
+
+  .wrapper .icon {
+    position: relative;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1d9bf0;
+    color: #fff;
+  }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    color: #fff;
+  }
+
+  .wrapper .tiktok:hover,
+  .wrapper .tiktok:hover .tooltip,
+  .wrapper .tiktok:hover .tooltip::before {
+    background: #ff3b5c;
+    color: #fff;
+  }
+
+  .wrapper .linkedin:hover,
+  .wrapper .linkedin:hover .tooltip,
+  .wrapper .linkedin:hover .tooltip::before {
+    background: rgb(10, 102, 194);
+    color: #fff;
+  }
+
+  .wrapper .youtube:hover,
+  .wrapper .youtube:hover .tooltip,
+  .wrapper .youtube:hover .tooltip::before {
+    background: #ff0000;
+    color: #fff;
+  }
+
+  @media (max-width: 640px) {
+    .wrapper {
+      justify-content: center;
+    }
+
+    .copyright {
+      text-align: center;
     }
   }
 `;
@@ -27,25 +131,29 @@ const Footer = () => {
       <div className="w-full max-w-5xl mx-auto px-6">
         <div className="flex flex-wrap items-center ">
           <div className="w-[100%] sm:w-[50%] mb-4 sm:mb-0">
-            <div className="social-media">
+            <div className="wrapper">
               <a
                 href="https://www.facebook.com/feyvik/"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Facebook">
+                title="Facebook"
+                className="icon facebook">
+                <span className="tooltip">Facebook</span>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24">
-                  <path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path>
+                  viewBox="0 0 320 512"
+                  height="1.2em"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
                 </svg>
               </a>
               <a
                 href="https://www.x.com/feyvik"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="X">
+                title="X"
+                className="icon twitter">
+                <span className="tooltip">X</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -60,7 +168,9 @@ const Footer = () => {
                 href="https://www.instagram.com/fey_vik"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Instagram">
+                title="Instagram"
+                className="icon instagram">
+                <span className="tooltip">Instagram</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -75,7 +185,9 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/feyvik/"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="LinkedIn">
+                title="LinkedIn"
+                className="icon linkedin">
+                <span className="tooltip">LinkedIn</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -90,7 +202,9 @@ const Footer = () => {
                 href="https://www.youtube.com/@feyvik"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="YouTube">
+                title="YouTube"
+                className="icon youtube">
+                <span className="tooltip">YouTube</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -105,7 +219,9 @@ const Footer = () => {
                 href="https://www.tiktok.com/@feyvik"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="TikTok">
+                title="TikTok"
+                className="icon tiktok">
+                <span className="tooltip">TikTok</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -118,7 +234,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="w-[100%] sm:w-[50%] sm:text-end text-white">
+          <div className="w-[100%] sm:w-[50%] sm:text-end text-white copyright">
             <p>&copy; Copyright Favour Vivian 2026</p>
           </div>
         </div>

@@ -138,6 +138,7 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
   };
 
   const [isDark, setIsDark] = useState(() => {
+    localStorage.setItem("theme", "dark");
     return (
       localStorage.getItem("theme") === "dark" ||
       (!localStorage.getItem("theme") &&
@@ -309,7 +310,6 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
         </CloseButton>
 
         <MobileNav>
-          
           <li className="mb-4">
             <button onClick={() => scrollToSection(aboutRef, "about")}>
               About
