@@ -1,52 +1,149 @@
 /** @format */
 
 import styled from "styled-components";
-import img from "../../assets/KELV2726.jpg";
 import { Link } from "react-router";
 import { ArrowRight } from "feather-icons-react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
-const AboutWrapper = styled.div`
-  background: linear-gradient(
-    135deg,
-    rgba(45, 27, 105, 0.04) 0%,
-    rgba(39, 151, 250, 0.03) 100%
-  );
+const AboutWrapper = styled.section`
+  padding: 7rem 6vw;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 
-  .avatar-frame {
-    position: relative;
-    width: 96px;
-    height: 96px;
-    flex-shrink: 0;
+  .section-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 50%;
-    }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6vw;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
 
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.15);
-      pointer-events: none;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
   }
 
-  .stat-card {
-    transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease;
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(45, 27, 105, 0.12);
+  .left {
+    position: sticky;
+    top: 100px;
+
+    @media (max-width: 768px) {
+      position: static;
+    }
+
+    h2 {
+      margin-bottom: 1.25rem;
+
+      em {
+        font-style: italic;
+        color: var(--accent);
+      }
+    }
+
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: gap 0.2s ease;
+
+      &:hover {
+        gap: 11px;
+        color: var(--accent) !important;
+      }
+    }
+  }
+
+  .right {
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-2);
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 2rem;
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+
+    .stat {
+      background: var(--bg-2);
+      padding: 1.5rem 1.25rem;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: var(--surface);
+      }
+
+      .num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 0.4rem;
+      }
+
+      .lbl {
+        font-size: 0.75rem;
+        color: var(--text-3);
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+
+    span {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.875rem;
+      border-radius: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      transition: border-color 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
     }
   }
 `;
+
+const SKILLS = ["React", "TypeScript", "Angular", "Tailwind CSS", "Firebase", "Node.js", "Figma", "AI Tools"];
 
 type SectionsProps = {
   aboutRef: React.RefObject<HTMLDivElement | null>;
@@ -56,68 +153,51 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
   const animRef = useScrollAnimation();
 
   return (
-    <AboutWrapper ref={aboutRef} className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div ref={animRef} className="animate-on-scroll">
-          <div className="flex items-center gap-5 mb-6">
-            <div className="avatar-frame shadow-2xl rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/10">
-              <img
-                src={img}
-                alt="Favour Vivian"
-                className="rounded-full"
-                loading="lazy"
-              />
-            </div>
-            <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase">
-              About Me.
-            </p>
+    <AboutWrapper ref={aboutRef}>
+      <div ref={animRef} className="animate-on-scroll">
+        <div className="about-grid">
+          <div className="left">
+            <span className="section-tag">// about_me</span>
+            <h2>
+              Building with <br />
+              purpose & <em>craft.</em>
+            </h2>
+            <Link to="/profile" className="read-link">
+              Full profile <ArrowRight size={14} />
+            </Link>
           </div>
 
-          <h2 className="mb-5 leading-tight dark:text-light">
-            Building Interfaces With Intention.
-          </h2>
-
-          <div className="text-left max-w-2xl">
-            <p className="mb-4 leading-relaxed">
+          <div className="right">
+            <p>
               I believe great products are built on craft, not just code. For
               over 8 years, I've worked with teams, founders, and communities to
               build responsive web applications, design scalable systems, and
               bring ideas to life across frontend engineering, AI-assisted
               development, and brand design.
             </p>
-            <p className="mb-4 leading-relaxed">
-              My mission is simple: create pathways for beginners to thrive in
-              tech. I'm committed to continuous learning, and to building
-              skills, projects, and communities that are accessible, practical,
-              and genuinely built to last.
+            <p>
+              My mission: create pathways for beginners to thrive in tech. I'm
+              committed to building skills, projects, and communities that are
+              accessible, practical, and genuinely built to last.
             </p>
-            <p className="mb-6">
-              <Link
-                to={"/profile"}
-                className="inline-flex items-center gap-1 text-[#3D5AFE] hover:underline">
-                Read my full story <ArrowRight size={16} />
-              </Link>
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="rounded-xl text-center p-6 border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
-              <h3 className="font-bold mb-2 text-[#3D5AFE]">8+</h3>
-              <p className="text-sm">
-                Years of experience in Frontend Engineering
-              </p>
+            <div className="stats">
+              <div className="stat">
+                <div className="num">8+</div>
+                <div className="lbl">Years Frontend Engineering</div>
+              </div>
+              <div className="stat">
+                <div className="num">1+</div>
+                <div className="lbl">Years Brand Design</div>
+              </div>
+              <div className="stat">
+                <div className="num">100+</div>
+                <div className="lbl">Lives Impacted</div>
+              </div>
             </div>
-            <div className="rounded-xl text-center p-6 border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
-              <h3 className="font-bold mb-2 text-[#3D5AFE]">1+</h3>
-              <p className="text-sm">
-                Years of experience in Brand Design
-              </p>
-            </div>
-            <div className="rounded-xl text-center p-6 border border-gray-200 dark:border-white/10 hover:border-[#3D5AFE]/40 hover:shadow-sm transition-all duration-200">
-              <h3 className="font-bold mb-2 text-[#3D5AFE]">100+</h3>
-              <p className="text-sm">
-                Lives Impacted
-              </p>
+
+            <div className="skills">
+              {SKILLS.map((s) => <span key={s}>{s}</span>)}
             </div>
           </div>
         </div>

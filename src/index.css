@@ -1,25 +1,49 @@
 /** @format */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @config "../tailwind.config.ts";
 @import "tailwindcss";
 
+/* ── Design tokens ── */
+:root {
+  --bg:        #f8f8f6;
+  --bg-2:      #ffffff;
+  --bg-3:      #f0f0ed;
+  --border:    rgba(0,0,0,0.09);
+  --text:      #111111;
+  --text-2:    #555555;
+  --text-3:    #999999;
+  --accent:    #3d5afe;
+  --accent-2:  #2d1b69;
+  --surface:   rgba(0,0,0,0.04);
+}
+
+.dark {
+  --bg:        #0d0d0d;
+  --bg-2:      #161616;
+  --bg-3:      #1e1e1e;
+  --border:    rgba(255,255,255,0.08);
+  --text:      #f0f0f0;
+  --text-2:    rgba(255,255,255,0.55);
+  --text-3:    rgba(255,255,255,0.3);
+  --accent:    #5c78ff;
+  --accent-2:  #3d5afe;
+  --surface:   rgba(255,255,255,0.05);
+}
+
 @theme {
   --color-dark-start: #131523;
-  --color-dark-end: #050608;
-  --color-white: #a3a7b3;
-  --color-light: #ffffff;
+  --color-dark-end:   #050608;
+  --color-white:      #a3a7b3;
+  --color-light:      #ffffff;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -27,186 +51,111 @@ body {
 
 body {
   min-height: 100vh;
-  height: 100%;
   box-sizing: border-box;
   font-weight: 400;
-  color: #0A0A0A;
+  color: var(--text);
+  background: var(--bg);
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 16px;
-}
-
-body[data-scroll-locked] {
-  --removed-body-scroll-bar-size: 0px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 body[data-scroll-locked] {
   overflow: hidden !important;
   overscroll-behavior: contain;
   position: relative !important;
-  padding-left: 0px;
-  padding-top: 0px;
-  padding-right: 0px;
-  margin-left: 0;
-  margin-top: 0;
   margin-right: 0px !important;
 }
 
-/* ── Scroll-reveal animations ── */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+::selection {
+  background: rgba(61, 90, 254, 0.2);
+  color: inherit;
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Scroll-reveal ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(28px);
   transition:
-    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity  0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+.animate-on-scroll .stagger-child:nth-child(1) { transition-delay: 0.05s; }
+.animate-on-scroll .stagger-child:nth-child(2) { transition-delay: 0.15s; }
+.animate-on-scroll .stagger-child:nth-child(3) { transition-delay: 0.25s; }
+.animate-on-scroll .stagger-child:nth-child(4) { transition-delay: 0.35s; }
 
-/* staggered children */
-.animate-on-scroll .stagger-child:nth-child(1) {
-  transition-delay: 0.05s;
-}
-.animate-on-scroll .stagger-child:nth-child(2) {
-  transition-delay: 0.15s;
-}
-.animate-on-scroll .stagger-child:nth-child(3) {
-  transition-delay: 0.25s;
-}
-.animate-on-scroll .stagger-child:nth-child(4) {
-  transition-delay: 0.35s;
-}
+/* ── Hero entrance ── */
+.hero-enter        { animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-enter-delay-1 { animation-delay: 0.1s; }
+.hero-enter-delay-2 { animation-delay: 0.25s; }
+.hero-enter-delay-3 { animation-delay: 0.4s; }
+.hero-image-enter  { animation: fadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both; }
 
-/* ── Hero entrance (plays immediately on load) ── */
-.hero-enter {
-  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.hero-enter-delay-1 {
-  animation-delay: 0.15s;
-}
-.hero-enter-delay-2 {
-  animation-delay: 0.3s;
-}
-.hero-enter-delay-3 {
-  animation-delay: 0.45s;
-}
-.hero-image-enter {
-  animation: fadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
-}
-
-/* ── Heading styles ── */
+/* ── Typography ── */
 h1 {
-  line-height: 1.15;
-  font-weight: 800;
-  letter-spacing: -1px;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.5rem, 6vw, 4.5rem); /* 40–72px fluid */
-}
-
-h2 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
   font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.5px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.75rem, 4vw, 2.75rem); /* 28–44px fluid */
+  line-height: 1.08;
+  letter-spacing: -2px;
+  color: var(--text);
 }
-
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--text);
+}
 h3 {
-  font-size: clamp(1.35rem, 2.5vw, 1.875rem); /* 21.6–30px */
-  font-weight: 600;
-  line-height: 1.35;
   font-family: "Cormorant Garamond", serif;
-  letter-spacing: -0.2px;
-}
-
-h4 {
+  font-size: clamp(1.35rem, 2.5vw, 1.875rem);
   font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: -0.15px;
+  line-height: 1.3;
+  color: var(--text);
 }
+h4 { font-weight: 600; line-height: 1.4; color: var(--text); }
+h5 { font-weight: 500; line-height: 1.4; color: var(--text); }
+h6 { font-size: 1.1rem; font-weight: 500; line-height: 1.5; color: var(--text); }
 
-h5 {
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: -0.1px;
-}
-
-h6 {
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.05px;
-}
-
-a:hover {
-  color: #3d5afe !important;
-}
+a:hover { color: var(--accent) !important; }
 
 button {
-  border-radius: 50px;
-  padding: 0.85rem 2rem;
-  font-size: 0.875em;
+  border-radius: 6px;
+  padding: 0.8rem 1.75rem;
+  font-size: 0.875rem;
   font-family: inherit;
   cursor: pointer;
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease,
-    background 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
 }
+button:active { transform: translateY(1px) !important; }
 
-button:active {
-  transform: translateY(0);
-}
-
-
-.container {
-  width: 1760px;
-  margin: auto;
-}
-
-.dark_mode_toggle {
-  height: 40px;
-  width: 40px;
-  padding: unset;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #3d5afe !important;
-  transition: background 0.2s ease;
-}
-
-.dark_mode_toggle:hover {
-  background: rgba(61, 90, 254, 0.08) !important;
-  box-shadow: none;
-  transform: none;
+/* ── Utility ── */
+.mono {
+  font-family: "JetBrains Mono", monospace;
 }
 
 .volunteer_ {
-  background: linear-gradient(
-    135deg,
-    rgba(45, 27, 105, 0.04) 0%,
-    rgba(39, 151, 250, 0.03) 100%
-  );
+  background: var(--bg-2);
 }

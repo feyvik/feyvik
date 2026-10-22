@@ -3,7 +3,7 @@ import img1 from "../assets/project/1.jpg";
 import img2 from "../assets/project/2.jpg";
 import img3 from "../assets/project/3.jpg";
 import img4 from "../assets/project/4.png";
-import img5 from "../assets/project/5.jpg";
+import img5 from "../assets/project/5.png";
 import img6 from "../assets/project/6.jpg";
 import img7 from "../assets/project/7.jpg";
 import img8 from "../assets/project/8.jpg";
@@ -38,6 +38,22 @@ export const ProjectImage: Image[] = [
     link: "https://feyvik.vercel.app/",
   },
   {
+    id: 7,
+    image: img5,
+    name: "Chakam App",
+    description:
+      "The Chakam trend was one of the funniest moments to come out of Nigerian Gen Z culture. It’s that internet slang that mimics a camera click “chakam!” basically like saying “Gotcha!” or “Screenshot!” when someone makes a bold statement you just know they’ll switch up on later.",
+    link: "https://chakam.vercel.app/",
+  },
+  {
+    id: 6,
+    image: img4,
+    name: "FLE Tribe Community Website",
+    description:
+      "The FLE Tribe Blog, is an extension of The FLE Tribe's mission to support beginners in their tech journeys. It offers a collection of beginner-friendly articles, stories, and resources designed to inspire and guide aspiring tech enthusiasts.",
+    link: "https://blog.thefletribe.com.ng",
+  },
+  {
     id: 2,
     image: img10,
     name: "Student Micro gig",
@@ -54,6 +70,14 @@ export const ProjectImage: Image[] = [
     link: "https://grid-system-psi.vercel.app/",
   },
   {
+    id: 8,
+    image: img6,
+    name: "Covid-19",
+    description:
+      "its a website that provides global update on coronavirus and guides to prevent the spread of coronavirus.",
+    link: "https://covid-19-app-ccb27.web.app/",
+  },
+  {
     id: 4,
     image: img1,
     name: "HouseAfrica Website",
@@ -68,30 +92,6 @@ export const ProjectImage: Image[] = [
     description:
       "A digital property registry system that helps estate developers, property buyers, and private estates to digitally register and track their property status.",
     link: "https://developer.sytemap.com/map/crown-field-estate",
-  },
-  {
-    id: 6,
-    image: img4,
-    name: "FLE Tribe Community Website",
-    description:
-      "The FLE Tribe Blog, is an extension of The FLE Tribe's mission to support beginners in their tech journeys. It offers a collection of beginner-friendly articles, stories, and resources designed to inspire and guide aspiring tech enthusiasts.",
-    link: "https://blog.thefletribe.com.ng",
-  },
-  {
-    id: 7,
-    image: img5,
-    name: "Chakam App",
-    description:
-      "The Chakam trend was one of the funniest moments to come out of Nigerian Gen Z culture. It’s that internet slang that mimics a camera click “chakam!” basically like saying “Gotcha!” or “Screenshot!” when someone makes a bold statement you just know they’ll switch up on later.",
-    link: "https://chakam.vercel.app/",
-  },
-  {
-    id: 8,
-    image: img6,
-    name: "Covid-19",
-    description:
-      "its a website that provides global update on coronavirus and guides to prevent the spread of coronavirus.",
-    link: "https://covid-19-app-ccb27.web.app/",
   },
   {
     id: 9,
