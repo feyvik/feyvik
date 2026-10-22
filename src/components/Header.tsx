@@ -4,112 +4,248 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import FeatherIcon from "feather-icons-react";
-import logo from "../assets/FEYVIK-LOGO-BLACK.png";
-import logo2 from "../assets/FEYVIK-LOGO-WHITE.png";
+import logoBlack from "../assets/FEYVIK-LOGO-BLACK.png";
+import logoWhite from "../assets/FEYVIK-LOGO-WHITE.png";
 
 const NavWrapper = styled.nav.withConfig({
-  shouldForwardProp: (prop) => prop !== "$isscrolled",
-})<{ $isscrolled: boolean }>`
-  transition:
-    background 0.3s ease,
-    padding 0.3s ease;
+  shouldForwardProp: (prop) => !["$isscrolled", "$dark"].includes(prop),
+})<{ $isscrolled: boolean; $dark: boolean }>`
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: ${({ $isscrolled, $dark }) =>
+    $isscrolled
+      ? $dark
+        ? "rgba(13,13,13,0.9)"
+        : "rgba(248,248,246,0.92)"
+      : "transparent"};
   box-shadow: ${({ $isscrolled }) =>
-    $isscrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none"};
+    $isscrolled ? "0 1px 0 var(--border)" : "none"};
+  backdrop-filter: ${({ $isscrolled }) =>
+    $isscrolled ? "blur(14px)" : "none"};
 
-  ul li button {
-    padding: 0px;
-    font-size: 16px;
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .logo img {
+    height: 26px;
+    width: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    li a,
+    li button {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-2);
+      padding: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--accent) !important;
+        box-shadow: none;
+        transform: none;
+      }
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .theme-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
     &:hover {
-      color: #3d5afe;
+      background: var(--bg-3) !important;
+      border-color: var(--accent);
+      color: var(--accent);
       box-shadow: none;
       transform: none;
     }
   }
 
-  .logo {
-    width: 100px;
+  .nav-cta {
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    color: var(--bg) !important;
+    background: var(--text) !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease !important;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    &:hover {
+      background: var(--accent) !important;
+      box-shadow: 0 4px 16px rgba(61, 90, 254, 0.25) !important;
+      transform: none !important;
+      color: #fff !important;
+    }
+  }
+
+  .menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-2);
+    cursor: pointer;
+    padding: 0.25rem;
+
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      color: var(--accent);
+      box-shadow: none;
+      transform: none;
+    }
   }
 `;
 
 const Overlay = styled.div<{ $open: boolean }>`
   position: fixed;
   inset: 0;
-  background: rgba(20, 16, 12, 0.35);
+  background: rgba(0, 0, 0, 0.4);
   opacity: ${({ $open }) => ($open ? 1 : 0)};
   visibility: ${({ $open }) => ($open ? "visible" : "hidden")};
   transition: opacity 0.25s ease;
   z-index: 60;
+  backdrop-filter: blur(4px);
 `;
 
-const Panel = styled.aside<{ $open: boolean; $isDark: boolean }>`
+const Panel = styled.aside<{ $open: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: min(420px, 86vw);
-  background: ${({ $isDark }) => ($isDark ? "#131523" : "#ffffff")};
+  width: min(340px, 85vw);
+  background: var(--bg-2);
+  border-left: 1px solid var(--border);
   z-index: 61;
   display: flex;
   flex-direction: column;
-  padding: 28px 32px 32px;
+  padding: 2rem;
   overflow-y: auto;
   transform: translateX(${({ $open }) => ($open ? "0" : "100%")});
   transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
 
-  @media (max-width: 380px) {
-    padding: 24px 20px 28px;
+  .panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
   }
-`;
 
-const CloseButton = styled.button`
-  align-self: flex-end;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  margin-bottom: 28px;
-  transition: background 0.2s ease;
-  padding: 0px;
-`;
+  .panel-close {
+    background: none;
+    border: none;
+    color: var(--text-3);
+    cursor: pointer;
+    padding: 0;
 
-const MobileNav = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  flex: 1;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  li a {
-    font-size: 16px;
-  }
-  button {
-    padding: 0px;
-    font-size: 16px;
     &:hover {
-      color: #3d5afe;
+      color: var(--text);
       box-shadow: none;
       transform: none;
     }
   }
-`;
 
-const CtaButton = styled.button`
-  margin-top: 8px;
-  width: 100%;
-  background: #3d5afe;
-  color: #ffffff;
-  transition:
-    background 0.2s ease,
-    transform 0.15s ease;
+  .panel-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
 
-  &:hover {
-    background: #3d5afe;
+    li {
+      border-bottom: 1px solid var(--border);
+      &:first-child { border-top: 1px solid var(--border); }
+    }
+
+    li a,
+    li button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-2);
+      padding: 1rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color 0.2s ease, padding-left 0.2s ease;
+
+      &:hover {
+        color: var(--text) !important;
+        padding-left: 0.4rem;
+        box-shadow: none;
+        transform: none;
+      }
+    }
   }
 
-  &:active {
-    transform: scale(0.98);
+  .panel-cta {
+    margin-top: 2rem;
+    width: 100%;
+    background: var(--text);
+    color: var(--bg);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 100px;
+    border: none;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: var(--accent) !important;
+      color: #fff !important;
+      box-shadow: none;
+      transform: none;
+    }
   }
 `;
 
@@ -122,14 +258,28 @@ type HeaderProps = {
 const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const dark = saved ? saved === "dark" : true;
+    setIsDark(dark);
+    document.documentElement.classList.toggle("dark", dark);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   const scrollToSection = (
     ref: React.RefObject<HTMLDivElement | null>,
     section: "about" | "projects" | "contact",
   ) => {
     setMenuOpen(false);
-
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
     } else {
@@ -137,31 +287,8 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
     }
   };
 
-  const [isDark, setIsDark] = useState(() => {
-    localStorage.setItem("theme", "dark");
-    return (
-      localStorage.getItem("theme") === "dark" ||
-      (!localStorage.getItem("theme") &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    );
-  });
-
   useEffect(() => {
-    const root = window.document.documentElement;
-    if (isDark) {
-      root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDark]);
-
-  useEffect(() => {
-    const onScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const onScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -172,173 +299,72 @@ const Header = ({ aboutRef, projectRef, contactRef }: HeaderProps) => {
     } else {
       document.body.removeAttribute("data-scroll-locked");
     }
-
-    return () => {
-      document.body.removeAttribute("data-scroll-locked");
-    };
+    return () => document.body.removeAttribute("data-scroll-locked");
   }, [menuOpen]);
-
-  const DarkModeToggle = () => (
-    <button
-      type="button"
-      onClick={() => setIsDark(!isDark)}
-      className="dark_mode_toggle"
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}>
-      {isDark ? (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-moon text-secondary-gold">
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-        </svg>
-      ) : (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-sun text-secondary-gold">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2"></path>
-          <path d="M12 20v2"></path>
-          <path d="m4.93 4.93 1.41 1.41"></path>
-          <path d="m17.66 17.66 1.41 1.41"></path>
-          <path d="M2 12h2"></path>
-          <path d="M20 12h2"></path>
-          <path d="m6.34 17.66-1.41 1.41"></path>
-          <path d="m19.07 4.93-1.41 1.41"></path>
-        </svg>
-      )}
-    </button>
-  );
 
   return (
     <>
-      <NavWrapper
-        $isscrolled={isScrolled}
-        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 md:py-4">
-          <Link
-            to={"/"}
-            className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src={isDark ? logo2 : logo} alt="logo" width={130} />
+      <NavWrapper $isscrolled={isScrolled} $dark={isDark} className="fixed top-0 left-0 right-0 z-50">
+        <div className="nav-inner">
+          <Link to="/" className="logo">
+            <img src={isDark ? logoWhite : logoBlack} alt="Feyvik" />
           </Link>
 
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            type="button"
-            className="inline-flex items-center justify-center md:hidden border-[#3f09c9]"
-            aria-label="Toggle navigation menu">
-            <FeatherIcon
-              icon="align-left"
-              style={{
-                cursor: "pointer",
-                width: "30px",
-                height: "30px",
-              }}
-            />
-          </button>
+          <ul className="nav-links">
+            <li><button onClick={() => scrollToSection(aboutRef, "about")}>About</button></li>
+            <li><button onClick={() => scrollToSection(projectRef, "projects")}>Projects</button></li>
+            <li><Link to="/profile">Profile</Link></li>
+            <li><Link to="/work">Work</Link></li>
+            <li><Link to="/design">Design</Link></li>
+          </ul>
 
-          <div className="hidden w-full md:block md:w-auto ms-auto">
-            <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
-              <li>
-                <button onClick={() => scrollToSection(aboutRef, "about")}>
-                  About
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollToSection(projectRef, "projects")}>
-                  Projects
-                </button>
-              </li>
-              <li>
-                <Link to={"/profile"}>Profile</Link>
-              </li>
-              <li>
-                <Link to={"/work"}>Work</Link>
-              </li>
-              <li>
-                <Link to={"/design"}>Design</Link>
-              </li>
-              <li>
-                <button onClick={() => scrollToSection(contactRef, "contact")}>
-                  Contact
-                </button>
-              </li>
-              <li>
-                <DarkModeToggle />
-              </li>
-            </ul>
+          <div className="nav-right">
+            <button
+              className="theme-btn"
+              onClick={toggleTheme}
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}>
+              <FeatherIcon icon={isDark ? "sun" : "moon"} size={16} />
+            </button>
+
+            <button
+              className="nav-cta"
+              onClick={() => scrollToSection(contactRef, "contact")}>
+              Contact
+            </button>
+
+            <button
+              className="menu-btn"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Menu">
+              <FeatherIcon icon={menuOpen ? "x" : "menu"} size={22} />
+            </button>
           </div>
         </div>
       </NavWrapper>
 
-      <Overlay
-        $open={menuOpen}
-        onClick={() => setMenuOpen(false)}
-        aria-hidden={!menuOpen}
-      />
-      <Panel
-        id="mobile-sidebar"
-        $open={menuOpen}
-        $isDark={isDark}
-        role="dialog"
-        aria-modal="true"
-        aria-hidden={!menuOpen}>
-        <CloseButton onClick={() => setMenuOpen(false)} aria-label="Close menu">
-          <FeatherIcon
-            icon="x"
-            size={18}
-            style={{
-              cursor: "pointer",
-              width: "30px",
-              height: "30px",
-            }}
-          />
-        </CloseButton>
+      <Overlay $open={menuOpen} onClick={() => setMenuOpen(false)} />
 
-        <MobileNav>
-          <li className="mb-4">
-            <button onClick={() => scrollToSection(aboutRef, "about")}>
-              About
-            </button>
-          </li>
-          <li className="mb-4">
-            <button onClick={() => scrollToSection(projectRef, "projects")}>
-              Projects
-            </button>
-          </li>
-          <li className="mb-4">
-            <Link to={"/profile"}>Profile</Link>
-          </li>
-          <li className="mb-4">
-            <Link to={"/work"}>Work</Link>
-          </li>
-          <li className="mb-4">
-            <Link to={"/design"} onClick={() => setMenuOpen(false)}>
-              Design
-            </Link>
-          </li>
-          <li className="mb-4">
-            <DarkModeToggle />
-          </li>
-        </MobileNav>
+      <Panel $open={menuOpen} role="dialog" aria-modal="true">
+        <div className="panel-top">
+          <img src={isDark ? logoWhite : logoBlack} alt="Feyvik" style={{ height: 22 }} />
+          <button className="panel-close" onClick={() => setMenuOpen(false)} aria-label="Close">
+            <FeatherIcon icon="x" size={20} />
+          </button>
+        </div>
 
-        <CtaButton onClick={() => scrollToSection(contactRef, "contact")}>
-          Work with me
-        </CtaButton>
+        <ul className="panel-links">
+          <li><button onClick={() => scrollToSection(aboutRef, "about")}>About</button></li>
+          <li><button onClick={() => scrollToSection(projectRef, "projects")}>Projects</button></li>
+          <li><Link to="/profile" onClick={() => setMenuOpen(false)}>Profile</Link></li>
+          <li><Link to="/work" onClick={() => setMenuOpen(false)}>Work</Link></li>
+          <li><Link to="/design" onClick={() => setMenuOpen(false)}>Design</Link></li>
+        </ul>
+
+        <button
+          className="panel-cta"
+          onClick={() => scrollToSection(contactRef, "contact")}>
+          Work With Me
+        </button>
       </Panel>
     </>
   );

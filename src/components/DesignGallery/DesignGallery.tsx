@@ -302,9 +302,7 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
                     className="text-[#3D5AFE]"
                   />
                 </div>
-                <p className="text-sm font-medium">
-                  More work coming soon
-                </p>
+                <p className="text-sm font-medium">More work coming soon</p>
               </div>
             )}
           </div>
@@ -313,9 +311,7 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
             <div className="w-16 h-16 rounded-full bg-[#3D5AFE]/10 flex items-center justify-center">
               <FeatherIcon icon="image" size={24} className="text-[#3D5AFE]" />
             </div>
-            <p>
-              No work in this category yet — check back soon.
-            </p>
+            <p>No work in this category yet — check back soon.</p>
           </div>
         )}
 
