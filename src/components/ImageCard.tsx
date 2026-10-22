@@ -2,7 +2,7 @@
 import img1 from "../assets/project/1.jpg";
 import img2 from "../assets/project/2.jpg";
 import img3 from "../assets/project/3.jpg";
-import img4 from "../assets/project/4.jpg";
+import img4 from "../assets/project/4.png";
 import img5 from "../assets/project/5.jpg";
 import img6 from "../assets/project/6.jpg";
 import img7 from "../assets/project/7.jpg";
@@ -10,6 +10,7 @@ import img8 from "../assets/project/8.jpg";
 import img9 from "../assets/project/9.jpg";
 import img10 from "../assets/project/16.png";
 import img11 from "../assets/project/17.png";
+import img12 from "../assets/project/GrowNaija.png";
 
 export interface Image {
   id: number;
@@ -20,6 +21,14 @@ export interface Image {
 }
 
 export const ProjectImage: Image[] = [
+  {
+    id: 12,
+    image: img12,
+    name: "GrowNaija",
+    description:
+      "GrowNaija is a platform that connects farmers with consumers to facilitate the sale of fresh produce.",
+    link: "https://grownaija.ng/",
+  },
   {
     id: 1,
     image: img3,
