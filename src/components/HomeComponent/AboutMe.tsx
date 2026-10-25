@@ -170,7 +170,7 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
           <div className="right">
             <p>
               I believe great products are built on craft, not just code. For
-              over 8 years, I've worked with teams, founders, and communities to
+              over 4 years, I've worked with teams, founders, and communities to
               build responsive web applications, design scalable systems, and
               bring ideas to life across frontend engineering, AI-assisted
               development, and brand design.
@@ -183,7 +183,7 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
 
             <div className="stats">
               <div className="stat">
-                <div className="num">8+</div>
+                <div className="num">4+</div>
                 <div className="lbl">Years Frontend Engineering</div>
               </div>
               <div className="stat">

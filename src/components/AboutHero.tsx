@@ -48,7 +48,7 @@ export default function AboutHero() {
 
         <div className="mt-20">
           <p className="text-lg leading-relaxed">
-            I've spent 8+ years in the trenches of frontend development —
+            I've spent 4+ years in the trenches of frontend development —
             Angular, React, TypeScript — shipping real products for real
             companies. But somewhere along the way, I found myself drawn to a
             different kind of craft: not how an interface functions, but how a

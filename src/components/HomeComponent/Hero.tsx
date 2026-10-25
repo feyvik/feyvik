@@ -248,7 +248,7 @@ const Hero = () => {
         <div className="roles hero-enter hero-enter-delay-1">
           <span>Frontend Engineer</span>
           <span className="sep">/</span>
-          <span>UI Designer</span>
+          <span>Brand Designer</span>
           <span className="sep">/</span>
           <span>Community Builder</span>
         </div>
@@ -279,7 +279,7 @@ const Hero = () => {
 
         <div className="stats hero-enter hero-enter-delay-3">
           <div className="stat">
-            <div className="num">8+</div>
+            <div className="num">4+</div>
             <div className="lbl">Years experience</div>
           </div>
           <div className="stat">
