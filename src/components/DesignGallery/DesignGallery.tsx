@@ -11,6 +11,7 @@ import {
 } from "./designData";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import img from "../../assets/KELV2777.jpg";
+import AvatarTag from "../AvatarTag";
 
 const GalleryCard = styled.div`
   position: relative;
@@ -119,31 +120,6 @@ const CategoryBtn = styled.button<{ $active: boolean }>`
   }
 `;
 
-const ImageWrapper = styled.div`
-  .avatar-frame {
-    position: relative;
-    width: 96px;
-    height: 96px;
-    flex-shrink: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 50%;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.15);
-      pointer-events: none;
-    }
-  }
-`;
 
 type ModalProps = {
   item: DesignItem;
@@ -233,14 +209,7 @@ export default function DesignGallery({ projectNumber }: HomeProjectProps) {
   return (
     <section className="py-24 px-6">
       <div ref={animRef} className="animate-on-scroll max-w-6xl mx-auto">
-        <ImageWrapper className="flex items-center gap-5 mb-6">
-          <div className="avatar-frame shadow-2xl rounded-full bg-[#2D1B69] border-4 border-[#2D1B69]/10">
-            <img src={img} alt="profile" loading="lazy" />
-          </div>
-          <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] uppercase">
-            Selected Design
-          </p>
-        </ImageWrapper>
+        <AvatarTag src={img} tag="// Selected_Design" className="mb-6" />
         <div className="flex items-start justify-between flex-wrap gap-4">
           <div>
             <h2 className="mb-4 leading-tight dark:text-light">Design Work</h2>

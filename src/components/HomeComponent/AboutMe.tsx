@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Link } from "react-router";
 import { ArrowRight } from "feather-icons-react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import AvatarTag from "../AvatarTag";
+import img from "../../assets/IMG.jpg";
 
 const AboutWrapper = styled.section`
   padding: 7rem 6vw;
@@ -143,7 +145,7 @@ const AboutWrapper = styled.section`
   }
 `;
 
-const SKILLS = ["React", "TypeScript", "Angular", "Tailwind CSS", "Firebase", "Node.js", "Figma", "AI Tools"];
+const SKILLS = ["Angular", "TypeScript", "JavaScript", "Tailwind CSS", "Bootstrap", "React (learning)", "Figma", "Brand Design"];
 
 type SectionsProps = {
   aboutRef: React.RefObject<HTMLDivElement | null>;
@@ -157,7 +159,7 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
       <div ref={animRef} className="animate-on-scroll">
         <div className="about-grid">
           <div className="left">
-            <span className="section-tag">// about_me</span>
+            <AvatarTag src={img} tag="// about_me" className="mb-5" />
             <h2>
               Building with <br />
               purpose & <em>craft.</em>
@@ -169,30 +171,31 @@ const AboutMe = ({ aboutRef }: SectionsProps) => {
 
           <div className="right">
             <p>
-              I believe great products are built on craft, not just code. For
-              over 8 years, I've worked with teams, founders, and communities to
-              build responsive web applications, design scalable systems, and
-              bring ideas to life across frontend engineering, AI-assisted
-              development, and brand design.
+              Frontend developer with a strong focus on Angular, TypeScript, and
+              Tailwind CSS — building responsive, well-structured web applications
+              that are clean under the hood and polished on the surface. I also
+              work with Bootstrap and vanilla JavaScript for flexible,
+              cross-project solutions.
             </p>
             <p>
-              My mission: create pathways for beginners to thrive in tech. I'm
-              committed to building skills, projects, and communities that are
-              accessible, practical, and genuinely built to last.
+              Beyond code, I'm actively learning brand design — exploring how
+              visual identity, typography, and layout decisions shape how people
+              experience a product. Currently growing my React skills to round
+              out a full modern frontend stack.
             </p>
 
             <div className="stats">
               <div className="stat">
-                <div className="num">8+</div>
-                <div className="lbl">Years Frontend Engineering</div>
+                <div className="num">5+</div>
+                <div className="lbl">Frameworks & Libraries</div>
               </div>
               <div className="stat">
-                <div className="num">1+</div>
-                <div className="lbl">Years Brand Design</div>
+                <div className="num">Angular</div>
+                <div className="lbl">Primary Framework</div>
               </div>
               <div className="stat">
-                <div className="num">100+</div>
-                <div className="lbl">Lives Impacted</div>
+                <div className="num">∞</div>
+                <div className="lbl">Always Learning</div>
               </div>
             </div>
 
