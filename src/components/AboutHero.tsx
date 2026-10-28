@@ -31,7 +31,7 @@ export default function AboutHero() {
             <img
               src={img}
               alt="Favour Vivian"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </div>
 
@@ -48,54 +48,66 @@ export default function AboutHero() {
 
         <div className="mt-20">
           <p className="text-lg leading-relaxed">
-            I've spent 4+ years in the trenches of frontend development —
-            Angular, React, TypeScript — shipping real products for real
-            companies. But somewhere along the way, I found myself drawn to a
-            different kind of craft: not how an interface functions, but how a
-            brand looks and feels — its mark, its color story, its visual
-            language. That pull is what's now taking me into brand and logo
-            design.
+            I've spent the past few years building for the web as a frontend
+            developer, turning designs and ideas into functional, user-friendly
+            digital experiences. Along the way, I've developed an interest in
+            something beyond writing code: understanding how design shapes the
+            way people experience a product, and how visual identity makes a
+            brand memorable.
           </p>
-          <p className="text-[#3D5AFE] text-lg mt-4">
-            Where I've built things:
+          <p className="text-lg leading-relaxed">
+            That curiosity is what led me to explore brand and logo design.
+          </p>
+          <p className="text-[#3D5AFE] text-lg mt-4">Where I've Been:</p>
+          <p className="text-lg leading-relaxed mt-4">
+            My journey has been about more than building interfaces. It's also
+            been about collaboration, problem-solving, and helping people
+            understand technology.
           </p>
           <p className="text-lg leading-relaxed mt-4">
-            At HouseAfrica, I spent over three years as Lead Frontend Engineer,
-            owning the build and refactor of responsive applications and working
-            hand-in-hand with designers to make sure what shipped actually
-            matched the vision — not just a rough approximation of it. At
-            Phreetech, I picked up the API-integration and performance side of
-            things, turning Figma files into layouts that hold up across devices
-            and aren't just "responsive" on paper.
+            As a frontend developer, I've worked on turning designs into
+            responsive applications, integrating APIs, improving performance,
+            and ensuring that what gets built reflects the intended experience.
           </p>
           <p className="text-lg leading-relaxed mt-4">
-            Teaching has been part of the journey too. As a React Tutor and Team
-            Lead at KodeCamp, I didn't just assign projects — I dug into where
-            individual students were stuck and built one-on-one sessions to get
-            them unstuck. That instinct — translate the complicated thing into
-            something a person can actually use — followed me into founding FLE
-            Tribe, a community for beginners who need more structure than a
-            YouTube tutorial gives them.
+            Teaching has also become an important part of my journey. Through
+            mentoring and working with beginners, I've learned that
+            understanding something deeply means being able to break it down and
+            help someone else understand it, too.
+          </p>
+          <p className="text-lg leading-relaxed mt-4">
+            That same belief shapes my interest in building communities and
+            creating pathways for people who are just starting their tech
+            journey.
           </p>
           <p className="text-[#3D5AFE] text-lg mt-4">Where I am now:</p>
           <p className="text-lg leading-relaxed mt-4">
-            Lately, most of my serious technical work involves AI-assisted
-            development — using Claude not as a shortcut, but as a real
-            collaborator in architecture and implementation.
+            I'm continuing to deepen my knowledge of frontend engineering while
+            exploring brand and visual identity design. I'm interested in the
+            relationship between how a product works and how it communicates its
+            identity to the world.
           </p>
           <p className="text-lg leading-relaxed mt-4">
-            And now I'm doing something a little different by the side: learning
-            about brand and logo design — typography, color systems, marks,
-            visual identity — because I think the products and brands that stand
-            out aren't just built well, they're designed well. I want to be
-            someone who understands both sides: the system that makes something
-            work, and the identity that makes it memorable.
+            I'm also exploring AI-assisted development as another way to
+            approach problem-solving, improve workflows, and build more
+            effectively.
           </p>
           <p className="text-lg leading-relaxed mt-4">
-            My mission is simple: create pathways for beginners to thrive in
-            tech. I'm committed to continuous learning, and to building skills,
-            projects, and communities that are accessible, practical, and
-            genuinely built to last
+            For me, learning doesn't stop at mastering a tool or a framework.
+            It's about understanding the principles behind the work and becoming
+            better at applying them.
+          </p>
+          <p className="text-[#3D5AFE] text-lg mt-4">What Drives Me:</p>
+          <p className="text-lg leading-relaxed mt-4">
+            I'm passionate about making technology more accessible to the next
+            generation of African developers. Through teaching, sharing what I
+            learn, and building communities, I want to help beginners find
+            direction, develop practical skills, and discover opportunities in
+            tech.
+          </p>
+          <p className="text-lg leading-relaxed mt-4">
+            I'm here to keep learning, keep building, and help others grow along
+            the way.
           </p>
         </div>
       </div>

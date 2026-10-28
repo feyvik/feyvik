@@ -5,8 +5,10 @@ import styled from "styled-components";
 import { ProjectImage, type Image } from "./ImageCard";
 import FeatherIcon, { ArrowRight } from "feather-icons-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import AvatarTag from "./AvatarTag";
+import avatarImg from "../assets/KELV2726.jpg";
 
-const STACK = ["HTML5","CSS3","JavaScript","TypeScript","React","Angular","Tailwind","Firebase","Leaflet"];
+const STACK = ["Angular","TypeScript","JavaScript","Tailwind CSS","Bootstrap","React","HTML5","CSS3","Affinity by Canva"];
 
 const ProjectWrapper = styled.section`
   padding: 7rem 6vw;
@@ -123,7 +125,6 @@ const ProjectWrapper = styled.section`
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 16px 40px rgba(0,0,0,0.14);
-      border-color: var(--accent);
 
       img { transform: scale(1.04); }
       .overlay { opacity: 1; }
@@ -198,7 +199,7 @@ const HomeProject = ({ projectRef, projectNumber }: SectionsProps) => {
       <div ref={animRef} className="animate-on-scroll">
         <div className="section-header">
           <div className="left">
-            <span className="tag">// selected_works</span>
+            <AvatarTag src={avatarImg} tag="// selected_works" className="mb-4" />
             <h2>Projects that <em>speak.</em></h2>
           </div>
           {projectNumber && projectNumber < ProjectImage.length && (

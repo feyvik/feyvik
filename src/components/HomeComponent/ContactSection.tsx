@@ -3,6 +3,8 @@
 import styled from "styled-components";
 import { Mail } from "feather-icons-react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import AvatarTag from "../AvatarTag";
+import img from "../../assets/IMG_7597.JPG";
 
 type SectionsProps = {
   contactRef: React.RefObject<HTMLDivElement | null>;
@@ -33,9 +35,9 @@ export default function ContactSection({ contactRef }: SectionsProps) {
       <div className="max-w-5xl mx-auto">
         <div ref={animRef} className="animate-on-scroll">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold tracking-widest text-[#3D5AFE] mb-4 uppercase">
-              Get In Touch
-            </p>
+            <div className="flex justify-center mb-4">
+              <AvatarTag src={img} tag="// get_in_touch" />
+            </div>
             <h2 className="mb-4 leading-tight dark:text-light">
               Let's create impact together
             </h2>

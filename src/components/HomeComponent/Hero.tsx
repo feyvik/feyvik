@@ -15,7 +15,6 @@ const HeroWrapper = styled.section`
   position: relative;
   overflow: hidden;
 
-  /* subtle dot grid */
   &::before {
     content: "";
     position: absolute;
@@ -26,7 +25,6 @@ const HeroWrapper = styled.section`
     opacity: 0.6;
   }
 
-  /* bottom fade */
   &::after {
     content: "";
     position: absolute;
@@ -46,7 +44,6 @@ const HeroWrapper = styled.section`
     align-items: center;
   }
 
-  /* photo */
   .photo-ring {
     position: relative;
     width: clamp(140px, 22vw, 210px);
@@ -87,7 +84,6 @@ const HeroWrapper = styled.section`
     to   { transform: rotate(360deg); }
   }
 
-  /* availability badge */
   .badge {
     display: inline-flex;
     align-items: center;
@@ -117,7 +113,6 @@ const HeroWrapper = styled.section`
     50%       { box-shadow: 0 0 0 6px rgba(34,197,94,0.08); }
   }
 
-  /* role tags */
   .roles {
     display: flex;
     flex-wrap: wrap;
@@ -139,8 +134,6 @@ const HeroWrapper = styled.section`
 
   h1.name {
     margin-bottom: 1.25rem;
-    max-width: 780px;
-
     em {
       font-style: italic;
       color: var(--accent);
@@ -151,7 +144,7 @@ const HeroWrapper = styled.section`
     font-size: 1rem;
     line-height: 1.75;
     color: var(--text-2);
-    max-width: 500px;
+    max-width: 700px;
     margin: 0 auto 2.5rem;
   }
 
@@ -169,7 +162,7 @@ const HeroWrapper = styled.section`
     font-weight: 600;
     letter-spacing: 0.02em;
     padding: 0.8rem 2rem;
-    border-radius: 6px;
+    border-radius: 50px;
     border: 1.5px solid var(--text);
     transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 
@@ -200,7 +193,6 @@ const HeroWrapper = styled.section`
     }
   }
 
-  /* quick stats */
   .stats {
     display: flex;
     gap: 2.5rem;
@@ -246,22 +238,23 @@ const Hero = () => {
         </div>
 
         <div className="roles hero-enter hero-enter-delay-1">
-          <span>Frontend Engineer</span>
+          <span>Frontend Developer</span>
           <span className="sep">/</span>
-          <span>Brand Designer</span>
+          <span>Angular Specialist</span>
           <span className="sep">/</span>
-          <span>Community Builder</span>
+          <span>Brand Design Student</span>
         </div>
 
         <h1 className="name hero-enter hero-enter-delay-1">
-          Developing & Designing <br />
-          <em>With Clarity.</em>
+          Creating What's Possible <br />
+          <em>Through Code.</em>
         </h1>
 
         <p className="desc hero-enter hero-enter-delay-2">
-          Frontend engineer with 4+ years building scalable, AI-assisted web
-          applications. I bridge the gap between engineering and design —
-          and open doors for the next generation of African developers.
+          A frontend developer and emerging brand designer focused on building
+          accessible, scalable, and user-centered digital experiences, bridging
+          the gap between technology and design, and creating opportunities for
+          the next generation of African developers.
         </p>
 
         <div className="actions hero-enter hero-enter-delay-3">
@@ -279,16 +272,16 @@ const Hero = () => {
 
         <div className="stats hero-enter hero-enter-delay-3">
           <div className="stat">
-            <div className="num">4+</div>
-            <div className="lbl">Years experience</div>
+            <div className="num">Angular</div>
+            <div className="lbl">Primary Stack</div>
           </div>
           <div className="stat">
-            <div className="num">50+</div>
-            <div className="lbl">Projects delivered</div>
+            <div className="num">React</div>
+            <div className="lbl">Currently Learning</div>
           </div>
           <div className="stat">
-            <div className="num">100+</div>
-            <div className="lbl">Lives impacted</div>
+            <div className="num">Brand Design</div>
+            <div className="lbl">Currently Learning</div>
           </div>
         </div>
       </div>

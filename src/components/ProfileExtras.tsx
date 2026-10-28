@@ -73,7 +73,6 @@ const volunteerItems = [
 ];
 
 const Card = styled.div`
-  border: 1px solid #e5e7eb;
   border-radius: 16px;
   background: #fff;
   transition:
@@ -82,7 +81,6 @@ const Card = styled.div`
 
   .dark & {
     background: #1a1a2e;
-    border-color: #a3a7b3;
   }
 
   &:hover {
