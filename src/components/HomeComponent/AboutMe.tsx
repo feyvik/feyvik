@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import { ArrowRight } from "feather-icons-react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import AvatarTag from "../AvatarTag";
-import img from "../../assets/IMG_7598.JPG";
+import img from "../../assets/IMG.jpg";
 
 const AboutWrapper = styled.section`
   padding: 7rem 6vw;

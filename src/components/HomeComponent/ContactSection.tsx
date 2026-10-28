@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Mail } from "feather-icons-react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import AvatarTag from "../AvatarTag";
-import img from "../../assets/IMG_7597.JPG";
+import img from "../../assets/IMG_1.jpg";
 
 type SectionsProps = {
   contactRef: React.RefObject<HTMLDivElement | null>;
